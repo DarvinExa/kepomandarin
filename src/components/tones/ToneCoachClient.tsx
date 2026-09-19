@@ -282,21 +282,33 @@ export function ToneCoachClient({ userId }: ToneCoachClientProps) {
             {/* Panel Pembahasan & Artikulasi Setelah Menjawab */}
             {hasAnswered && (
               <div className="border border-rule bg-canvas p-6 space-y-4">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-rule pb-3">
-                  <div className="flex items-center gap-2">
-                    <span
-                      className={`w-2.5 h-2.5 ${
-                        isSelectedCorrect ? "bg-status-success" : "bg-accent-red"
-                      }`}
-                      aria-hidden="true"
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-rule pb-3">
+                  <div className="flex items-center gap-3">
+                    <img
+                      src={isSelectedCorrect ? "/images/mascot-correct.png" : "/images/mascot-dizzy.png"}
+                      alt={isSelectedCorrect ? "Maskot Jawaban Tepat" : "Maskot Belum Tepat"}
+                      className="w-10 h-10 object-contain shrink-0"
                     />
-                    <span className="font-mono text-xs font-bold uppercase tracking-wider text-ink">
-                      {isSelectedCorrect
-                        ? "Analisis Akurat // Kaidah Terverifikasi"
-                        : "Analisis Belum Tepat // Tinjauan Kaidah"}
-                    </span>
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <span
+                          className={`w-2.5 h-2.5 ${
+                            isSelectedCorrect ? "bg-status-success" : "bg-accent-red"
+                          }`}
+                          aria-hidden="true"
+                        />
+                        <span className="font-mono text-xs font-bold uppercase tracking-wider text-ink">
+                          {isSelectedCorrect
+                            ? "Analisis Akurat // Kaidah Terverifikasi"
+                            : "Analisis Belum Tepat // Tinjauan Kaidah"}
+                        </span>
+                      </div>
+                      <span className="font-mono text-xs text-muted block sm:hidden mt-0.5">
+                        {currentQuestion.explanation.ruleTitle}
+                      </span>
+                    </div>
                   </div>
-                  <span className="font-mono text-xs text-muted">
+                  <span className="font-mono text-xs text-muted hidden sm:block">
                     {currentQuestion.explanation.ruleTitle}
                   </span>
                 </div>

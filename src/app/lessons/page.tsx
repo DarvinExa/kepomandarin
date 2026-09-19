@@ -39,22 +39,29 @@ export default async function LessonsPage() {
       </nav>
 
       {/* 1. Header Section */}
-      <section className="border-b border-rule pb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-        <div className="space-y-2">
-          <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 bg-accent-red" aria-hidden="true" />
-            <span className="font-mono text-xs uppercase tracking-widest text-muted">
-              02 // SILABUS HSK 1
-            </span>
-          </div>
-          <div>
-            <h1 className="text-2xl sm:text-4xl font-black uppercase tracking-tight text-ink">
-              Daftar Pelajaran HSK 1
-            </h1>
-            <p className="text-xs sm:text-sm text-muted max-w-2xl leading-relaxed pt-1">
-              Lima unit pembelajaran terstruktur yang menghubungkan karakter,
-              pelafalan nada, pola kalimat, dan latihan kontekstual secara bertahap.
-            </p>
+      <section className="border-b border-rule pb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+        <div className="flex items-start sm:items-center gap-4 sm:gap-6 min-w-0">
+          <img
+            src="/images/mascot-studying.png"
+            alt="Maskot KepoMandarin Belajar"
+            className="w-16 h-16 sm:w-20 sm:h-20 object-contain shrink-0"
+          />
+          <div className="space-y-2 min-w-0">
+            <div className="flex items-center gap-2">
+              <span className="w-2.5 h-2.5 bg-accent-red" aria-hidden="true" />
+              <span className="font-mono text-xs uppercase tracking-widest text-muted">
+                02 // SILABUS HSK 1
+              </span>
+            </div>
+            <div>
+              <h1 className="text-2xl sm:text-4xl font-black uppercase tracking-tight text-ink">
+                Daftar Pelajaran HSK 1
+              </h1>
+              <p className="text-xs sm:text-sm text-muted max-w-2xl leading-relaxed pt-1">
+                Lima unit pembelajaran terstruktur yang menghubungkan karakter,
+                pelafalan nada, pola kalimat, dan latihan kontekstual secara bertahap.
+              </p>
+            </div>
           </div>
         </div>
 

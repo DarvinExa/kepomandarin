@@ -219,7 +219,14 @@ export function ErrorJournalClient({ userId, isGuest }: ErrorJournalClientProps)
           </span>
         </div>
       ) : filteredEntries.length === 0 ? (
-        <section className="border border-rule bg-paper p-8 sm:p-14 text-center space-y-3">
+        <section className="border border-rule bg-paper p-8 sm:p-14 text-center space-y-4">
+          <div className="flex justify-center">
+            <img
+              src={entries.length === 0 ? "/images/mascot-celebrating.png" : "/images/mascot-sad.png"}
+              alt={entries.length === 0 ? "Maskot Tidak Ada Kesalahan" : "Maskot Tidak Ada Hasil Filter"}
+              className="w-20 h-20 sm:w-24 sm:h-24 object-contain"
+            />
+          </div>
           <div className="inline-block border border-rule px-3 py-1 font-mono text-[11px] text-muted uppercase bg-canvas">
             Status Jurnal
           </div>
@@ -230,7 +237,7 @@ export function ErrorJournalClient({ userId, isGuest }: ErrorJournalClientProps)
           </h2>
           <p className="text-xs sm:text-sm text-muted max-w-md mx-auto leading-relaxed">
             {entries.length === 0
-              ? "Saat kamu keliru menjawab latihan soal atau menemukan nada yang membingungkan, catat di sini untuk dipelajari lagi."
+              ? "Hebat! Saat kamu keliru menjawab latihan soal atau menemukan nada yang membingungkan, catat di sini untuk dipelajari lagi."
               : "Coba ubah pilihan kategori atau tab status untuk melihat catatan lainnya."}
           </p>
           {entries.length === 0 && (

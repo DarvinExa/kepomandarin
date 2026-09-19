@@ -123,23 +123,30 @@ export default async function Home() {
   return (
     <div className="p-4 sm:p-8 max-w-6xl mx-auto space-y-8 sm:space-y-12">
       {/* 1. Header / Greeting */}
-      <section className="border-b border-rule pb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-        <div className="space-y-2">
-          <div className="flex items-center gap-2">
-            <span className="w-2.5 h-2.5 bg-accent-red" aria-hidden="true" />
-            <span className="font-mono text-xs uppercase tracking-widest text-muted">
-              01 // BERANDA BELAJAR
-            </span>
-          </div>
-          <div>
-            <h1 className="text-2xl sm:text-4xl font-black uppercase tracking-tight text-ink">
-              {isGuest ? "Selamat Datang" : "Selamat Datang Kembali"}, {learnerName}
-            </h1>
-            <p className="text-xs sm:text-sm text-muted max-w-xl leading-relaxed pt-1">
-              {isGuest
-                ? "Belajar bahasa Mandarin lewat contoh kalimat nyata. Kamu bisa langsung coba tanpa daftar, atau buat akun buat simpan progres belajarmu."
-                : "Lanjut belajar HSK 1 dan coba latihan soal hari ini."}
-            </p>
+      <section className="border-b border-rule pb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-6">
+        <div className="flex items-start sm:items-center gap-4 sm:gap-6 min-w-0">
+          <img
+            src="/images/mascot-greeting.png"
+            alt="Maskot KepoMandarin Halo"
+            className="w-20 h-20 sm:w-24 sm:h-24 object-contain shrink-0"
+          />
+          <div className="space-y-2 min-w-0">
+            <div className="flex items-center gap-2">
+              <span className="w-2.5 h-2.5 bg-accent-red" aria-hidden="true" />
+              <span className="font-mono text-xs uppercase tracking-widest text-muted">
+                01 // BERANDA BELAJAR
+              </span>
+            </div>
+            <div>
+              <h1 className="text-2xl sm:text-4xl font-black uppercase tracking-tight text-ink">
+                {isGuest ? "Selamat Datang" : "Selamat Datang Kembali"}, {learnerName}
+              </h1>
+              <p className="text-xs sm:text-sm text-muted max-w-xl leading-relaxed pt-1">
+                {isGuest
+                  ? "Belajar bahasa Mandarin lewat contoh kalimat nyata. Kamu bisa langsung coba tanpa daftar, atau buat akun buat simpan progres belajarmu."
+                  : "Lanjut belajar HSK 1 dan coba latihan soal hari ini."}
+              </p>
+            </div>
           </div>
         </div>
 

@@ -143,14 +143,21 @@ export function ProgressClient({ userId, isGuest }: ProgressClientProps) {
 
       {/* 3. Panel Bilah Kemajuan HSK 1 */}
       <section className="border border-rule bg-canvas p-6 sm:p-8 space-y-4">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-rule pb-3">
-          <div>
-            <h3 className="text-sm font-bold uppercase tracking-wider text-ink">
-              Tingkat Penguasaan Kurikulum HSK 1
-            </h3>
-            <p className="text-xs text-muted">
-              Dihitung berdasarkan penyelesaian 5 unit pelajaran dan frasa yang kamu simpan.
-            </p>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-rule pb-4">
+          <div className="flex items-center gap-3">
+            <img
+              src={metrics.hsk1MasteryPercent >= 70 ? "/images/mascot-celebrating.png" : "/images/mascot-studying.png"}
+              alt="Maskot Progres Belajar"
+              className="w-12 h-12 object-contain shrink-0"
+            />
+            <div>
+              <h3 className="text-sm font-bold uppercase tracking-wider text-ink">
+                Tingkat Penguasaan Kurikulum HSK 1
+              </h3>
+              <p className="text-xs text-muted">
+                Dihitung berdasarkan penyelesaian 5 unit pelajaran dan frasa yang kamu simpan.
+              </p>
+            </div>
           </div>
           <div className="font-mono text-2xl font-black text-ink">
             {isLoading ? "0%" : `${metrics.hsk1MasteryPercent}%`}

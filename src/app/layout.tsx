@@ -20,9 +20,14 @@ const notoSansSC = Noto_Sans_SC({
 });
 
 export const metadata: Metadata = {
-  title: "Mandarin Context Lab : Platform Belajar HSK 1 Berbasis Konteks",
+  title: "KepoMandarin : Platform Belajar Mandarin Berbasis Konteks & HSK",
   description:
     "Platform belajar bahasa Mandarin berbasis konteks dengan materi terstruktur, latihan terarah, dan jurnal kesalahan pribadi.",
+  icons: {
+    icon: "/images/logo.png",
+    shortcut: "/images/logo.png",
+    apple: "/images/logo.png",
+  },
 };
 
 export default function RootLayout({

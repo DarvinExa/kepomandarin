@@ -317,17 +317,24 @@ export default async function ModuleUnitDetailPage({ params }: PageProps) {
       {/* 6. Action CTA: Lanjut ke Latihan Soal Unit */}
       <section className="border-2 border-ink bg-paper p-6 sm:p-10 space-y-4">
         <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-          <div className="space-y-1 max-w-2xl">
-            <span className="font-mono text-xs uppercase font-bold text-accent-red tracking-wider block">
-              EVALUASI PEMAHAMAN // UNIT {unitDetail.slug}
-            </span>
-            <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-ink">
-              Siap Menguji Pemahaman Unit Ini?
-            </h3>
-            <p className="text-xs sm:text-sm text-muted leading-relaxed">
-              Uji pemahaman kosakata dan struktur kalimat melalui latihan pilihan ganda,
-              susun kalimat, dan menyimak audio. Setelah selesai, kamu bisa lanjut langsung ke unit berikutnya.
-            </p>
+          <div className="flex items-center gap-4 max-w-2xl">
+            <img
+              src="/images/mascot-thinking.png"
+              alt="Maskot Siap Latihan"
+              className="w-14 h-14 sm:w-16 sm:h-16 object-contain shrink-0"
+            />
+            <div className="space-y-1">
+              <span className="font-mono text-xs uppercase font-bold text-accent-red tracking-wider block">
+                EVALUASI PEMAHAMAN // UNIT {unitDetail.slug}
+              </span>
+              <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-ink">
+                Siap Menguji Pemahaman Unit Ini?
+              </h3>
+              <p className="text-xs sm:text-sm text-muted leading-relaxed">
+                Uji pemahaman kosakata dan struktur kalimat melalui latihan pilihan ganda,
+                susun kalimat, dan menyimak audio. Setelah selesai, kamu bisa lanjut langsung ke unit berikutnya.
+              </p>
+            </div>
           </div>
 
           <Link

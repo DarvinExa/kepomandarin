@@ -62,14 +62,21 @@ export default async function PracticePage({ searchParams }: PracticePageProps) 
             03 // LATIHAN SOAL
           </span>
         </div>
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-          <div className="space-y-1">
-            <h1 className="text-2xl sm:text-4xl font-black uppercase tracking-tight text-ink">
-              Latihan Soal
-            </h1>
-            <p className="text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
-              Uji pemahamanmu seputar susunan kalimat, pinyin, dan nada bahasa Mandarin langsung lewat konteks kalimat.
-            </p>
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <img
+              src="/images/mascot-thinking.png"
+              alt="Maskot Latihan Soal KepoMandarin"
+              className="w-14 h-14 sm:w-16 sm:h-16 object-contain shrink-0"
+            />
+            <div className="space-y-1">
+              <h1 className="text-2xl sm:text-4xl font-black uppercase tracking-tight text-ink">
+                Latihan Soal
+              </h1>
+              <p className="text-sm sm:text-base text-muted max-w-2xl leading-relaxed">
+                Uji pemahamanmu seputar susunan kalimat, pinyin, dan nada bahasa Mandarin langsung lewat konteks kalimat.
+              </p>
+            </div>
           </div>
           <div className="shrink-0 font-mono text-xs text-muted flex items-center gap-2">
             <span className="w-2 h-2 bg-status-success inline-block" />

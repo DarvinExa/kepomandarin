@@ -91,7 +91,17 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="p-4 sm:p-8 max-w-xl mx-auto py-8 sm:py-16">
+    <div className="p-4 sm:p-8 max-w-xl mx-auto py-8 sm:py-16 space-y-6">
+      <div className="flex justify-center">
+        <Link href="/" title="KepoMandarin: Beranda">
+          <img
+            src="/images/logo-text.png"
+            alt="KepoMandarin"
+            className="h-16 sm:h-20 w-auto object-contain"
+          />
+        </Link>
+      </div>
+
       {/* Box Container Utama bergaya Bauhaus / Constructivism */}
       <div className="border-2 border-ink bg-paper">
         {/* Header Bar */}

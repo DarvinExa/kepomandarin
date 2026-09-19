@@ -120,15 +120,16 @@ export function DesktopNav() {
       {/* Brand Header & Toggle */}
       <div>
         {isCollapsed ? (
-          <div className="p-3 border-b border-rule flex flex-col items-center gap-2.5 min-h-[65px] justify-center">
+          <div className="p-3 border-b border-rule flex flex-col items-center gap-2.5 min-h-[72px] justify-center">
             <Link
               href="/"
-              title="Mandarin Context Lab: Beranda"
+              title="KepoMandarin: Beranda"
               className="flex items-center justify-center p-1 hover:opacity-80 transition-opacity"
             >
-              <span
-                className="w-4 h-4 bg-accent-red shrink-0"
-                aria-hidden="true"
+              <img
+                src="/images/logo.png"
+                alt="Logo KepoMandarin"
+                className="w-10 h-10 object-contain"
               />
             </Link>
             <button
@@ -142,27 +143,20 @@ export function DesktopNav() {
             </button>
           </div>
         ) : (
-          <div className="p-4 border-b border-rule flex items-center justify-between min-h-[65px]">
-            <Link href="/" className="group flex items-center gap-2.5 min-w-0">
-              <span
-                className="w-3.5 h-3.5 bg-accent-red shrink-0"
-                aria-hidden="true"
+          <div className="p-3.5 border-b border-rule flex items-center justify-between min-h-[72px]">
+            <Link href="/" className="group flex items-center gap-2 min-w-0" title="KepoMandarin: Beranda">
+              <img
+                src="/images/logo-text.png"
+                alt="KepoMandarin"
+                className="h-12 xl:h-14 w-auto max-w-[185px] xl:max-w-[210px] object-contain"
               />
-              <div className="min-w-0">
-                <span className="font-mono text-xs font-bold uppercase tracking-wider text-ink block group-hover:text-accent-red transition-colors truncate">
-                  Mandarin Lab
-                </span>
-                <span className="font-mono text-[9px] text-muted uppercase tracking-widest block truncate">
-                  HSK 1 Editorial
-                </span>
-              </div>
             </Link>
             <button
               type="button"
               onClick={toggleCollapsed}
               aria-label="Persempit bilah navigasi"
               title="Persempit navigasi"
-              className="px-2 py-1 border border-rule hover:border-ink bg-paper text-ink font-mono text-xs transition-colors cursor-pointer shrink-0 ml-2"
+              className="px-2 py-1 border border-rule hover:border-ink bg-paper text-ink font-mono text-xs transition-colors cursor-pointer shrink-0 ml-1.5"
             >
               «
             </button>

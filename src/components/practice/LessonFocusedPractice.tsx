@@ -236,15 +236,22 @@ export function LessonFocusedPractice({
       <div className="border border-rule bg-canvas max-w-4xl mx-auto space-y-0">
         {/* Header Ringkasan Selesai */}
         <div className="p-6 sm:p-8 border-b border-rule bg-canvas flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div className="space-y-1">
-            <span className="text-accent-red font-mono text-xs uppercase font-bold tracking-widest block">
-              UNIT {lesson.slug} · {lesson.hanzi} ({lesson.pinyin.toUpperCase()})
-            </span>
-            <h1 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-ink">
-              LATIHAN SELESAI // PELAJARAN {lesson.slug}: {lesson.title.toUpperCase()}
-            </h1>
+          <div className="flex items-center gap-4 min-w-0">
+            <img
+              src={accuracy >= 70 ? "/images/mascot-celebrating.png" : "/images/mascot-studying.png"}
+              alt={accuracy >= 70 ? "Maskot Perayaan Sukses" : "Maskot Belajar Mandiri"}
+              className="w-16 h-16 sm:w-20 sm:h-20 object-contain shrink-0"
+            />
+            <div className="space-y-1 min-w-0">
+              <span className="text-accent-red font-mono text-xs uppercase font-bold tracking-widest block">
+                UNIT {lesson.slug} · {lesson.hanzi} ({lesson.pinyin.toUpperCase()})
+              </span>
+              <h1 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-ink truncate sm:whitespace-normal">
+                LATIHAN SELESAI // PELAJARAN {lesson.slug}: {lesson.title.toUpperCase()}
+              </h1>
+            </div>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-3 shrink-0">
             <div className="border border-rule px-3 py-1 font-mono text-xs font-bold text-ink bg-paper">
               {totalAnswered} SOAL TUNTAS
             </div>
@@ -866,28 +873,40 @@ function LessonPracticeCard({
                 : "border-accent-red bg-accent-red/5"
             }`}
           >
-            <div className="flex items-center justify-between">
-              <span
-                className={`font-mono text-xs uppercase font-bold tracking-wider ${
-                  isCorrect ? "text-status-success" : "text-accent-red"
-                }`}
-              >
-                {isCorrect ? "HASIL // BENAR" : "HASIL // BELUM TEPAT"}
-              </span>
-              <span className="font-mono text-[10px] text-muted uppercase">
-                Penjelasan
-              </span>
+            <div className="flex items-start gap-4">
+              <div className="shrink-0 pt-0.5">
+                <img
+                  src={isCorrect ? "/images/mascot-correct.png" : "/images/mascot-dizzy.png"}
+                  alt={isCorrect ? "Maskot Jawaban Benar" : "Maskot Belum Tepat"}
+                  className="w-14 h-14 sm:w-16 sm:h-16 object-contain"
+                />
+              </div>
+
+              <div className="flex-1 min-w-0 space-y-2">
+                <div className="flex items-center justify-between">
+                  <span
+                    className={`font-mono text-xs uppercase font-bold tracking-wider ${
+                      isCorrect ? "text-status-success" : "text-accent-red"
+                    }`}
+                  >
+                    {isCorrect ? "HASIL // BENAR" : "HASIL // BELUM TEPAT"}
+                  </span>
+                  <span className="font-mono text-[10px] text-muted uppercase">
+                    Penjelasan
+                  </span>
+                </div>
+
+                <p className="text-sm font-bold text-ink">
+                  {isCorrect
+                    ? "Bagus! Jawabanmu sudah benar."
+                    : `Jawaban yang tepat: ${stripTrailingPunctuation(exercise.correct_answer)}`}
+                </p>
+
+                <p className="text-xs sm:text-sm text-muted leading-relaxed">
+                  {exercise.explanation}
+                </p>
+              </div>
             </div>
-
-            <p className="text-sm font-bold text-ink">
-              {isCorrect
-                ? "Bagus! Jawabanmu sudah benar."
-                : `Jawaban yang tepat: ${stripTrailingPunctuation(exercise.correct_answer)}`}
-            </p>
-
-            <p className="text-xs sm:text-sm text-muted leading-relaxed">
-              {exercise.explanation}
-            </p>
 
             {!isCorrect && (
               <div className="pt-2 border-t border-rule/50 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs font-mono">

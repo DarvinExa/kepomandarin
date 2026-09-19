@@ -94,19 +94,18 @@ export function MobileNav() {
   return (
     <header className="lg:hidden sticky top-0 z-40 bg-canvas border-b border-rule">
       {/* Mobile Top Bar */}
-      <div className="flex items-center justify-between px-4 py-3 min-h-[52px]">
+      <div className="flex items-center justify-between px-4 py-2.5 min-h-[60px]">
         <Link
           href="/"
           className="flex items-center gap-2 text-ink"
           onClick={handleLinkClick}
+          title="KepoMandarin: Beranda"
         >
-          <span
-            className="w-3 h-3 bg-accent-red shrink-0"
-            aria-hidden="true"
+          <img
+            src="/images/logo-text.png"
+            alt="KepoMandarin"
+            className="h-10 sm:h-11 w-auto max-w-[175px] object-contain"
           />
-          <span className="font-mono text-xs font-bold uppercase tracking-wider">
-            Mandarin Context Lab
-          </span>
         </Link>
 
         {/* User initials (if logged in) + Menu Toggle Button */}

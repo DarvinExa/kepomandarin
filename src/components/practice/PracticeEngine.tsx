@@ -138,21 +138,28 @@ export function PracticeEngine({
     return (
       <div className="border-2 border-ink bg-paper p-6 sm:p-12 space-y-8 max-w-2xl mx-auto">
         {/* Header Ringkasan */}
-        <div className="border-b border-rule pb-6 space-y-2">
-          <div className="flex items-center justify-between">
-            <span className="font-mono text-xs uppercase font-bold text-accent-red tracking-widest">
-              HASIL EVALUASI // SESI SELESAI
-            </span>
-            <span className="font-mono text-xs text-muted">
-              {totalAnswered} SOAL DIKERJAKAN
-            </span>
+        <div className="border-b border-rule pb-6 flex flex-col sm:flex-row sm:items-center gap-4">
+          <img
+            src={accuracy >= 70 ? "/images/mascot-celebrating.png" : "/images/mascot-studying.png"}
+            alt={accuracy >= 70 ? "Maskot Perayaan Sukses" : "Maskot Belajar Mandiri"}
+            className="w-16 h-16 sm:w-20 sm:h-20 object-contain shrink-0"
+          />
+          <div className="flex-1 min-w-0 space-y-1">
+            <div className="flex items-center justify-between">
+              <span className="font-mono text-xs uppercase font-bold text-accent-red tracking-widest">
+                HASIL EVALUASI // SESI SELESAI
+              </span>
+              <span className="font-mono text-xs text-muted">
+                {totalAnswered} SOAL DIKERJAKAN
+              </span>
+            </div>
+            <h2 className="text-2xl sm:text-4xl font-black uppercase tracking-tight text-ink">
+              Ringkasan Sesi Latihan
+            </h2>
+            <p className="text-xs sm:text-sm text-muted">
+              Berikut adalah evaluasi akurasi pemahaman struktur kalimat, ejaan pinyin, dan pelafalan nada pada unit ini.
+            </p>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-black uppercase tracking-tight text-ink">
-            Ringkasan Sesi Latihan
-          </h2>
-          <p className="text-xs sm:text-sm text-muted">
-            Berikut adalah evaluasi akurasi pemahaman struktur kalimat, ejaan pinyin, dan pelafalan nada pada unit ini.
-          </p>
         </div>
 
         {/* Notifikasi Status Penyimpanan Sesi */}
@@ -813,28 +820,40 @@ function QuestionCard({
                 : "border-accent-red bg-accent-red/5"
             }`}
           >
-            <div className="flex items-center justify-between">
-              <span
-                className={`font-mono text-xs uppercase font-bold tracking-wider ${
-                  isCorrect ? "text-status-success" : "text-accent-red"
-                }`}
-              >
-                {isCorrect ? "HASIL // JAWABAN TEPAT" : "HASIL // BELUM TEPAT"}
-              </span>
-              <span className="font-mono text-[10px] text-muted uppercase">
-                Penjelasan
-              </span>
+            <div className="flex items-start gap-4">
+              <div className="shrink-0 pt-0.5">
+                <img
+                  src={isCorrect ? "/images/mascot-correct.png" : "/images/mascot-dizzy.png"}
+                  alt={isCorrect ? "Maskot Jawaban Benar" : "Maskot Belum Tepat"}
+                  className="w-14 h-14 sm:w-16 sm:h-16 object-contain"
+                />
+              </div>
+
+              <div className="flex-1 min-w-0 space-y-2">
+                <div className="flex items-center justify-between">
+                  <span
+                    className={`font-mono text-xs uppercase font-bold tracking-wider ${
+                      isCorrect ? "text-status-success" : "text-accent-red"
+                    }`}
+                  >
+                    {isCorrect ? "HASIL // JAWABAN TEPAT" : "HASIL // BELUM TEPAT"}
+                  </span>
+                  <span className="font-mono text-[10px] text-muted uppercase">
+                    Penjelasan
+                  </span>
+                </div>
+
+                <p className="text-sm font-bold text-ink">
+                  {isCorrect
+                    ? "Bagus! Jawabanmu benar."
+                    : `Jawaban yang benar: ${stripTrailingPunctuation(question.correct_answer)}`}
+                </p>
+
+                <p className="text-xs sm:text-sm text-muted leading-relaxed">
+                  {question.explanation}
+                </p>
+              </div>
             </div>
-
-            <p className="text-sm font-bold text-ink">
-              {isCorrect
-                ? "Bagus! Jawabanmu benar."
-                : `Jawaban yang benar: ${stripTrailingPunctuation(question.correct_answer)}`}
-            </p>
-
-            <p className="text-xs sm:text-sm text-muted leading-relaxed">
-              {question.explanation}
-            </p>
 
             {!isCorrect && (
               <div className="pt-2 border-t border-rule/50 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs font-mono">

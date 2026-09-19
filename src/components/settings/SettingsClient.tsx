@@ -104,15 +104,22 @@ export function SettingsClient({ userId, email, isGuest }: SettingsClientProps) 
       <section className="border border-rule divide-y divide-rule bg-paper">
         {/* 1. Status Akun */}
         <div className="p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-          <div className="space-y-1">
-            <h2 className="text-sm font-bold uppercase tracking-wider text-ink">
-              Status Akun & Sinkronisasi
-            </h2>
-            <p className="text-xs text-muted max-w-lg">
-              {isGuest
-                ? "Saat ini kamu menggunakan mode tamu tanpa akun. Seluruh catatan tersimpan di browser ini. Buat akun untuk mengaktifkan sinkronisasi cloud lintas perangkat."
-                : `Terhubung sebagai ${email}. Riwayat belajar, frasa, dan diagnosis tersinkronisasi aman ke cloud.`}
-            </p>
+          <div className="flex items-center gap-4">
+            <img
+              src="/images/mascot-neutral.png"
+              alt="Avatar Pengguna KepoMandarin"
+              className="w-12 h-12 border border-rule bg-canvas p-1 object-contain shrink-0"
+            />
+            <div className="space-y-1">
+              <h2 className="text-sm font-bold uppercase tracking-wider text-ink">
+                Status Akun & Sinkronisasi
+              </h2>
+              <p className="text-xs text-muted max-w-lg">
+                {isGuest
+                  ? "Saat ini kamu menggunakan mode tamu tanpa akun. Seluruh catatan tersimpan di browser ini. Buat akun untuk mengaktifkan sinkronisasi cloud lintas perangkat."
+                  : `Terhubung sebagai ${email}. Riwayat belajar, frasa, dan diagnosis tersinkronisasi aman ke cloud.`}
+              </p>
+            </div>
           </div>
           {isGuest ? (
             <div className="flex items-center gap-2 shrink-0">
