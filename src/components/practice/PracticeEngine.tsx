@@ -57,7 +57,7 @@ export function PracticeEngine({
           Status Soal
         </div>
         <h2 className="text-xl sm:text-2xl font-bold uppercase tracking-tight text-ink">
-          Tidak ada soal latihan untuk unit ini.
+          Tidak ada soal latihan untuk unit ini
         </h2>
         <p className="text-xs sm:text-sm text-muted max-w-md mx-auto leading-relaxed">
           Pilih unit latihan lain atau kembali ke silabus pembelajaran HSK 1.
@@ -892,7 +892,7 @@ function QuestionCard({
         {/* 5. Tombol Tindakan (Check / Next) */}
         <div className="pt-4 border-t border-rule flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="font-mono text-xs text-muted">
-            MANDARIN CONTEXT LAB · TINGKAT HSK 1
+            KEPOMANDARIN · TINGKAT HSK 1
           </div>
 
           <div className="flex items-center gap-3 w-full sm:w-auto">

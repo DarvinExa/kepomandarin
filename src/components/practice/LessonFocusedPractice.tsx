@@ -157,7 +157,7 @@ export function LessonFocusedPractice({
           STATUS SOAL
         </div>
         <h2 className="text-xl sm:text-2xl font-bold uppercase tracking-tight text-ink">
-          Belum ada soal latihan untuk unit {lesson.slug}.
+          Belum ada soal latihan untuk unit {lesson.slug}
         </h2>
         <p className="text-xs sm:text-sm text-muted max-w-md mx-auto leading-relaxed">
           Silakan pelajari teori unit ini terlebih dahulu atau kembali ke silabus kurikulum.
@@ -937,7 +937,7 @@ function LessonPracticeCard({
         {/* 6. Footer Minimal Sesuai Screenshot */}
         <div className="border-t border-rule pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 mt-8">
           <div className="font-mono text-xs text-muted tracking-wider uppercase">
-            MANDARIN CONTEXT LAB · {lesson.moduleTitle ?? "TINGKAT HSK 1"}
+            KEPOMANDARIN · {lesson.moduleTitle ?? "TINGKAT HSK 1"}
           </div>
 
           <div className="w-full sm:w-auto">

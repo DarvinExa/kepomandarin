@@ -3,7 +3,7 @@ import { createClient } from "@/lib/supabase/server";
 import { HanziExplorerClient } from "@/components/hanzi/HanziExplorerClient";
 
 export const metadata = {
-  title: "Eksplorasi Karakter (Hanzi Explorer) · Mandarin Context Lab",
+  title: "Eksplorasi Karakter (Hanzi Explorer) · KepoMandarin",
   description:
     "Eksplorasi 12 radikal semantik, dekonstruksi struktur spasial, dan urutan goresan karakter Mandarin HSK 1.",
 };

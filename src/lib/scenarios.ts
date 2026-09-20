@@ -1,7 +1,7 @@
 /**
  * scenarios.ts
  * Fondasi dataset dan logika untuk Modul 9.5: Conversation Scenarios (Skenario Percakapan Kontekstual).
- * Berfokus pada 4 situasi komunikasi nyata tingkat HSK 1:
+ * Berfokus pada 4 situasi komunikasi sehari-hari tingkat HSK 1:
  * 1. Sapaan Sopan & Perkenalan Diri di Kampus
  * 2. Memesan Minuman di Kedai Teh Tradisional
  * 3. Berbelanja Buah di Toko / Pasar

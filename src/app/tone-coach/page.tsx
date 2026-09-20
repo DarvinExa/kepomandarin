@@ -2,7 +2,7 @@ import { createClient } from "@/lib/supabase/server";
 import { ToneCoachClient } from "@/components/tones/ToneCoachClient";
 
 export const metadata = {
-  title: "Pelatih Nada (Tone Coach) · Mandarin Context Lab",
+  title: "Pelatih Nada (Tone Coach) · KepoMandarin",
   description:
     "Eksplorasi visual kontur nada 5-skala Y.R. Chao dan kaidah perubahan nada (Tone Sandhi) HSK 1.",
 };

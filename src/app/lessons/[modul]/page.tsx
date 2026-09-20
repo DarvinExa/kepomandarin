@@ -26,18 +26,18 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { modul } = await params;
   if (HSK1_SLUGS.includes(modul)) {
-    return { title: `Pelajaran ${modul} | Mandarin Context Lab` };
+    return { title: `Pelajaran ${modul} | KepoMandarin` };
   }
   const currentModule = getModuleById(modul);
 
   if (!currentModule) {
     return {
-      title: "Modul Tidak Ditemukan | Mandarin Context Lab",
+      title: "Modul Tidak Ditemukan | KepoMandarin",
     };
   }
 
   return {
-    title: `${currentModule.title} (${currentModule.hanziTitle}) : Silabus Pembelajaran | Mandarin Context Lab`,
+    title: `${currentModule.title} (${currentModule.hanziTitle}) : Silabus Pembelajaran | KepoMandarin`,
     description: currentModule.description,
   };
 }

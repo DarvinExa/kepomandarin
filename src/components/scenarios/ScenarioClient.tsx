@@ -60,7 +60,7 @@ export function ScenarioClient({ userId }: ScenarioClientProps) {
       {/* 2. Seleksi 4 Skenario Percakapan Bauhaus */}
       <div className="space-y-3">
         <span className="font-mono text-xs uppercase tracking-wider text-muted block">
-          Pilih Situasi Percakapan Nyata:
+          Pilih Situasi Percakapan Sehari-hari:
         </span>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
           {CONVERSATION_SCENARIOS.map((sc, idx) => {

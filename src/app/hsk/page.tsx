@@ -299,7 +299,7 @@ export default async function HskPage() {
           Cara Kami Menyusun Materi
         </span>
         <p className="text-xs sm:text-sm text-muted leading-relaxed max-w-3xl">
-          Mandarin Context Lab mengutamakan proses belajar yang tenang dan terarah: materi disusun bertahap mulai dari fondasi nada dan hanzi, contoh nyata dalam kalimat, latihan langsung, hingga pencatatan kesalahan belajar untuk evaluasi mandiri.
+          KepoMandarin mengutamakan proses belajar yang tenang dan terarah: materi disusun bertahap mulai dari fondasi nada dan hanzi, contoh dalam kalimat sehari-hari, latihan langsung, hingga pencatatan kesalahan belajar untuk evaluasi mandiri.
         </p>
       </section>
     </div>

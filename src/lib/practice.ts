@@ -162,7 +162,7 @@ export const DEFAULT_EXERCISES: ExerciseItem[] = [
     ],
     correct_answer: "pà (怕 - takut / konsonan berhembus kuat)",
     explanation:
-      "Audio melafalkan suku kata 'pà' (怕) dengan semburan hembusan udara nyata pada inisial bibir 'p'.",
+      "Audio melafalkan suku kata 'pà' (怕) dengan semburan hembusan udara kuat pada inisial bibir 'p'.",
     order_index: 3,
   },
 

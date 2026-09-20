@@ -37,19 +37,19 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { modul, unit } = await params;
   if (HSK1_SLUGS.includes(modul)) {
-    return { title: `Latihan Pelajaran ${modul} | Mandarin Context Lab` };
+    return { title: `Latihan Pelajaran ${modul} | KepoMandarin` };
   }
   const unitDetail = getModuleUnit(modul, unit);
   const currentModule = getModuleById(modul);
 
   if (!unitDetail || !currentModule) {
     return {
-      title: "Pelajaran Tidak Ditemukan | Mandarin Context Lab",
+      title: "Pelajaran Tidak Ditemukan | KepoMandarin",
     };
   }
 
   return {
-    title: `Pelajaran ${unitDetail.slug}: ${unitDetail.title} (${unitDetail.hanzi}) : ${currentModule.title} | Mandarin Context Lab`,
+    title: `Pelajaran ${unitDetail.slug}: ${unitDetail.title} (${unitDetail.hanzi}) : ${currentModule.title} | KepoMandarin`,
     description: unitDetail.overview,
   };
 }

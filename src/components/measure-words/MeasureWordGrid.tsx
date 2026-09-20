@@ -121,7 +121,7 @@ export function MeasureWordGrid() {
           </div>
         </div>
 
-        {/* Sisi Kanan: Contoh Frasa Nyata HSK 1 (5 Kolom) */}
+        {/* Sisi Kanan: Contoh Frasa Sehari-hari HSK 1 (5 Kolom) */}
         <div className="lg:col-span-5 p-6 sm:p-8 bg-paper space-y-4">
           <div className="flex items-center justify-between border-b border-rule pb-3">
             <span className="font-mono text-xs uppercase tracking-wider text-muted">

@@ -4108,7 +4108,7 @@ const FUNDAMENTALS_UNITS: FullUnitDetail[] = [
         commonErrors:
           "Menghilangkan tanda apostrof pada nama kota Xī'ān sehingga terbaca xiān.",
         communicativeFunction:
-          "Menjamin kejernihan artikulasi internasional dan mencegah salah tafsir kata dalam percakapan nyata.",
+          "Menjamin kejernihan artikulasi internasional dan mencegah salah tafsir kata dalam percakapan langsung.",
       },
       {
         ruleTitle: "Bagian B: Kaidah Kontur Nada & Tone Sandhi Lisan",
@@ -4234,7 +4234,7 @@ const FUNDAMENTALS_UNITS: FullUnitDetail[] = [
         "谢谢 (Xièxie: Terima kasih)",
       ],
       evaluationRubric:
-        "Rubrik Evaluasi: 1) Kejelasan artikulasi (intelligibility); 2) Keberanian produksi suara mandiri; 3) Penerapan dasar 4 nada dan sandhi (ní hǎo); 4) Fokus pada keberanian komunikasi nyata, bukan aksen sempurna penutur asli.",
+        "Rubrik Evaluasi: 1) Kejelasan artikulasi (intelligibility); 2) Keberanian produksi suara mandiri; 3) Penerapan dasar 4 nada dan sandhi (ní hǎo); 4) Fokus pada keberanian komunikasi langsung, bukan aksen sempurna penutur asli.",
     },
 
     readingActivity: {
@@ -5742,7 +5742,7 @@ const HSK1_UNITS: FullUnitDetail[] = [
         ruleTitle: "Perbedaan Penggunaan '二' (Èr) dan '两' (Liǎng)",
         formula: "Urutan / Hitungan / Puluhan: 二 (Èr) | Sebelum Measure Word / Kuantitas: 两 (Liǎng)",
         explanation:
-          "Keduanya berarti 'dua', tetapi fungsinya berbeda tegas: 1) Gunakan 二 (èr) untuk menghitung angka berurutan (一, 二, 三), angka pecahan, nomor urut, nomor telepon, dan angka puluhan (二十, 二十二); 2) Gunakan 两 (liǎng) jika diikuti kata bantu bilangan (measure word) atau saat menyatakan kuantitas nyata benda/orang (两个, 两把, 两百, 两千, 两点钟).",
+          "Keduanya berarti 'dua', tetapi fungsinya berbeda tegas: 1) Gunakan 二 (èr) untuk menghitung angka berurutan (一, 二, 三), angka pecahan, nomor urut, nomor telepon, dan angka puluhan (二十, 二十二); 2) Gunakan 两 (liǎng) jika diikuti kata bantu bilangan (measure word) atau saat menyatakan jumlah fisik benda/orang (两个, 两把, 两百, 两千, 两点钟).",
         example: "两个人 (Liǎng gè rén: 2 orang) — BUKAN 二个人.",
         positiveExamples: [
           {
@@ -9995,7 +9995,7 @@ const HSK1_UNITS: FullUnitDetail[] = [
     objectives:
       "Menguasai perbedaan pemakaian tiga kata kerja bantu modal 'bisa' (会 huì untuk keahlian hasil belajar, 能 néng untuk kapasitas fisik/situasi objektif, 可以 kěyǐ untuk kebolehan/izin); menyusun permohonan santun dengan '请' (qǐng); serta menguasai 5 kalimat pemulihan komunikasi kritis (我听不懂, 请再说一遍, 请说慢一点儿, 这个怎么说, 这是什么意思) saat berinteraksi dengan penutur asli.",
     overview:
-      "Pelajaran kesebelas HSK 1 ini memberikan instrumen krusial bagi kelangsungan komunikasi di dunia nyata. Kamu akan belajar membedakan ragam makna 'bisa' dalam bahasa Mandarin—antara kemahiran hasil belajar (会), kapasitas fisik/kondisi objektif (能), dan izin sosial (可以)—serta memperlengkapi diri dengan 'tali pengaman percakapan' agar tetap tenang dan percaya diri ketika belum memahami tuturan lawan bicara.",
+      "Pelajaran kesebelas HSK 1 ini memberikan instrumen krusial bagi kelangsungan komunikasi sehari-hari. Kamu akan belajar membedakan ragam makna 'bisa' dalam bahasa Mandarin—antara kemahiran hasil belajar (会), kapasitas fisik/kondisi objektif (能), dan izin sosial (可以)—serta memperlengkapi diri dengan 'tali pengaman percakapan' agar tetap tenang dan percaya diri ketika belum memahami tuturan lawan bicara.",
     vocabCount: 14,
     durationMinutes: 15,
     levelBadge: "HSK 1 · UNIT 11",

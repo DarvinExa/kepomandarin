@@ -4,7 +4,7 @@ import { getAllListeningDrills } from "@/lib/phonetics";
 import { ListeningLabClient } from "@/components/listening/ListeningLabClient";
 
 export const metadata = {
-  title: "Latihan Mendengar : Mandarin Context Lab",
+  title: "Latihan Mendengar · KepoMandarin",
   description:
     "Latihan mendengar audio, membedakan bunyi mirip, dan melatih kepekaan nada Mandarin HSK 1.",
 };

@@ -85,7 +85,7 @@ export function ToneSandhiMatrix() {
         {/* Catatan Kritis untuk Pembelajar */}
         <div className="p-4 bg-paper border-l-4 border-l-accent-red border border-rule space-y-1">
           <span className="font-mono text-[10px] uppercase font-bold text-ink block">
-            Prinsip Penulisan Pinyin vs Pelafalan Nyata:
+            Prinsip Penulisan Pinyin vs Pelafalan Langsung:
           </span>
           <p className="text-xs text-muted leading-relaxed">
             {activeRule.whyItMatters}

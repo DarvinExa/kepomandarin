@@ -244,7 +244,7 @@ export const HSK4_GRAMMAR_POINTS: Hsk4GrammarPoint[] = [
     ruleTitle: "Klarifikasi Fakta Sebenarnya: 其实 (Qíshí) & 究竟 (Jiūjìng)",
     formula: "Kesan Luar / Dugaan, 其实 + Fakta Hakiki / 究竟 + Pertanyaan Inti",
     explanation:
-      "其实 digunakan untuk meluruskan kesalahpahaman atau mengungkap hakikat nyata yang berbeda dari tampakan luar. 究竟 dipakai untuk menggali kejelasan terdalam dalam kalimat tanya.",
+      "其实 digunakan untuk meluruskan kesalahpahaman atau mengungkap hakikat sebenarnya yang berbeda dari tampakan luar. 究竟 dipakai untuk menggali kejelasan terdalam dalam kalimat tanya.",
     keyRule:
       "其实 dapat diletakkan di awal klausa atau setelah subjek. 究竟 hanya digunakan dalam kalimat yang memuat kata tanya.",
     specimenSentences: [
@@ -412,7 +412,7 @@ export const HSK4_LESSON_BLUEPRINTS: Hsk4LessonBlueprint[] = [
         role: "Pembelanja Bijak",
         hanzi: "非常赞同！买东西关键看品质与实际需要，不能只看广告宣传。",
         pinyin: "Fēicháng zàntóng! Mǎi dōngxi guānjiàn kàn pǐnzhì yǔ shíjì xūyào, bù néng zhǐ kàn guǎnggào xuānchuán.",
-        translation: "Sangat setuju! Membeli barang kuncinya melihat kualitas dan kebutuhan nyata, tidak boleh hanya terpaku pada promosi iklan.",
+        translation: "Sangat setuju! Membeli barang kuncinya melihat kualitas dan kebutuhan yang sebenarnya, tidak boleh hanya terpaku pada promosi iklan.",
       },
       {
         speaker: "B",

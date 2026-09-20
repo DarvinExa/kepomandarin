@@ -35,12 +35,12 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   if (!unitDetail || !currentModule) {
     return {
-      title: "Latihan Tidak Ditemukan | Mandarin Context Lab",
+      title: "Latihan Tidak Ditemukan | KepoMandarin",
     };
   }
 
   return {
-    title: `Latihan Pelajaran ${unitDetail.slug}: ${unitDetail.title} (${unitDetail.hanzi}) : ${currentModule.title} | Mandarin Context Lab`,
+    title: `Latihan Pelajaran ${unitDetail.slug}: ${unitDetail.title} (${unitDetail.hanzi}) : ${currentModule.title} | KepoMandarin`,
     description: `Latihan soal fokus untuk Pelajaran ${unitDetail.slug}: Pilihan ganda, susun kalimat, dan audio.`,
   };
 }

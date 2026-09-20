@@ -2,7 +2,7 @@ import { createClient } from "@/lib/supabase/server";
 import { MeasureWordClient } from "@/components/measure-words/MeasureWordClient";
 
 export const metadata = {
-  title: "Kata Bantu Bilangan (Measure Word Explorer) · Mandarin Context Lab",
+  title: "Kata Bantu Bilangan (Measure Word Explorer) · KepoMandarin",
   description:
     "Eksplorasi 10 kata bantu bilangan (量词 - liàngcí), rumus sintaksis balok, dan asosiasi benda HSK 1.",
 };

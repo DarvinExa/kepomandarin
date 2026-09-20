@@ -192,7 +192,7 @@ export const FUNDAMENTAL_INITIALS: FundamentalInitial[] = [
   {
     letter: "p",
     category: "Bibir (Labial Aspirasi)",
-    articulationTip: "Mirip bunyi 'p' kuat dengan hembusan udara nyata dari mulut.",
+    articulationTip: "Mirip bunyi 'p' kuat dengan hembusan udara jelas dari mulut.",
     exampleHanzi: "朋",
     examplePinyin: "péng",
     exampleTranslation: "teman",
