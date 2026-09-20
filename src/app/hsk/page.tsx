@@ -6,6 +6,8 @@ export default async function HskPage() {
   const primaryLevel = levels.find((lvl) => lvl.level_number === 1) ?? levels[0];
   const advancedLevels = levels.filter((lvl) => lvl.level_number > 1);
   const lessons = await getLessonsByLevel(primaryLevel?.id);
+  const previewLessons = lessons.slice(0, 5);
+  const remainingLessonsCount = Math.max(0, lessons.length - previewLessons.length);
 
   return (
     <div className="p-4 sm:p-8 max-w-6xl mx-auto space-y-10 sm:space-y-14">
@@ -173,7 +175,7 @@ export default async function HskPage() {
                 </div>
 
                 <div className="border border-rule divide-y divide-rule bg-paper">
-                  {lessons.map((lesson) => (
+                  {previewLessons.map((lesson) => (
                     <Link
                       key={lesson.id}
                       href={`/lessons/hsk1/${lesson.slug}`}
@@ -197,6 +199,21 @@ export default async function HskPage() {
                       </div>
                     </Link>
                   ))}
+
+                  {remainingLessonsCount > 0 && (
+                    <Link
+                      href="/lessons/hsk1"
+                      className="p-3 flex items-center justify-between bg-canvas hover:bg-paper transition-colors group text-ink font-mono text-xs"
+                    >
+                      <span className="text-muted group-hover:text-ink font-medium">
+                        +{remainingLessonsCount} pelajaran lainnya...
+                      </span>
+                      <span className="font-bold text-accent-red group-hover:underline flex items-center gap-1">
+                        <span>Lihat Semua</span>
+                        <span>→</span>
+                      </span>
+                    </Link>
+                  )}
                 </div>
               </div>
 

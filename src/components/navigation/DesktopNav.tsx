@@ -13,14 +13,14 @@ export function DesktopNav() {
   const [user, setUser] = useState<User | null>(null);
   const [fullName, setFullName] = useState<string | null>(null);
   const [isLoadingAuth, setIsLoadingAuth] = useState(true);
-  const [isCollapsed, setIsCollapsed] = useState(false);
+  const [isCollapsed, setIsCollapsed] = useState(true);
 
   useEffect(() => {
     try {
       const saved = localStorage.getItem("mcl_nav_collapsed");
-      if (saved === "true") {
+      if (saved === "false") {
         requestAnimationFrame(() => {
-          setIsCollapsed(true);
+          setIsCollapsed(false);
         });
       }
     } catch {
@@ -256,28 +256,38 @@ export function DesktopNav() {
                   </button>
                 </div>
               ) : (
-                <div className="space-y-1">
+                <div className="space-y-1.5">
                   <Link
                     href="/login"
                     title="Masuk ke Akun"
                     aria-label="Masuk ke Akun"
-                    className="w-full text-center font-mono text-[10px] uppercase font-bold py-1.5 border border-rule hover:border-ink text-ink bg-paper transition-colors block"
+                    className="w-full text-center font-mono text-[10px] uppercase font-bold py-1.5 bg-ink text-canvas hover:bg-black transition-colors block"
                   >
                     Masuk
+                  </Link>
+                  <Link
+                    href="/register"
+                    title="Daftar Akun Baru"
+                    aria-label="Daftar Akun Baru"
+                    className="w-full text-center font-mono text-[10px] uppercase font-bold py-1.5 border border-rule hover:border-ink text-ink bg-paper transition-colors block"
+                  >
+                    Daftar
                   </Link>
                 </div>
               )}
             </div>
           )}
 
-          <div className="border-t border-rule pt-2 text-center">
-            <span
-              className="text-[10px] font-mono text-status-success font-bold block"
-              title="Tingkat Aktif: HSK 1"
-            >
-              HSK 1
-            </span>
-          </div>
+          {user && (
+            <div className="border-t border-rule pt-2 text-center">
+              <span
+                className="text-[10px] font-mono text-status-success font-bold block"
+                title="Tingkat Aktif: HSK 1"
+              >
+                HSK 1
+              </span>
+            </div>
+          )}
 
           <div className="grid grid-cols-3 gap-0.5 pt-0.5" aria-hidden="true">
             <div className="h-1 bg-accent-red" />
