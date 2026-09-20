@@ -16,13 +16,9 @@ export function PublicLandingPage() {
             KepoMandarin
           </span>
           <span className="text-rule">/</span>
-          <span>Belajar Mandarin Buat Si Kepo // HSK 1</span>
+          <span>Belajar Mandarin Buat Si Kepo</span>
         </div>
-        <div className="flex items-center gap-3 text-muted">
-          <span>12 UNIT LENGKAP</span>
-          <span className="text-rule">·</span>
-          <span>AUDIO PENUTUR ASLI</span>
-          <span className="text-rule">·</span>
+        <div className="flex items-center gap-2 text-muted">
           <span className="text-status-success font-semibold">100% GRATIS</span>
         </div>
       </div>
@@ -106,7 +102,7 @@ export function PublicLandingPage() {
             <img
               src="/images/mascot-greeting.png"
               alt="Maskot KepoMandarin Menyapa"
-              className="w-32 h-32 sm:w-40 sm:h-40 object-contain"
+              className="w-32 h-32 sm:w-40 sm:h-40 object-contain drop-shadow-[0_3px_8px_rgba(0,0,0,0.08)] select-none"
             />
           </div>
 
