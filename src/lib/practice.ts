@@ -37,7 +37,7 @@ export const DEFAULT_EXERCISES: ExerciseItem[] = [
   // ==========================================
   // FONDASI DASAR (FUNDAMENTALS)
   // ==========================================
-  // Unit 01: 4 Nada & Nada Netral
+  // Unit 01: Cara Kerja Bahasa Mandarin (F-01)
   {
     id: "fund-ex-01",
     level_id: "fundamentals",
@@ -45,19 +45,19 @@ export const DEFAULT_EXERCISES: ExerciseItem[] = [
     module_id: "fundamentals",
     unit_slug: "01",
     type: "multiple_choice",
-    prompt: "Pilih kontur nada yang tepat untuk kata 'mǎ' (马 - kuda):",
-    context_hanzi: "mǎ (马)",
-    context_pinyin: "mǎ",
-    context_translation: "kuda",
+    prompt: "Apa fungsi utama sistem Pīnyīn dalam mempelajari bahasa Mandarin?",
+    context_hanzi: "拼音",
+    context_pinyin: "Pīnyīn",
+    context_translation: "sistem romanisasi fonetik",
     options: [
-      "Nada 1 (Tinggi datar)",
-      "Nada 3 (Turun-naik melengkung rendah)",
-      "Nada 2 (Naik tajam)",
-      "Nada 4 (Jatuh tegas ke bawah)",
+      "Sistem romanisasi fonetik resmi untuk memandu pelafalan aksara Hanzi",
+      "Satu-satunya aksara resmi yang menggantikan karakter Hanzi secara tertulis",
+      "Bahasa daerah khusus yang hanya digunakan di Tiongkok selatan",
+      "Kumpulan simbol angka untuk menghitung tanggal kalender",
     ],
-    correct_answer: "Nada 3 (Turun-naik melengkung rendah)",
+    correct_answer: "Sistem romanisasi fonetik resmi untuk memandu pelafalan aksara Hanzi",
     explanation:
-      "Karakter '马' (mǎ) memiliki tanda caron (ˇ) yang menandakan nada ke-3, bersuara turun rendah lalu melengkung naik kembali.",
+      "Pīnyīn diciptakan sebagai sistem transkripsi fonetik huruf Latin resmi untuk memandu cara membaca dan melafalkan karakter Hanzi dengan nada yang tepat.",
     order_index: 1,
   },
   {
@@ -67,18 +67,18 @@ export const DEFAULT_EXERCISES: ExerciseItem[] = [
     module_id: "fundamentals",
     unit_slug: "01",
     type: "sentence_ordering",
-    prompt: "Susun urutan hierarki vokal dalam aturan penempatan tanda nada pinyin dari prioritas tertinggi:",
-    context_hanzi: "标调规则",
-    context_pinyin: "Biāodiào Guīzé",
-    context_translation: "Aturan Penempatan Nada",
+    prompt: "Berdasarkan anatomi satu suku kata Mandarin, susunlah komponen pembentuk kata 'mǎ' (马 - kuda) secara runtut:",
+    context_hanzi: "mǎ (马)",
+    context_pinyin: "mǎ",
+    context_translation: "kuda (suku kata utuh)",
     options: [
-      { text: "o / e", pinyin: "prioritas kedua" },
-      { text: "a", pinyin: "prioritas utama" },
-      { text: "i / u", pinyin: "prioritas ketiga" },
+      { text: "Inisial: m", pinyin: "konsonan awal" },
+      { text: "Final: a", pinyin: "vokal inti" },
+      { text: "Nada: ke-3 (ˇ)", pinyin: "kontur melengkung rendah" },
     ],
-    correct_answer: "a o / e i / u",
+    correct_answer: "Inisial: m Final: a Nada: ke-3 (ˇ)",
     explanation:
-      "Urutan prioritas penempatan tanda nada pinyin selalu dimulai dari 'a', kemudian 'o' atau 'e', lalu 'i' atau 'u'.",
+      "Suku kata 'mǎ' tersusun runtut atas inisial konsonan 'm', final vokal 'a', dan tanda nada ke-3 di atas vokal utama.",
     order_index: 2,
   },
   {
@@ -88,18 +88,18 @@ export const DEFAULT_EXERCISES: ExerciseItem[] = [
     module_id: "fundamentals",
     unit_slug: "01",
     type: "listening",
-    prompt: "Dengarkan audio karakter bernada pertama (tinggi datar) berikut, lalu pilih kata yang tepat:",
-    context_hanzi: "妈",
-    context_pinyin: "mā",
-    context_translation: "ibu",
-    options: ["má (麻 / rami)", "mā (妈 / ibu)", "mǎ (马 / kuda)", "mà (骂 / memarahi)"],
-    correct_answer: "mā (妈 / ibu)",
+    prompt: "Dengarkan audio suku kata bernada ketiga (turun-naik rendah) berikut, lalu pilih kata yang tepat:",
+    context_hanzi: "马",
+    context_pinyin: "mǎ",
+    context_translation: "kuda",
+    options: ["mǎ (马 / kuda)", "mā (妈 / ibu)", "má (麻 / rami)", "mà (骂 / memarahi)"],
+    correct_answer: "mǎ (马 / kuda)",
     explanation:
-      "Kata 'mā' (妈) berbunyi nada ke-1 yang tinggi, datar, dan stabil tanpa kenaikan atau penurunan intonasi.",
+      "Audio melafalkan suku kata 'mǎ' (马 - kuda) dengan nada ke-3 yang bersuara rendah lalu melengkung naik.",
     order_index: 3,
   },
 
-  // Unit 02: Inisial & Final Pinyin
+  // Unit 02: Initials: Kelompok Dasar (F-02)
   {
     id: "fund-ex-04",
     level_id: "fundamentals",
@@ -107,14 +107,19 @@ export const DEFAULT_EXERCISES: ExerciseItem[] = [
     module_id: "fundamentals",
     unit_slug: "02",
     type: "multiple_choice",
-    prompt: "Manakah pasangan konsonan yang dibedakan oleh hembusan udara kuat (aspirasi)?",
-    context_hanzi: "声母发音",
-    context_pinyin: "Shēngmǔ fāyīn",
-    context_translation: "Pelafalan Konsonan Pīnyīn",
-    options: ["m dan f", "b dan p", "n dan l", "y dan w"],
-    correct_answer: "b dan p",
+    prompt: "Manakah kelompok konsonan inisial dasar yang seluruhnya wajib diucapkan dengan semburan hembusan udara kuat (aspirasi)?",
+    context_hanzi: "送气音",
+    context_pinyin: "Sòngqìyīn",
+    context_translation: "Konsonan Aspirasi (Berhembus Kuat)",
+    options: [
+      "p, t, dan k",
+      "b, d, dan g",
+      "m, n, dan l",
+      "b, p, dan m",
+    ],
+    correct_answer: "p, t, dan k",
     explanation:
-      "Konsonan 'b' diucapkan lembut tanpa hembusan udara, sedangkan konsonan 'p' diucapkan dengan hembusan angin yang nyata dari rongga mulut.",
+      "Konsonan 'p', 't', dan 'k' merupakan konsonan aspirasi yang wajib dilafalkan dengan letupan semburan udara kuat dari rongga mulut.",
     order_index: 1,
   },
   {
@@ -124,17 +129,18 @@ export const DEFAULT_EXERCISES: ExerciseItem[] = [
     module_id: "fundamentals",
     unit_slug: "02",
     type: "sentence_ordering",
-    prompt: "Susun suku kata pinyin untuk kata 'nǚ' (wanita) dari konsonan dan vokal berikut:",
-    context_hanzi: "女",
-    context_pinyin: "nǚ",
-    context_translation: "wanita",
+    prompt: "Susun suku kata 'pà' (怕 - takut) dari komponen konsonan inisial berhembus dan vokal berikut:",
+    context_hanzi: "怕 (pà)",
+    context_pinyin: "pà",
+    context_translation: "takut",
     options: [
-      { text: "ü", pinyin: "vokal bulat" },
-      { text: "n", pinyin: "konsonan hidung" },
+      { text: "p", pinyin: "inisial berhembus kuat" },
+      { text: "a", pinyin: "vokal terbuka" },
+      { text: "Nada 4 (` )", pinyin: "kontur jatuh tegas" },
     ],
-    correct_answer: "n ü",
+    correct_answer: "p a Nada 4 (` )",
     explanation:
-      "Suku kata pinyin selalu dimulai dengan inisial konsonan (n) diikuti oleh final vokal (ü).",
+      "Kata 'pà' dibentuk secara runtut dari inisial aspirasi bibir 'p', final vokal 'a', dan tanda nada ke-4 jatuh tegas.",
     order_index: 2,
   },
   {
@@ -144,18 +150,23 @@ export const DEFAULT_EXERCISES: ExerciseItem[] = [
     module_id: "fundamentals",
     unit_slug: "02",
     type: "listening",
-    prompt: "Dengarkan audio bunyi vokal berikut, lalu tentukan huruf pinyin yang dilafalkan:",
-    context_hanzi: "八",
-    context_pinyin: "bā",
-    context_translation: "delapan",
-    options: ["dà (大 - besar)", "bā (八 - delapan)", "kàn (看 - melihat)", "tiān (天 - hari)"],
-    correct_answer: "bā (八 - delapan)",
+    prompt: "Dengarkan audio kata berikut, lalu tentukan apakah kata yang dilafalkan berawal dari konsonan b (tanpa hembusan) atau p (berhembus kuat):",
+    context_hanzi: "怕",
+    context_pinyin: "pà",
+    context_translation: "takut",
+    options: [
+      "pà (怕 - takut / konsonan berhembus kuat)",
+      "bà (爸 - ayah / konsonan tanpa hembusan)",
+      "dà (大 - besar / konsonan ujung lidah)",
+      "tā (他 - dia / konsonan berhembus lidah)",
+    ],
+    correct_answer: "pà (怕 - takut / konsonan berhembus kuat)",
     explanation:
-      "Audio melafalkan suku kata 'bā' dengan konsonan bibir lembut 'b' dan vokal terbuka rileks 'a'.",
+      "Audio melafalkan suku kata 'pà' (怕) dengan semburan hembusan udara nyata pada inisial bibir 'p'.",
     order_index: 3,
   },
 
-  // Unit 03: Aturan Menulis Hanzi
+  // Unit 03: Initials: Kelompok Sulit (F-03)
   {
     id: "fund-ex-07",
     level_id: "fundamentals",
@@ -163,19 +174,19 @@ export const DEFAULT_EXERCISES: ExerciseItem[] = [
     module_id: "fundamentals",
     unit_slug: "03",
     type: "multiple_choice",
-    prompt: "Pada karakter '十' (shí - sepuluh), goresan manakah yang wajib ditulis terlebih dahulu?",
-    context_hanzi: "十",
-    context_pinyin: "shí",
-    context_translation: "sepuluh",
+    prompt: "Manakah kelompok konsonan yang wajib diucapkan dengan ujung lidah sedikit melengkung ke atas (zh, ch, sh, r)?",
+    context_hanzi: "翘舌音",
+    context_pinyin: "Qiàoshéyīn",
+    context_translation: "Konsonan Lidah Melengkung (zh, ch, sh, r)",
     options: [
-      "Garis tegak lurus vertikal (竖 - Shù)",
-      "Garis mendatar horizontal (横 - Héng)",
-      "Titik tekan (点 - Diǎn)",
-      "Goresan kait (钩 - Gōu)",
+      "zh, ch, sh, dan r",
+      "z, c, dan s",
+      "j, q, dan x",
+      "b, p, m, dan f",
     ],
-    correct_answer: "Garis mendatar horizontal (横 - Héng)",
+    correct_answer: "zh, ch, sh, dan r",
     explanation:
-      "Berdasarkan kaidah '先横后竖' (Horizontal sebelum Vertikal), garis mendatar ditarik terlebih dahulu sebelum dipotong garis tegak vertikal.",
+      "Kelompok konsonan 'zh, ch, sh, r' diucapkan dengan ujung lidah sedikit melengkung ke atas mendekati langit-langit mulut.",
     order_index: 1,
   },
   {
@@ -185,18 +196,18 @@ export const DEFAULT_EXERCISES: ExerciseItem[] = [
     module_id: "fundamentals",
     unit_slug: "03",
     type: "sentence_ordering",
-    prompt: "Susun urutan goresan karakter simetris '小' (xiǎo - kecil) sesuai kaidah '先中间后两边':",
-    context_hanzi: "小",
-    context_pinyin: "xiǎo",
-    context_translation: "kecil",
+    prompt: "Susun suku kata 'chá' (茶 - teh) dari komponen konsonan berhembus dan vokal berikut:",
+    context_hanzi: "茶 (chá)",
+    context_pinyin: "chá",
+    context_translation: "teh",
     options: [
-      { text: "Titik kanan (丶)", pinyin: "langkah 3" },
-      { text: "Kait tengah (亅)", pinyin: "langkah 1" },
-      { text: "Miring kiri (丿)", pinyin: "langkah 2" },
+      { text: "ch", pinyin: "konsonan lidah melengkung berhembus" },
+      { text: "a", pinyin: "final vokal terbuka" },
+      { text: "Nada 2 (ˊ)", pinyin: "kontur intonasi naik" },
     ],
-    correct_answer: "Kait tengah (亅) Miring kiri (丿) Titik kanan (丶)",
+    correct_answer: "ch a Nada 2 (ˊ)",
     explanation:
-      "Kaidah karakter simetris mewajibkan poros tengah (亅) ditulis pertama, baru diikuti sayap kiri dan sayap kanan.",
+      "Kata 'chá' (茶 - teh) tersusun atas konsonan 'ch' (lidah melengkung berhembus angin), vokal 'a', dan nada ke-2 menanjak.",
     order_index: 2,
   },
   {
@@ -206,19 +217,521 @@ export const DEFAULT_EXERCISES: ExerciseItem[] = [
     module_id: "fundamentals",
     unit_slug: "03",
     type: "listening",
-    prompt: "Dengarkan audio karakter berikut dan perhatikan nama goresan dasarnya:",
-    context_hanzi: "一",
-    context_pinyin: "yī",
-    context_translation: "satu",
+    prompt: "Dengarkan audio kata berikut, lalu tentukan apakah konsonan yang dilafalkan adalah bunyi lidah melengkung (zh) atau gigi datar (z):",
+    context_hanzi: "知",
+    context_pinyin: "zhī",
+    context_translation: "tahu / mengetahui",
     options: [
-      "Shù (竖 - goresan tegak)",
-      "Héng (横 - goresan mendatar)",
-      "Piě (撇 - goresan miring kiri)",
-      "Nà (捺 - goresan tebal kanan)",
+      "zhī (知 - tahu / konsonan lidah melengkung ke atas)",
+      "zī (资 - modal / konsonan gigi datar)",
+      "qī (七 - tujuh / konsonan lidah halus)",
+      "xī (西 - barat / konsonan desis halus)",
     ],
-    correct_answer: "Héng (横 - goresan mendatar)",
+    correct_answer: "zhī (知 - tahu / konsonan lidah melengkung ke atas)",
     explanation:
-      "Karakter '一' (yī - satu) tersusun atas satu tarikan goresan mendatar tunggal bernama Héng (横).",
+      "Audio melafalkan suku kata 'zhī' (知) dengan ujung lidah sedikit melengkung ke atas, bukan mendatar.",
+    order_index: 3,
+  },
+
+  // Unit 04: Finals Tunggal & Gabungan (F-04)
+  {
+    id: "fund-ex-10",
+    level_id: "fundamentals",
+    lesson_id: "fund-04",
+    module_id: "fundamentals",
+    unit_slug: "04",
+    type: "multiple_choice",
+    prompt:
+      "Manakah kaidah penulisan tanda titik dua pada vokal 'ü' yang BENAR dalam aturan ejaan Pinyin resmi?",
+    context_hanzi: "去 vs 绿",
+    context_pinyin: "qù vs lǜ",
+    context_translation: "pergi vs hijau",
+    options: [
+      "Titik dua dihilangkan setelah j, q, x, y (misal: qu), tetapi wajib ditulis setelah n dan l (misal: nǚ, lǜ)",
+      "Titik dua selalu dihilangkan pada semua inisial konsonan tanpa pengecualian",
+      "Titik dua selalu ditulis pada semua konsonan (misal: qǜ, xǜ, lǜ)",
+      "Titik dua hanya ditulis jika kata tersebut berada di akhir kalimat",
+    ],
+    correct_answer:
+      "Titik dua dihilangkan setelah j, q, x, y (misal: qu), tetapi wajib ditulis setelah n dan l (misal: nǚ, lǜ)",
+    explanation:
+      "Konsonan j, q, x, dan y tidak pernah berpasangan dengan vokal 'u' biasa sehingga titik dua aman dihilangkan tanpa kerancuan (qu, ju, xu, yu). Sebaliknya, n dan l dapat berpasangan dengan u dan ü (lu vs lü), sehingga titik dua wajib dipertahankan.",
+    order_index: 1,
+  },
+  {
+    id: "fund-ex-11",
+    level_id: "fundamentals",
+    lesson_id: "fund-04",
+    module_id: "fundamentals",
+    unit_slug: "04",
+    type: "sentence_ordering",
+    prompt:
+      "Susun suku kata 'liù' (六 - enam) dari komponen inisial, vokal singkatan (asal iou), dan nada berikut:",
+    context_hanzi: "六 (liù)",
+    context_pinyin: "liù",
+    context_translation: "enam (berasal dari l + iou)",
+    options: [
+      { text: "l", pinyin: "inisial konsonan lidah" },
+      { text: "iu", pinyin: "final singkatan dari iou" },
+      { text: "Nada 4 (ˋ)", pinyin: "kontur nada jatuh tegas" },
+    ],
+    correct_answer: "l iu Nada 4 (ˋ)",
+    explanation:
+      "Suku kata 'liù' (六 - enam) tersusun dari inisial 'l', vokal singkatan 'iu' (berasal dari vokal majemuk 'iou'), dan nada ke-4 jatuh tegas (liù).",
+    order_index: 2,
+  },
+  {
+    id: "fund-ex-12",
+    level_id: "fundamentals",
+    lesson_id: "fund-04",
+    module_id: "fundamentals",
+    unit_slug: "04",
+    type: "listening",
+    prompt:
+      "Dengarkan audio kata berikut, lalu tentukan apakah vokal yang dilafalkan adalah vokal bulat khusus ü (lǜ - hijau) atau vokal u biasa (lù - jalan):",
+    context_hanzi: "绿",
+    context_pinyin: "lǜ",
+    context_translation: "hijau",
+    options: [
+      "lǜ (绿 - hijau / vokal bulat bersiul ü)",
+      "lù (路 - jalan / vokal belakang u biasa)",
+      "lì (利 - tajam / vokal depan i)",
+      "lè (乐 - gembira / vokal tengah e)",
+    ],
+    correct_answer: "lǜ (绿 - hijau / vokal bulat bersiul ü)",
+    explanation:
+      "Audio melafalkan vokal bulat khusus 'ü' dengan bentuk bibir membulat bersiul pada kata 'lǜ' (绿 - hijau), bukan vokal 'u' biasa pada 'lù' (路 - jalan).",
+    order_index: 3,
+  },
+
+  // Unit 05: Nasal Finals / Vokal Sengau (F-05)
+  {
+    id: "fund-ex-13",
+    level_id: "fundamentals",
+    lesson_id: "fund-05",
+    module_id: "fundamentals",
+    unit_slug: "05",
+    type: "multiple_choice",
+    prompt:
+      "Manakah pernyataan yang BENAR mengenai posisi artikulasi lidah saat membunyikan vokal sengau depan (-n) dibandingkan sengau belakang (-ng)?",
+    context_hanzi: "前鼻音 vs 后鼻音",
+    context_pinyin: "Qiánbíyīn vs Hòubíyīn",
+    context_translation: "Sengau Depan (-n) vs Sengau Belakang (-ng)",
+    options: [
+      "Pada -n ujung lidah menempel gusi atas, sedangkan pada -ng pangkal lidah terangkat ke langit-langit lunak",
+      "Pada -n lidah ditarik ke belakang, sedangkan pada -ng bibir dirapatkan",
+      "Kedua bunyi tersebut dilafalkan persis sama tanpa perbedaan posisi lidah",
+      "Pada -ng ujung lidah dikeluarkan di antara dua gigi depan",
+    ],
+    correct_answer:
+      "Pada -n ujung lidah menempel gusi atas, sedangkan pada -ng pangkal lidah terangkat ke langit-langit lunak",
+    explanation:
+      "Sengau depan (-n) diakhiri sentuhan ujung lidah pada gusi atas (alveolar), sedangkan sengau belakang (-ng) dihasilkan dengan mengangkat pangkal lidah ke langit-langit lunak rongga tekak (velar).",
+    order_index: 1,
+  },
+  {
+    id: "fund-ex-14",
+    level_id: "fundamentals",
+    lesson_id: "fund-05",
+    module_id: "fundamentals",
+    unit_slug: "05",
+    type: "sentence_ordering",
+    prompt:
+      "Susun suku kata 'tiān' (天 - langit/hari) dari komponen konsonan inisial berhembus, vokal sengau depan gabungan (dilafalkan /ien/), dan tanda nada berikut:",
+    context_hanzi: "天 (tiān)",
+    context_pinyin: "tiān",
+    context_translation: "langit / hari (dilafalkan mendekati /tien/)",
+    options: [
+      { text: "t", pinyin: "inisial konsonan letupan lidah berhembus" },
+      { text: "ian", pinyin: "vokal sengau gabungan /ien/" },
+      { text: "Nada 1 (ˉ)", pinyin: "kontur nada tinggi datar" },
+    ],
+    correct_answer: "t ian Nada 1 (ˉ)",
+    explanation:
+      "Suku kata 'tiān' (天 - langit/hari) tersusun atas inisial aspirasi 't', vokal sengau depan 'ian' (berbunyi mendekati /ien/), dan nada pertama tinggi datar.",
+    order_index: 2,
+  },
+  {
+    id: "fund-ex-15",
+    level_id: "fundamentals",
+    lesson_id: "fund-05",
+    module_id: "fundamentals",
+    unit_slug: "05",
+    type: "listening",
+    prompt:
+      "Dengarkan audio kata berikut, lalu tentukan apakah kata yang diucapkan berakhiran sengau depan (-n / melihat) atau sengau belakang (-ng / sehat):",
+    context_hanzi: "看",
+    context_pinyin: "kàn",
+    context_translation: "melihat",
+    options: [
+      "kàn (看 - melihat / sengau depan ujung lidah -n)",
+      "kāng (康 - sehat / sengau belakang pangkal lidah -ng)",
+      "kào (靠 - bersandar / vokal majemuk ao)",
+      "kè (课 - pelajaran / vokal tunggal e)",
+    ],
+    correct_answer: "kàn (看 - melihat / sengau depan ujung lidah -n)",
+    explanation:
+      "Audio melafalkan kata 'kàn' (看 - melihat) dengan penutupan rapi ujung lidah pada gusi atas (sengau depan -n), bukan resonansi rongga tenggorokan 'kāng'.",
+    order_index: 3,
+  },
+
+  // Unit 06: 4 Nada Utama & Nada Netral (F-06)
+  {
+    id: "fund-ex-16",
+    level_id: "fundamentals",
+    lesson_id: "fund-06",
+    module_id: "fundamentals",
+    unit_slug: "06",
+    type: "multiple_choice",
+    prompt:
+      "Manakah pasangan kontur pitch numerik (五度标记法) yang BENAR untuk Nada Pertama dan Nada Keempat dalam bahasa Mandarin?",
+    context_hanzi: "第一声 与 第四声",
+    context_pinyin: "Dì-yī shēng yǔ Dì-sì shēng",
+    context_translation: "Nada 1 (Tinggi Datar) & Nada 4 (Jatuh Tegas)",
+    options: [
+      "Nada 1 bernilai 55 (tinggi datar) dan Nada 4 bernilai 51 (puncak jatuh ke dasar)",
+      "Nada 1 bernilai 35 (naik) dan Nada 4 bernilai 214 (rendah melengkung)",
+      "Nada 1 bernilai 214 dan Nada 4 bernilai 55",
+      "Semua nada bernilai datar 33 tanpa perbedaan kontur",
+    ],
+    correct_answer:
+      "Nada 1 bernilai 55 (tinggi datar) dan Nada 4 bernilai 51 (puncak jatuh ke dasar)",
+    explanation:
+      "Menurut sistem 5-tingkat Chao Yuen Ren, Nada 1 berada di tingkat 55 (tinggi konstan), sedangkan Nada 4 dijatuhkan tegas dari tingkat tertinggi 5 langsung ke dasar terendah 1 (51).",
+    order_index: 1,
+  },
+  {
+    id: "fund-ex-17",
+    level_id: "fundamentals",
+    lesson_id: "fund-06",
+    module_id: "fundamentals",
+    unit_slug: "06",
+    type: "sentence_ordering",
+    prompt:
+      "Susun kata salam perpisahan 'zàijiàn' (再见 - selamat tinggal) yang terdiri dari dua suku kata bernada ke-4 (jatuh tegas) berikut:",
+    context_hanzi: "再见 (zàijiàn)",
+    context_pinyin: "zàijiàn",
+    context_translation: "selamat tinggal (dua nada ke-4)",
+    options: [
+      { text: "zài", pinyin: "nada 4 jatuh tegas (51)" },
+      { text: "jiàn", pinyin: "nada 4 jatuh tegas (51)" },
+      { text: "再见", pinyin: "selamat tinggal" },
+    ],
+    correct_answer: "zài jiàn 再见",
+    explanation:
+      "Kata 'zàijiàn' (再见) tersusun atas dua suku kata yang sama-sama bernada ke-4 tegas (zài + jiàn).",
+    order_index: 2,
+  },
+  {
+    id: "fund-ex-18",
+    level_id: "fundamentals",
+    lesson_id: "fund-06",
+    module_id: "fundamentals",
+    unit_slug: "06",
+    type: "listening",
+    prompt:
+      "Dengarkan audio kata berikut, lalu tentukan kontur nada suara yang dilafalkan:",
+    context_hanzi: "马",
+    context_pinyin: "mǎ",
+    context_translation: "kuda",
+    options: [
+      "mǎ (马 - kuda / Nada 3: melengkung rendah 214)",
+      "mā (妈 - ibu / Nada 1: tinggi datar 55)",
+      "má (麻 - rami / Nada 2: naik bertanya 35)",
+      "mà (骂 - memarahi / Nada 4: jatuh tegas 51)",
+    ],
+    correct_answer: "mǎ (马 - kuda / Nada 3: melengkung rendah 214)",
+    explanation:
+      "Audio melafalkan kata 'mǎ' (马 - kuda) dengan nada ke-3 yang turun ke dasar pita suara (214), berbeda dengan nada 1 (mā), nada 2 (má), dan nada 4 (mà).",
+    order_index: 3,
+  },
+
+  // Unit 07: Tone Sandhi & Perubahan Nada (F-07)
+  {
+    id: "fund-ex-19",
+    level_id: "fundamentals",
+    lesson_id: "fund-07",
+    module_id: "fundamentals",
+    unit_slug: "07",
+    type: "multiple_choice",
+    prompt:
+      "Ketika dua karakter bernada ke-3 (ˇ) bertemu berdampingan (seperti frasa 'nǐ hǎo' 你好), bagaimanakah aturan pelafalan lisan yang BENAR?",
+    context_hanzi: "你好 (nǐ hǎo)",
+    context_pinyin: "nǐ hǎo",
+    context_translation: "halo / apa kabar",
+    options: [
+      "Karakter pertama otomatis dilafalkan sebagai Nada ke-2 (ní hǎo), karakter kedua tetap Nada ke-3",
+      "Kedua karakter sama-sama berubah menjadi Nada ke-1 (nī hāo)",
+      "Kedua karakter dilafalkan dengan nada netral tanpa intonasi",
+      "Karakter kedua yang berubah menjadi Nada ke-4 (nǐ hào)",
+    ],
+    correct_answer:
+      "Karakter pertama otomatis dilafalkan sebagai Nada ke-2 (ní hǎo), karakter kedua tetap Nada ke-3",
+    explanation:
+      "Sesuai kaidah sandhi 3+3 (三声变调), jika dua nada ke-3 bertemu, nada ke-3 pertama dilafalkan sebagai nada ke-2 (35 menanjak) agar lebih luwes diucapkan (ní hǎo).",
+    order_index: 1,
+  },
+  {
+    id: "fund-ex-20",
+    level_id: "fundamentals",
+    lesson_id: "fund-07",
+    module_id: "fundamentals",
+    unit_slug: "07",
+    type: "sentence_ordering",
+    prompt:
+      "Susun frasa negasi 'bú shì' (不是 - bukan) yang mengalami perubahan sandhi nada dari kata 'bù' (asal nada 4) saat bertemu nada 4 'shì' berikut:",
+    context_hanzi: "不是 (bú shì)",
+    context_pinyin: "bú shì",
+    context_translation: "bukan / tidak (dilafalkan bú shì)",
+    options: [
+      { text: "bú", pinyin: "kata 不 berubah menjadi nada 2 naik" },
+      { text: "shì", pinyin: "kata 是 bernada 4 jatuh tegas" },
+      { text: "不是", pinyin: "bukan / tidak" },
+    ],
+    correct_answer: "bú shì 不是",
+    explanation:
+      "Kata negasi '不' (bù) berubah menjadi nada ke-2 ('bú') saat bertemu suku kata bernada ke-4 lainnya ('shì'), sehingga dibaca 'bú shì'.",
+    order_index: 2,
+  },
+  {
+    id: "fund-ex-21",
+    level_id: "fundamentals",
+    lesson_id: "fund-07",
+    module_id: "fundamentals",
+    unit_slug: "07",
+    type: "listening",
+    prompt:
+      "Dengarkan audio kata '一个' (sebuah / satu orang) berikut, lalu tentukan nada yang dilafalkan pada kata '一':",
+    context_hanzi: "一个",
+    context_pinyin: "yí ge",
+    context_translation: "sebuah / satu orang",
+    options: [
+      "yí ge (kata '一' dilafalkan Nada ke-2 naik sebelum kata bernada ke-4)",
+      "yī ge (kata '一' dilafalkan Nada ke-1 tinggi datar)",
+      "yì ge (kata '一' dilafalkan Nada ke-4 jatuh)",
+      "ge yí (urutan suku kata terbalik)",
+    ],
+    correct_answer:
+      "yí ge (kata '一' dilafalkan Nada ke-2 naik sebelum kata bernada ke-4)",
+    explanation:
+      "Kata bilangan '一' (yī) mengalami perubahan nada menjadi nada ke-2 ('yí') saat mendahului suku kata bernada ke-4 ('gè' / ge).",
+    order_index: 3,
+  },
+
+  // Unit 08: Aturan Penulisan Pinyin (F-08)
+  {
+    id: "fund-ex-22",
+    level_id: "fundamentals",
+    lesson_id: "fund-08",
+    module_id: "fundamentals",
+    unit_slug: "08",
+    type: "multiple_choice",
+    prompt:
+      "Manakah aturan penempatan tanda nada (标调规则) yang BENAR ketika suku kata memiliki dua vokal berdampingan seperti 'iu' pada kata 'liù' (六 - enam) dan 'ui' pada kata 'duì' (对 - benar)?",
+    context_hanzi: "标调规则",
+    context_pinyin: "Biāodiào Guīzé",
+    context_translation: "Aturan Penempatan Tanda Nada",
+    options: [
+      "Jika 'i' dan 'u' berdampingan, tanda nada selalu diletakkan pada huruf vokal yang berada di urutan kedua ('liù' dan 'duì')",
+      "Tanda nada selalu diletakkan pada huruf 'i' terlebih dahulu di semua kondisi",
+      "Tanda nada selalu diletakkan pada huruf konsonan inisial",
+      "Tanda nada diletakkan di antara dua huruf vokal",
+    ],
+    correct_answer:
+      "Jika 'i' dan 'u' berdampingan, tanda nada selalu diletakkan pada huruf vokal yang berada di urutan kedua ('liù' dan 'duì')",
+    explanation:
+      "Sesuai rima hierarki baku 'i, u 并列标在后' (jika i dan u berdampingan, tanda nada pada huruf di belakang), pada kata 'liù' nada di atas 'u', sedangkan pada 'duì' nada di atas 'i'.",
+    order_index: 1,
+  },
+  {
+    id: "fund-ex-23",
+    level_id: "fundamentals",
+    lesson_id: "fund-08",
+    module_id: "fundamentals",
+    unit_slug: "08",
+    type: "sentence_ordering",
+    prompt:
+      "Susun ejaan baku nama kota kuno 'Xī'ān' (西安) lengkap dengan tanda apostrof pemisah batas suku kata (隔音符号) berikut:",
+    context_hanzi: "西安 (Xī'ān)",
+    context_pinyin: "Xī'ān",
+    context_translation: "Kota Xi'an (menggunakan apostrof pemisah)",
+    options: [
+      { text: "Xī", pinyin: "suku kata pertama kapital" },
+      { text: "'", pinyin: "tanda apostrof pemisah batas suku kata" },
+      { text: "ān", pinyin: "suku kata kedua diawali vokal a" },
+    ],
+    correct_answer: "Xī ' ān",
+    explanation:
+      "Nama kota 'Xī'ān' (西安) wajib menggunakan tanda apostrof (') pemisah sebelum vokal 'ā' agar tidak disalahartikan sebagai satu suku kata tunggal 'xiān' (先 - terlebih dahulu).",
+    order_index: 2,
+  },
+  {
+    id: "fund-ex-24",
+    level_id: "fundamentals",
+    lesson_id: "fund-08",
+    module_id: "fundamentals",
+    unit_slug: "08",
+    type: "listening",
+    prompt:
+      "Dengarkan audio kata berikut, lalu tentukan apakah kata yang diucapkan adalah nama kota dua suku kata 'Xī'ān' (西安) atau kata satu suku kata 'xiān' (先):",
+    context_hanzi: "西安 vs 先",
+    context_pinyin: "Xī'ān vs xiān",
+    context_translation: "Kota Xi'an (dua ketukan) vs duluan (satu ketukan)",
+    options: [
+      "Xī'ān (西安 - dua suku kata terpisah dengan jeda mikro / nama kota)",
+      "xiān (先 - satu suku kata tunggal meluncur / terlebih dahulu)",
+      "xīn (新 - baru / vokal sengau in)",
+      "xiāng (香 - wangi / vokal sengau iang)",
+    ],
+    correct_answer:
+      "Xī'ān (西安 - dua suku kata terpisah dengan jeda mikro / nama kota)",
+    explanation:
+      "Audio melafalkan dua suku kata terpisah secara beruntun ('Xī' lalu 'ān'), yang dalam ejaan pinyin resmi wajib ditulis 'Xī'ān'.",
+    order_index: 3,
+  },
+
+  // Unit 09: Struktur Hanzi & Urutan Goresan (F-09)
+  {
+    id: "fund-ex-25",
+    level_id: "fundamentals",
+    lesson_id: "fund-09",
+    module_id: "fundamentals",
+    unit_slug: "09",
+    type: "multiple_choice",
+    prompt:
+      "Pada karakter berstruktur mengelilingi penuh (全包围结构) seperti '国' (guó - negara) dan '回' (huí - kembali), bagaimanakah kaidah urutan penulisan yang BENAR?",
+    context_hanzi: "国 (guó) / 回 (huí)",
+    context_pinyin: "Quánbāowéi Jiégòu",
+    context_translation: "Struktur Mengelilingi Penuh (Luar dulu, dalam, baru tutup bingkai)",
+    options: [
+      "Tulis bingkai luar (kiri, atas, kanan), tulis komponen isi di dalam, lalu tutup garis bawah paling akhir ('masuk rumah dulu, baru kunci pintu')",
+      "Buat kotak bingkai tertutup rapat terlebih dahulu dari awal, lalu selipkan komponen isi di dalamnya",
+      "Tulis garis penutup bawah terlebih dahulu, baru mendirikan dinding kiri dan kanan",
+      "Tulis komponen dalam terlebih dahulu, baru buat kotak melingkari di sekelilingnya",
+    ],
+    correct_answer:
+      "Tulis bingkai luar (kiri, atas, kanan), tulis komponen isi di dalam, lalu tutup garis bawah paling akhir ('masuk rumah dulu, baru kunci pintu')",
+    explanation:
+      "Prinsip baku untuk karakter mengelilingi penuh (全包围) adalah '先外后里再封口' (buat tiga sisi bingkai luar terlebih dahulu, masukkan komponen isi ke dalam, lalu tutup garis horizontal bawah paling akhir sebagai segel penutup).",
+    order_index: 1,
+  },
+  {
+    id: "fund-ex-26",
+    level_id: "fundamentals",
+    lesson_id: "fund-09",
+    module_id: "fundamentals",
+    unit_slug: "09",
+    type: "sentence_ordering",
+    prompt:
+      "Susun urutan goresan yang BENAR saat menulis karakter '木' (mù - kayu/pohon) dari tarikan pertama hingga terakhir:",
+    context_hanzi: "木 (mù)",
+    context_pinyin: "mù",
+    context_translation: "kayu / pohon (4 goresan)",
+    options: [
+      { text: "1. 横 (héng)", pinyin: "garis mendatar dari kiri ke kanan" },
+      { text: "2. 竖 (shù)", pinyin: "garis tegak lurus memotong tengah" },
+      { text: "3. 撇 (piě)", pinyin: "goresan miring melengkung ke kiri" },
+      { text: "4. 捺 (nà)", pinyin: "goresan miring menekan ke kanan" },
+    ],
+    correct_answer: "1. 横 (héng) 2. 竖 (shù) 3. 撇 (piě) 4. 捺 (nà)",
+    explanation:
+      "Sesuai kaidah '先横后竖' (horizontal sebelum vertikal) dan '先撇后捺' (miring kiri sebelum miring kanan), urutan goresan '木' secara runtut adalah: 横 (1) → 竖 (2) → 撇 (3) → 捺 (4).",
+    order_index: 2,
+  },
+  {
+    id: "fund-ex-27",
+    level_id: "fundamentals",
+    lesson_id: "fund-09",
+    module_id: "fundamentals",
+    unit_slug: "09",
+    type: "listening",
+    prompt:
+      "Dengarkan audio pembahasan radikal karakter berikut, lalu tentukan radikal semantik yang berkaitan dengan air dan cairan pada kata 'hǎi' (海 - laut):",
+    context_hanzi: "海 (hǎi)",
+    context_pinyin: "hǎi",
+    context_translation: "laut (memiliki radikal tiga titik air)",
+    options: [
+      "氵 (sāndiǎnshuǐ - tiga titik air di sebelah kiri / perubahan bentuk dari '水')",
+      "亻 (dānrénpáng - radikal manusia di sebelah kiri / perubahan bentuk dari '人')",
+      "灬 (sìdiǎnhuǒ - radikal empat titik api di sebelah bawah)",
+      "艹 (cǎozìtóu - radikal rumput/tumbuhan di sebelah atas)",
+    ],
+    correct_answer:
+      "氵 (sāndiǎnshuǐ - tiga titik air di sebelah kiri / perubahan bentuk dari '水')",
+    explanation:
+      "Karakter '海' (hǎi - laut) memiliki radikal semantik 氵 (sāndiǎnshuǐ / tiga titik air) yang menandakan bahwa kata tersebut berkaitan erat dengan air, sungai, atau lautan.",
+    order_index: 3,
+  },
+
+  // Unit 10: Ujian Akhir Fondasi & Mini Proyek (F-10)
+  {
+    id: "fund-ex-28",
+    level_id: "fundamentals",
+    lesson_id: "fund-10",
+    module_id: "fundamentals",
+    unit_slug: "10",
+    type: "multiple_choice",
+    prompt:
+      "Dalam evaluasi komprehensif sistem pinyin dan nada, manakah pernyataan berikut yang PALING TEPAT mengenai pelafalan frasa 'bú duì' (不对 - tidak benar) dan penulisan nama kota 'Xī'ān' (西安)?",
+    context_hanzi: "不对 与 西安",
+    context_pinyin: "bú duì yǔ Xī'ān",
+    context_translation: "Evaluasi Pinyin, Sandhi Nada & Apostrof Pemisah",
+    options: [
+      "Kata '不' mengalami perubahan sandhi menjadi nada ke-2 ('bú') sebelum nada ke-4 'duì', dan nama kota 'Xī'ān' wajib memakai apostrof pemisah batas suku kata.",
+      "Kata '不' tidak pernah berubah nada dalam kondisi apa pun dan nama kota 'Xī'ān' wajib ditulis tanpa apostrof.",
+      "Tanda nada pada kata 'duì' diletakkan di atas huruf 'u' bukan 'i'.",
+      "Kedua kata dilafalkan dengan nada netral tanpa intonasi.",
+    ],
+    correct_answer:
+      "Kata '不' mengalami perubahan sandhi menjadi nada ke-2 ('bú') sebelum nada ke-4 'duì', dan nama kota 'Xī'ān' wajib memakai apostrof pemisah batas suku kata.",
+    explanation:
+      "Kata negasi '不' (bù) berubah menjadi nada ke-2 ('bú') ketika mendahului nada ke-4 lainnya ('duì'). Nama kota 'Xī'ān' (西安) wajib menggunakan tanda apostrof pemisah agar tidak keliru dibaca sebagai suku kata tunggal 'xiān'.",
+    order_index: 1,
+  },
+  {
+    id: "fund-ex-29",
+    level_id: "fundamentals",
+    lesson_id: "fund-10",
+    module_id: "fundamentals",
+    unit_slug: "10",
+    type: "sentence_ordering",
+    prompt:
+      "Susun kalimat Mini Proyek perkenalan diri sederhana berikut secara runtut dan tepat:",
+    context_hanzi: "你好，我叫大卫，我学中文。",
+    context_pinyin: "Nǐ hǎo, wǒ jiào Dàwèi, wǒ xué Zhōngwén.",
+    context_translation: "Halo, nama saya David, saya belajar bahasa Mandarin.",
+    options: [
+      { text: "你好，", pinyin: "salam pembuka (ní hǎo)" },
+      { text: "我叫大卫，", pinyin: "perkenalan nama diri" },
+      { text: "我学中文。", pinyin: "kalimat deklaratif tujuan belajar" },
+    ],
+    correct_answer: "你好， 我叫大卫， 我学中文。",
+    explanation:
+      "Struktur perkenalan lisan alami dalam bahasa Mandarin diawali oleh salam sopan ('你好'), diikuti perkenalan nama diri ('我叫大卫'), dan diakhiri kalimat konteks kegiatan ('我学中文').",
+    order_index: 2,
+  },
+  {
+    id: "fund-ex-30",
+    level_id: "fundamentals",
+    lesson_id: "fund-10",
+    module_id: "fundamentals",
+    unit_slug: "10",
+    type: "listening",
+    prompt:
+      "Dengarkan audio evaluasi integratif berikut, lalu identifikasi kalimat yang dilafalkan lengkap dengan penerapan sandhi nada yang tepat:",
+    context_hanzi: "你好，一个苹果。",
+    context_pinyin: "Nǐ hǎo, yí ge píngguǒ.",
+    context_translation: "Halo, sebuah apel. (Pelafalan lisan: ní hǎo, yí ge píngguǒ)",
+    options: [
+      "你好，一个苹果 (Ní hǎo, yí ge píngguǒ - sandhi nada 2 pada 'nǐ' dan kata '一' berubah 'yí')",
+      "Nǐ hǎo, yī ge píngguǒ (tanpa penerapan perubahan sandhi lisan)",
+      "Bù hǎo, sì ge píngguǒ (kosakata dan makna berbeda)",
+      "Zàijiàn, liǎng ge lí (kalimat perpisahan dan buah pir)",
+    ],
+    correct_answer:
+      "你好，一个苹果 (Ní hǎo, yí ge píngguǒ - sandhi nada 2 pada 'nǐ' dan kata '一' berubah 'yí')",
+    explanation:
+      "Rekaman melafalkan kalimat '你好，一个苹果' dengan penerapan sandhi 3+3 pada 'ní hǎo' serta sandhi kata bilangan '一' menjadi 'yí' sebelum suku kata bernada ke-4 ('gè' / ge).",
     order_index: 3,
   },
 
@@ -335,7 +848,7 @@ export const DEFAULT_EXERCISES: ExerciseItem[] = [
     ],
     correct_answer: "我 是 印尼人",
     explanation:
-      "Struktur kalimat kopula bahasa Mandarin: Subjek (我) + Kata Kerja Kopula (是) + Objek Identitas (印尼人).",
+      "Struktur kalimat bahasa Mandarin: Subjek (我) + Kata 'adalah' (是) + Objek (印尼人). Berbeda dengan bahasa Indonesia, kata '是' (shì) wajib diucapkan.",
     order_index: 2,
   },
   {
@@ -633,6 +1146,484 @@ export const DEFAULT_EXERCISES: ExerciseItem[] = [
     explanation:
       "Audio melafalkan 'Nǐ xiǎng chī shénme' (你想吃什么) yang berarti 'Kamu ingin makan apa'.",
     order_index: 4,
+  },
+
+  // Unit 06: Rutinitas Harian & Jadwal (HSK 1)
+  {
+    id: "hsk1-ex-06-01",
+    level_id: "hsk1",
+    lesson_id: "hsk1-06",
+    module_id: "hsk1",
+    unit_slug: "06",
+    type: "multiple_choice",
+    prompt:
+      "Dalam urutan sintaksis Mandarin baku, manakah posisi penempatan keterangan waktu '明天上午' (besok pagi) yang PALING TEPAT pada kalimat 'Saya pergi ke sekolah'?",
+    context_hanzi: "我 明天上午 去学校",
+    context_pinyin: "Wǒ míngtiān shàngwǔ qù xuéxiào",
+    context_translation: "Saya pergi ke sekolah besok pagi",
+    options: [
+      "Tepat setelah subjek atau di awal kalimat sebelum kata kerja (我明天上午去学校 / 明天上午我去学校)",
+      "Di akhir kalimat setelah objek sekolah (我去学校明天上午)",
+      "Di antara kata kerja dan objek (我去明天上午学校)",
+      "Bebas di mana saja tanpa aturan tata bahasa",
+    ],
+    correct_answer:
+      "Tepat setelah subjek atau di awal kalimat sebelum kata kerja (我明天上午去学校 / 明天上午我去学校)",
+    explanation:
+      "Keterangan waktu dalam bahasa Mandarin selalu diletakkan sebelum kata kerja perbuatan, baik setelah subjek (我 + 明天上午 + 去学校) maupun di awal kalimat (明天上午 + 我 + 去学校). Pantangan besar meletakkannya di akhir kalimat.",
+    order_index: 1,
+  },
+  {
+    id: "hsk1-ex-06-02",
+    level_id: "hsk1",
+    lesson_id: "hsk1-06",
+    module_id: "hsk1",
+    unit_slug: "06",
+    type: "sentence_ordering",
+    prompt:
+      "Susun potongan kata berikut agar membentuk kalimat 'Setiap hari kami berdua bangun tidur jam 7 pagi':",
+    context_hanzi: "我们每天早上七点都起床",
+    context_pinyin: "Wǒmen měitiān zǎoshang qī diǎn dōu qǐchuáng",
+    context_translation: "Setiap hari kami berdua bangun tidur jam 7 pagi",
+    options: [
+      { text: "我们", pinyin: "wǒmen" },
+      { text: "每天早上七点", pinyin: "měitiān zǎoshang qī diǎn" },
+      { text: "都起床", pinyin: "dōu qǐchuáng" },
+    ],
+    correct_answer: "我们 每天早上七点 都起床",
+    explanation:
+      "Pola sintaksis: Subjek (我们) + Waktu (每天早上七点) + Keterangan Lingkup (都) + Verba (起床).",
+    order_index: 2,
+  },
+  {
+    id: "hsk1-ex-06-03",
+    level_id: "hsk1",
+    lesson_id: "hsk1-06",
+    module_id: "hsk1",
+    unit_slug: "06",
+    type: "listening",
+    prompt:
+      "Dengarkan audio percakapan rencana aktivitas berikut, lalu pilih kegiatan yang ditanyakan:",
+    context_hanzi: "你几点睡觉",
+    context_pinyin: "Nǐ jǐ diǎn shuìjiào",
+    context_translation: "Kamu jam berapa tidur",
+    options: [
+      "你几点睡觉 (Nǐ jǐ diǎn shuìjiào / Jam berapa kamu tidur)",
+      "你几点起床 (Nǐ jǐ diǎn qǐchuáng / Jam berapa kamu bangun)",
+      "你去学校吗 (Nǐ qù xuéxiào ma / Apakah kamu ke sekolah)",
+      "你吃米饭吗 (Nǐ chī mǐfàn ma / Apakah kamu makan nasi)",
+    ],
+    correct_answer: "你几点睡觉 (Nǐ jǐ diǎn shuìjiào / Jam berapa kamu tidur)",
+    explanation:
+      "Audio melafalkan 'Nǐ jǐ diǎn shuìjiào' (你几点睡觉) untuk menanyakan jam tidur seseorang.",
+    order_index: 3,
+  },
+
+  // Unit 07: Makanan & Minuman (HSK 1)
+  {
+    id: "hsk1-ex-07-01",
+    level_id: "hsk1",
+    lesson_id: "hsk1-07",
+    module_id: "hsk1",
+    unit_slug: "07",
+    type: "multiple_choice",
+    prompt:
+      "Pilih kata bantu ukur (classifier) yang paling tepat untuk memesan hidangan 'dua mangkuk nasi putih':",
+    context_hanzi: "两 ___ 米饭",
+    context_pinyin: "liǎng ___ mǐfàn",
+    context_translation: "dua mangkuk nasi putih",
+    options: ["碗 (wǎn)", "杯 (bēi)", "瓶 (píng)", "个 (ge)"],
+    correct_answer: "碗 (wǎn)",
+    explanation:
+      "Kata ukur wadah untuk nasi putih dan sup dalam bahasa Mandarin adalah '碗' (wǎn - mangkuk). Contoh: 两碗米饭 (dua mangkuk nasi putih).",
+    order_index: 1,
+  },
+  {
+    id: "hsk1-ex-07-02",
+    level_id: "hsk1",
+    lesson_id: "hsk1-07",
+    module_id: "hsk1",
+    unit_slug: "07",
+    type: "sentence_ordering",
+    prompt:
+      "Susun potongan kata berikut untuk memesan minuman di restoran: 'Saya ingin minum segelas air hangat':",
+    context_hanzi: "我想喝一杯热水",
+    context_pinyin: "Wǒ xiǎng hē yì bēi rè shuǐ",
+    context_translation: "Saya ingin minum segelas air hangat",
+    options: [
+      { text: "我想喝", pinyin: "wǒ xiǎng hē" },
+      { text: "一杯", pinyin: "yì bēi" },
+      { text: "热水", pinyin: "rè shuǐ" },
+    ],
+    correct_answer: "我想喝 一杯 热水",
+    explanation:
+      "Struktur: Subjek + Ingin (我想) + Kata Kerja (喝) + Angka & Satuan Ukur (一杯) + Benda (热水).",
+    order_index: 2,
+  },
+  {
+    id: "hsk1-ex-07-03",
+    level_id: "hsk1",
+    lesson_id: "hsk1-07",
+    module_id: "hsk1",
+    unit_slug: "07",
+    type: "listening",
+    prompt:
+      "Dengarkan audio pesanan hidangan berikut, lalu pilih jenis sajian yang dipesan:",
+    context_hanzi: "吃中国菜",
+    context_pinyin: "chī Zhōngguó cài",
+    context_translation: "makan masakan Tiongkok",
+    options: [
+      "吃中国菜 (chī Zhōngguó cài / makan masakan Tiongkok)",
+      "喝中国茶 (hē Zhōngguó chá / minum teh Tiongkok)",
+      "吃米饭 (chī mǐfàn / makan nasi putih)",
+      "喝热水 (hē rè shuǐ / minum air hangat)",
+    ],
+    correct_answer: "吃中国菜 (chī Zhōngguó cài / makan masakan Tiongkok)",
+    explanation:
+      "Audio melafalkan 'chī Zhōngguó cài' (吃中国菜) yang berarti menyantap masakan Tiongkok.",
+    order_index: 3,
+  },
+
+  // Unit 08: Tempat, Posisi & Arah Dasar (HSK 1)
+  {
+    id: "hsk1-ex-08-01",
+    level_id: "hsk1",
+    lesson_id: "hsk1-08",
+    module_id: "hsk1",
+    unit_slug: "08",
+    type: "multiple_choice",
+    prompt:
+      "Manakah struktur tata bahasa yang BENAR untuk menyatakan posisi 'Buku berada di atas meja'?",
+    context_hanzi: "书在桌子上",
+    context_pinyin: "Shū zài zhuōzi shang",
+    context_translation: "Buku ada di atas meja",
+    options: [
+      "书在桌子上 (Shū zài zhuōzi shang - Kata penunjuk posisi diletakkan setelah nama objek)",
+      "书在上桌子 (Shū zài shàng zhuōzi - Posisi mendahului nama objek)",
+      "桌子在书上 (Zhuōzi zài shū shang - Posisi terbalik: meja di atas buku)",
+      "书是桌子上 (Shū shì zhuōzi shang - Keliru memakai kata 'shì' alih-alih kata letak 'zài')",
+    ],
+    correct_answer:
+      "书在桌子上 (Shū zài zhuōzi shang - Kata penunjuk posisi diletakkan setelah nama objek)",
+    explanation:
+      "Formula posisi bahasa Mandarin: [Subjek] + 在 + [Nama Tempat/Benda] + [Kata Penunjuk Posisi: 上/下/里/前/后].",
+    order_index: 1,
+  },
+  {
+    id: "hsk1-ex-08-02",
+    level_id: "hsk1",
+    lesson_id: "hsk1-08",
+    module_id: "hsk1",
+    unit_slug: "08",
+    type: "sentence_ordering",
+    prompt:
+      "Susun potongan frasa berikut untuk menanyakan lokasi teman: 'Di manakah temanmu sekarang?':",
+    context_hanzi: "你的朋友现在在哪里",
+    context_pinyin: "Nǐ de péngyou xiànzài zài nǎlǐ",
+    context_translation: "Di manakah temanmu sekarang?",
+    options: [
+      { text: "你的朋友", pinyin: "nǐ de péngyou" },
+      { text: "现在", pinyin: "xiànzài" },
+      { text: "在哪里", pinyin: "zài nǎlǐ" },
+    ],
+    correct_answer: "你的朋友 现在 在哪里",
+    explanation:
+      "Urutan sintaksis: Subjek (你的朋友) + Waktu (现在) + Tanya Lokasi (在哪里).",
+    order_index: 2,
+  },
+  {
+    id: "hsk1-ex-08-03",
+    level_id: "hsk1",
+    lesson_id: "hsk1-08",
+    module_id: "hsk1",
+    unit_slug: "08",
+    type: "listening",
+    prompt:
+      "Dengarkan audio keberadaan benda berikut, lalu tentukan di manakah posisi benda yang disebutkan:",
+    context_hanzi: "电脑在桌子上",
+    context_pinyin: "Diànnǎo zài zhuōzi shang",
+    context_translation: "Komputer ada di atas meja",
+    options: [
+      "Di atas meja (在桌子上 - zài zhuōzi shang)",
+      "Di bawah meja (在桌子下 - zài zhuōzi xià)",
+      "Di dalam perpustakaan (在图书馆里 - zài túshūguǎn lǐ)",
+      "Di depan sekolah (在学校前面 - zài xuéxiào qiánmian)",
+    ],
+    correct_answer: "Di atas meja (在桌子上 - zài zhuōzi shang)",
+    explanation:
+      "Audio melafalkan 'Diànnǎo zài zhuōzi shang' (电脑在桌子上) yang berarti komputer berada di atas meja.",
+    order_index: 3,
+  },
+
+  // Unit 09: Belanja & Harga (HSK 1)
+  {
+    id: "hsk1-ex-09-01",
+    level_id: "hsk1",
+    lesson_id: "hsk1-09",
+    module_id: "hsk1",
+    unit_slug: "09",
+    type: "multiple_choice",
+    prompt:
+      "Lengkapi kalimat tawar-menawar harga berikut: 'Baju ini terlalu mahal, bisakah lebih murah sedikit?':",
+    context_hanzi: "太贵了，便宜 ___ 吧",
+    context_pinyin: "Tài guì le, piányi ___ ba",
+    context_translation: "Terlalu mahal, lebih murah sedikitlah",
+    options: ["一点儿 (yìdiǎnr)", "多少 (duōshao)", "几个 (jǐ gè)", "很多 (hěn duō)"],
+    correct_answer: "一点儿 (yìdiǎnr)",
+    explanation:
+      "Untuk meminta perubahan derajat sifat (lebih murah sedikit), gunakan formula: [Kata Sifat] + 一点儿 (piányi yìdiǎnr). Sedangkan 有点儿 diletakkan sebelum kata sifat.",
+    order_index: 1,
+  },
+  {
+    id: "hsk1-ex-09-02",
+    level_id: "hsk1",
+    lesson_id: "hsk1-09",
+    module_id: "hsk1",
+    unit_slug: "09",
+    type: "sentence_ordering",
+    prompt:
+      "Susun potongan frasa berikut untuk menanyakan harga barang: 'Berapa harga buku ini?':",
+    context_hanzi: "这本书多少钱",
+    context_pinyin: "Zhè běn shū duōshao qián",
+    context_translation: "Berapa harga buku ini?",
+    options: [
+      { text: "这本书", pinyin: "zhè běn shū" },
+      { text: "多少", pinyin: "duōshao" },
+      { text: "钱", pinyin: "qián" },
+    ],
+    correct_answer: "这本书 多少 钱",
+    explanation:
+      "Pola tanya harga: [Benda + Classifier] + 多少钱 (duōshao qián).",
+    order_index: 2,
+  },
+  {
+    id: "hsk1-ex-09-03",
+    level_id: "hsk1",
+    lesson_id: "hsk1-09",
+    module_id: "hsk1",
+    unit_slug: "09",
+    type: "listening",
+    prompt:
+      "Dengarkan audio harga barang berikut, lalu tentukan nominal harga yang diucapkan:",
+    context_hanzi: "三十五块钱",
+    context_pinyin: "sānshíwǔ kuài qián",
+    context_translation: "35 kuai / yuan",
+    options: [
+      "35 kuài (三十五块 - sānshíwǔ kuài)",
+      "53 kuài (五十三块 - wǔshísān kuài)",
+      "15 kuài (十五块 - shíwǔ kuài)",
+      "30 kuài (三十块 - sānshí kuài)",
+    ],
+    correct_answer: "35 kuài (三十五块 - sānshíwǔ kuài)",
+    explanation:
+      "Audio melafalkan 'sānshíwǔ kuài qián' (三十五块钱) yaitu angka tiga puluh lima (35).",
+    order_index: 3,
+  },
+
+  // Unit 10: Cuaca & Kondisi (HSK 1)
+  {
+    id: "hsk1-ex-10-01",
+    level_id: "hsk1",
+    lesson_id: "hsk1-10",
+    module_id: "hsk1",
+    unit_slug: "10",
+    type: "multiple_choice",
+    prompt:
+      "Manakah kalimat mendeskripsikan cuaca yang BENAR secara tata bahasa Mandarin baku?",
+    context_hanzi: "今天天气很好",
+    context_pinyin: "Jīntiān tiānqì hěn hǎo",
+    context_translation: "Cuaca hari ini sangat bagus",
+    options: [
+      "今天天气很好 (Jīntiān tiānqì hěn hǎo - Menggunakan '很' tanpa menyisipkan '是')",
+      "今天天气是很好 (Jīntiān tiānqì shì hěn hǎo - Menyisipkan '是' sebelum kata sifat)",
+      "今天天气很冷吗很好 (Kalimat rancu tidak baku)",
+      "天气是冷今天 (Urutan kata terbalik)",
+    ],
+    correct_answer:
+      "今天天气很好 (Jīntiān tiānqì hěn hǎo - Menggunakan '很' tanpa menyisipkan '是')",
+    explanation:
+      "Dalam kalimat dengan kata sifat, bahasa Mandarin menghubungkan subjek langsung ke kata sifat dengan '很' (hěn). PANTANG menyisipkan kata '是' (shì).",
+    order_index: 1,
+  },
+  {
+    id: "hsk1-ex-10-02",
+    level_id: "hsk1",
+    lesson_id: "hsk1-10",
+    module_id: "hsk1",
+    unit_slug: "10",
+    type: "sentence_ordering",
+    prompt:
+      "Susun potongan frasa berikut untuk menanyakan perkiraan cuaca: 'Bagaimana cuaca besok?':",
+    context_hanzi: "明天天气怎么样",
+    context_pinyin: "Míngtiān tiānqì zěnmeyàng",
+    context_translation: "Bagaimana cuaca besok?",
+    options: [
+      { text: "明天", pinyin: "míngtiān" },
+      { text: "天气", pinyin: "tiānqì" },
+      { text: "怎么样", pinyin: "zěnmeyàng" },
+    ],
+    correct_answer: "明天 天气 怎么样",
+    explanation:
+      "Pola tanya kondisi cuaca: [Waktu] + 天气 + 怎么样 (zěnmeyàng).",
+    order_index: 2,
+  },
+  {
+    id: "hsk1-ex-10-03",
+    level_id: "hsk1",
+    lesson_id: "hsk1-10",
+    module_id: "hsk1",
+    unit_slug: "10",
+    type: "listening",
+    prompt:
+      "Dengarkan audio laporan cuaca berikut, lalu tentukan kondisi cuaca yang terjadi:",
+    context_hanzi: "外面下雨了很冷",
+    context_pinyin: "Wàimiàn xiàyǔ le, hěn lěng",
+    context_translation: "Di luar turun hujan, sangat dingin",
+    options: [
+      "Hujan dan sangat dingin (下雨很冷 - xiàyǔ hěn lěng)",
+      "Panas terik tidak hujan (很热不下雨 - hěn rè bú xiàyǔ)",
+      "Cuaca sangat bagus dan cerah (天气很好 - tiānqì hěn hǎo)",
+      "Salju turun tidak dingin (下雪不冷 - xiàxuě bù lěng)",
+    ],
+    correct_answer: "Hujan dan sangat dingin (下雨很冷 - xiàyǔ hěn lěng)",
+    explanation:
+      "Audio melafalkan 'Wàimiàn xiàyǔ le, hěn lěng' (外面下雨了，很冷) yang berarti di luar turun hujan dan terasa sangat dingin.",
+    order_index: 3,
+  },
+
+  // Unit 11: Kemampuan & Permintaan Santun (HSK 1)
+  {
+    id: "hsk1-ex-11-01",
+    level_id: "hsk1",
+    lesson_id: "hsk1-11",
+    module_id: "hsk1",
+    unit_slug: "11",
+    type: "multiple_choice",
+    prompt:
+      "Pilih kata kerja bantu modal yang paling tepat untuk menyatakan kemahiran yang dipelajari: 'Saya bisa berbicara bahasa Mandarin':",
+    context_hanzi: "我 ___ 说汉语",
+    context_pinyin: "Wǒ ___ shuō Hànyǔ",
+    context_translation: "Saya bisa berbicara bahasa Mandarin",
+    options: ["会 (huì)", "可以 (kěyǐ)", "请 (qǐng)", "能 (néng)"],
+    correct_answer: "会 (huì)",
+    explanation:
+      "Kata kerja modal '会' (huì) digunakan khusus untuk menyatakan kemampuan atau keahlian yang diperoleh melalui proses belajar atau latihan (misal: 会说汉语, 会写汉字).",
+    order_index: 1,
+  },
+  {
+    id: "hsk1-ex-11-02",
+    level_id: "hsk1",
+    lesson_id: "hsk1-11",
+    module_id: "hsk1",
+    unit_slug: "11",
+    type: "sentence_ordering",
+    prompt:
+      "Susun kalimat permohonan pemulihan komunikasi santun berikut saat kamu tidak memahami ucapan lawan bicara:",
+    context_hanzi: "对不起我听不懂请说慢一点儿",
+    context_pinyin: "Duìbuqǐ, wǒ tīng bu dǒng, qǐng shuō màn yìdiǎnr",
+    context_translation: "Maaf, saya tidak paham, tolong bicara lebih pelan sedikit",
+    options: [
+      { text: "对不起，", pinyin: "duìbuqǐ" },
+      { text: "我听不懂，", pinyin: "wǒ tīng bu dǒng" },
+      { text: "请说慢一点儿。", pinyin: "qǐng shuō màn yìdiǎnr" },
+    ],
+    correct_answer: "对不起， 我听不懂， 请说慢一点儿。",
+    explanation:
+      "Urutan etika komunikasi santun: Maaf (对不起) + Pengakuan kendala pemahaman (我听不懂) + Permohonan pelan (请说慢一点儿).",
+    order_index: 2,
+  },
+  {
+    id: "hsk1-ex-11-03",
+    level_id: "hsk1",
+    lesson_id: "hsk1-11",
+    module_id: "hsk1",
+    unit_slug: "11",
+    type: "listening",
+    prompt:
+      "Dengarkan permohonan santun dalam audio berikut, lalu pilih frasa yang diucapkan:",
+    context_hanzi: "请再说一遍",
+    context_pinyin: "Qǐng zài shuō yí biàn",
+    context_translation: "Tolong katakan sekali lagi",
+    options: [
+      "请再说一遍 (Qǐng zài shuō yí biàn / Tolong katakan sekali lagi)",
+      "请进请坐 (Qǐng jìn qǐng zuò / Silakan masuk silakan duduk)",
+      "我听不懂 (Wǒ tīng bu dǒng / Saya tidak paham)",
+      "我可以坐吗 (Wǒ kěyǐ zuò ma / Bolehkah saya duduk)",
+    ],
+    correct_answer: "请再说一遍 (Qǐng zài shuō yí biàn / Tolong katakan sekali lagi)",
+    explanation:
+      "Audio melafalkan 'Qǐng zài shuō yí biàn' (请再说一遍) yang merupakan permohonan santun agar lawan bicara mengulangi ucapannya sekali lagi.",
+    order_index: 3,
+  },
+
+  // Unit 12: Review Integratif & Ujian Akhir Level (HSK 1)
+  {
+    id: "hsk1-ex-12-01",
+    level_id: "hsk1",
+    lesson_id: "hsk1-12",
+    module_id: "hsk1",
+    unit_slug: "12",
+    type: "multiple_choice",
+    prompt:
+      "Berdasarkan sintaksis standar bahasa Mandarin, manakah kalimat profil perkenalan berikut yang memiliki urutan kata 100% TEPAT?",
+    context_hanzi: "我每天在大学认真学习汉语",
+    context_pinyin: "Wǒ měitiān zài dàxué rènzhēn xuéxí Hànyǔ",
+    context_translation: "Saya belajar Mandarin dengan sungguh-sungguh di universitas setiap hari",
+    options: [
+      "我每天在大学认真学习汉语 (Subjek + Waktu + Tempat + Cara + Verba + Objek)",
+      "我在大学学习汉语每天认真 (Keterangan waktu dan cara ditaruh di belakang)",
+      "我学习汉语每天在大学 (Keterangan tempat ditaruh di paling belakang)",
+      "学习汉语每天我在大学 (Struktur terbalik tidak baku)",
+    ],
+    correct_answer:
+      "我每天在大学认真学习汉语 (Subjek + Waktu + Tempat + Cara + Verba + Objek)",
+    explanation:
+      "Urutan sintaksis baku bahasa Mandarin: Subjek (我) + Waktu (每天) + Lokasi (在大学) + Keterangan Cara (认真) + Kata Kerja (学习) + Objek (汉语). Latar situasi selalu mendahului aksi.",
+    order_index: 1,
+  },
+  {
+    id: "hsk1-ex-12-02",
+    level_id: "hsk1",
+    lesson_id: "hsk1-12",
+    module_id: "hsk1",
+    unit_slug: "12",
+    type: "sentence_ordering",
+    prompt: "Susun kalimat evaluasi kelulusan HSK 1 berikut secara runtut:",
+    context_hanzi: "恭喜你顺利完成HSK1",
+    context_pinyin: "Gōngxǐ nǐ shùnlì wánchéng HSK 1",
+    context_translation: "Selamat kamu telah sukses menyelesaikan HSK 1",
+    options: [
+      { text: "恭喜你", pinyin: "gōngxǐ nǐ" },
+      { text: "顺利完成", pinyin: "shùnlì wánchéng" },
+      { text: "HSK 1", pinyin: "HSK 1" },
+    ],
+    correct_answer: "恭喜你 顺利完成 HSK 1",
+    explanation:
+      "Ucapan kelulusan: Ucapan selamat (恭喜你) + Verba hasil (顺利完成) + Objek level (HSK 1).",
+    order_index: 2,
+  },
+  {
+    id: "hsk1-ex-12-03",
+    level_id: "hsk1",
+    lesson_id: "hsk1-12",
+    module_id: "hsk1",
+    unit_slug: "12",
+    type: "listening",
+    prompt:
+      "Dengarkan audio evaluasi akhir HSK 1 berikut, lalu pilih kalimat refleksi penutup yang diucapkan:",
+    context_hanzi: "准备学习HSK2",
+    context_pinyin: "zhǔnbèi xuéxí HSK 2",
+    context_translation: "bersiap mempelajari HSK 2",
+    options: [
+      "准备学习 HSK 2 (zhǔnbèi xuéxí HSK 2 / bersiap belajar HSK 2)",
+      "不学汉语了 (bù xué Hànyǔ le / tidak belajar Mandarin lagi)",
+      "每天睡懒觉 (měitiān shuì lǎnjiào / tidur malas setiap hari)",
+      "不知道怎么说 (bù zhīdào zěnme shuō / tidak tahu bagaimana mengatakannya)",
+    ],
+    correct_answer: "准备学习 HSK 2 (zhǔnbèi xuéxí HSK 2 / bersiap belajar HSK 2)",
+    explanation:
+      "Audio melafalkan 'zhǔnbèi xuéxí HSK 2' (准备学习 HSK 2) yang menunjukkan tekad pembelajar untuk melangkah ke tingkat berikutnya.",
+    order_index: 3,
   },
 
   // ==========================================
@@ -1215,14 +2206,35 @@ const LESSON_ID_EQUIVALENTS: Record<string, string[]> = {
   "03": ["lesson-hsk1-03", "21000000-0000-0000-0000-000000000003", "03", "hsk1-03"],
   "04": ["lesson-hsk1-04", "21000000-0000-0000-0000-000000000004", "04", "hsk1-04"],
   "05": ["lesson-hsk1-05", "21000000-0000-0000-0000-000000000005", "05", "hsk1-05"],
-  "06": ["hsk2-06", "06", "hsk2-lesson-06"],
-  "07": ["hsk2-07", "07", "hsk2-lesson-07"],
-  "08": ["hsk2-08", "08", "hsk2-lesson-08"],
-  "09": ["hsk2-09", "09", "hsk2-lesson-09"],
-  "10": ["hsk2-10", "10", "hsk2-lesson-10"],
+  "06": ["hsk1-06", "hsk2-06", "06", "hsk2-lesson-06"],
+  "07": ["hsk1-07", "hsk2-07", "07", "hsk2-lesson-07"],
+  "08": ["hsk1-08", "hsk2-08", "08", "hsk2-lesson-08"],
+  "09": ["hsk1-09", "hsk2-09", "09", "hsk2-lesson-09"],
+  "10": ["hsk1-10", "hsk2-10", "10", "hsk2-lesson-10"],
+  "11": ["hsk1-11", "11"],
+  "12": ["hsk1-12", "12"],
+  "hsk1-01": ["hsk1-01", "01", "lesson-hsk1-01"],
+  "hsk1-02": ["hsk1-02", "02", "lesson-hsk1-02"],
+  "hsk1-03": ["hsk1-03", "03", "lesson-hsk1-03"],
+  "hsk1-04": ["hsk1-04", "04", "lesson-hsk1-04"],
+  "hsk1-05": ["hsk1-05", "05", "lesson-hsk1-05"],
+  "hsk1-06": ["hsk1-06", "06"],
+  "hsk1-07": ["hsk1-07", "07"],
+  "hsk1-08": ["hsk1-08", "08"],
+  "hsk1-09": ["hsk1-09", "09"],
+  "hsk1-10": ["hsk1-10", "10"],
+  "hsk1-11": ["hsk1-11", "11"],
+  "hsk1-12": ["hsk1-12", "12"],
   "fund-01": ["fund-01", "fundamentals-01"],
   "fund-02": ["fund-02", "fundamentals-02"],
   "fund-03": ["fund-03", "fundamentals-03"],
+  "fund-04": ["fund-04", "fundamentals-04"],
+  "fund-05": ["fund-05", "fundamentals-05"],
+  "fund-06": ["fund-06", "fundamentals-06"],
+  "fund-07": ["fund-07", "fundamentals-07"],
+  "fund-08": ["fund-08", "fundamentals-08"],
+  "fund-09": ["fund-09", "fundamentals-09"],
+  "fund-10": ["fund-10", "fundamentals-10"],
 };
 
 export function parseExerciseOptions(

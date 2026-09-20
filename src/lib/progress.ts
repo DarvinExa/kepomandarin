@@ -224,7 +224,7 @@ export async function fetchStudyMetrics(userId?: string | null): Promise<StudyMe
     fetchErrorEntries(userId),
   ]);
 
-  const totalLessonsCount = 5;
+  const totalLessonsCount = 12;
   const completedLessonSlugs = Object.values(progressMap)
     .filter((p) => p.isCompleted)
     .map((p) => p.lessonSlug);
@@ -247,20 +247,27 @@ export async function fetchStudyMetrics(userId?: string | null): Promise<StudyMe
   const unresolvedErrorsCount = errorEntries.filter((e) => !e.is_resolved).length;
 
   // Rumus penguasaan objektif HSK 1:
-  // 5 unit bernilai masing-masing 16% (maks 80%), frasa tersimpan berkontribusi s.d. 20%
+  // 12 unit bernilai masing-masing ~6.67% (maks 80%), frasa tersimpan berkontribusi s.d. 20%
   const lessonContribution = (completedLessonsCount / totalLessonsCount) * 80;
   const phraseContribution = Math.min(20, totalPhrasesSaved * 2);
   const hsk1MasteryPercent = Math.min(100, Math.round(lessonContribution + phraseContribution));
 
-  // Hitung jumlah kosakata yang telah ditinjau (Task 7.4)
+  // Hitung jumlah kosakata yang telah ditinjau (150 Kosakata HSK 1)
   const LESSON_VOCAB_MAP: Record<string, number> = {
-    "01": 16,
-    "02": 18,
-    "03": 18,
-    "04": 17,
-    "05": 16,
+    "01": 10,
+    "02": 15,
+    "03": 12,
+    "04": 14,
+    "05": 12,
+    "06": 12,
+    "07": 12,
+    "08": 12,
+    "09": 11,
+    "10": 10,
+    "11": 14,
+    "12": 16,
   };
-  const totalVocabularyInCurriculum = 85;
+  const totalVocabularyInCurriculum = 150;
 
   let vocabFromLessons = 0;
   for (const slug of completedLessonSlugs) {

@@ -124,6 +124,8 @@ export interface Database {
           lesson_id: string | null;
           lesson_slug: string;
           is_completed: boolean;
+          mastery_status?: "belum_dimulai" | "sedang_dipelajari" | "perlu_review" | "dikuasai";
+          skill_scores?: Json;
           completed_at: string;
           practice_score: number;
           practice_accuracy: number;
@@ -136,6 +138,8 @@ export interface Database {
           lesson_id?: string | null;
           lesson_slug: string;
           is_completed?: boolean;
+          mastery_status?: "belum_dimulai" | "sedang_dipelajari" | "perlu_review" | "dikuasai";
+          skill_scores?: Json;
           completed_at?: string;
           practice_score?: number;
           practice_accuracy?: number;
@@ -148,6 +152,8 @@ export interface Database {
           lesson_id?: string | null;
           lesson_slug?: string;
           is_completed?: boolean;
+          mastery_status?: "belum_dimulai" | "sedang_dipelajari" | "perlu_review" | "dikuasai";
+          skill_scores?: Json;
           completed_at?: string;
           practice_score?: number;
           practice_accuracy?: number;
@@ -272,6 +278,16 @@ export interface Database {
           duration_minutes: number;
           order_index: number;
           is_published: boolean;
+          status?: "draft" | "reviewed" | "published";
+          reviewer?: string | null;
+          prerequisites?: string[];
+          skills?: string[];
+          curriculum_version?: string;
+          dialogue_context?: Json;
+          pronunciation_focus?: Json;
+          hanzi_components?: Json;
+          skills_activities?: Json;
+          checkpoint?: Json;
           created_at: string;
           updated_at: string;
         };
@@ -292,6 +308,16 @@ export interface Database {
           duration_minutes?: number;
           order_index?: number;
           is_published?: boolean;
+          status?: "draft" | "reviewed" | "published";
+          reviewer?: string | null;
+          prerequisites?: string[];
+          skills?: string[];
+          curriculum_version?: string;
+          dialogue_context?: Json;
+          pronunciation_focus?: Json;
+          hanzi_components?: Json;
+          skills_activities?: Json;
+          checkpoint?: Json;
           created_at?: string;
           updated_at?: string;
         };
@@ -312,6 +338,16 @@ export interface Database {
           duration_minutes?: number;
           order_index?: number;
           is_published?: boolean;
+          status?: "draft" | "reviewed" | "published";
+          reviewer?: string | null;
+          prerequisites?: string[];
+          skills?: string[];
+          curriculum_version?: string;
+          dialogue_context?: Json;
+          pronunciation_focus?: Json;
+          hanzi_components?: Json;
+          skills_activities?: Json;
+          checkpoint?: Json;
           created_at?: string;
           updated_at?: string;
         };
@@ -324,8 +360,12 @@ export interface Database {
           hanzi: string;
           pinyin: string;
           tone: string;
+          tone_number?: number | null;
           translation: string;
           part_of_speech: string | null;
+          usage_notes?: string | null;
+          is_enrichment?: boolean;
+          inclusion_reason?: string | null;
           example_hanzi: string;
           example_pinyin: string;
           example_translation: string;
@@ -341,8 +381,12 @@ export interface Database {
           hanzi: string;
           pinyin: string;
           tone: string;
+          tone_number?: number | null;
           translation: string;
           part_of_speech?: string | null;
+          usage_notes?: string | null;
+          is_enrichment?: boolean;
+          inclusion_reason?: string | null;
           example_hanzi: string;
           example_pinyin: string;
           example_translation: string;
@@ -358,8 +402,12 @@ export interface Database {
           hanzi?: string;
           pinyin?: string;
           tone?: string;
+          tone_number?: number | null;
           translation?: string;
           part_of_speech?: string | null;
+          usage_notes?: string | null;
+          is_enrichment?: boolean;
+          inclusion_reason?: string | null;
           example_hanzi?: string;
           example_pinyin?: string;
           example_translation?: string;
@@ -374,14 +422,28 @@ export interface Database {
           id: string;
           level_id: string;
           lesson_id: string | null;
-          type: "multiple_choice" | "sentence_ordering";
+          type:
+            | "multiple_choice"
+            | "sentence_ordering"
+            | "listening"
+            | "matching"
+            | "fill_in_blank"
+            | "dictation"
+            | "pronunciation_imitation"
+            | "hanzi_recognition"
+            | "stroke_order"
+            | "reading_comprehension"
+            | "error_correction";
           prompt: string;
           context_hanzi: string;
           context_pinyin: string;
           context_translation: string;
+          audio_url?: string | null;
           options: Json;
           correct_answer: string;
           explanation: string;
+          feedback_detail?: Json;
+          metadata?: Json;
           order_index: number;
           created_at: string;
           updated_at: string;
@@ -390,14 +452,28 @@ export interface Database {
           id?: string;
           level_id: string;
           lesson_id?: string | null;
-          type: "multiple_choice" | "sentence_ordering";
+          type:
+            | "multiple_choice"
+            | "sentence_ordering"
+            | "listening"
+            | "matching"
+            | "fill_in_blank"
+            | "dictation"
+            | "pronunciation_imitation"
+            | "hanzi_recognition"
+            | "stroke_order"
+            | "reading_comprehension"
+            | "error_correction";
           prompt: string;
           context_hanzi: string;
           context_pinyin: string;
           context_translation: string;
+          audio_url?: string | null;
           options?: Json;
           correct_answer: string;
           explanation: string;
+          feedback_detail?: Json;
+          metadata?: Json;
           order_index?: number;
           created_at?: string;
           updated_at?: string;
@@ -406,14 +482,28 @@ export interface Database {
           id?: string;
           level_id?: string;
           lesson_id?: string | null;
-          type?: "multiple_choice" | "sentence_ordering";
+          type?:
+            | "multiple_choice"
+            | "sentence_ordering"
+            | "listening"
+            | "matching"
+            | "fill_in_blank"
+            | "dictation"
+            | "pronunciation_imitation"
+            | "hanzi_recognition"
+            | "stroke_order"
+            | "reading_comprehension"
+            | "error_correction";
           prompt?: string;
           context_hanzi?: string;
           context_pinyin?: string;
           context_translation?: string;
+          audio_url?: string | null;
           options?: Json;
           correct_answer?: string;
           explanation?: string;
+          feedback_detail?: Json;
+          metadata?: Json;
           order_index?: number;
           created_at?: string;
           updated_at?: string;

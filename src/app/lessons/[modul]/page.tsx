@@ -11,13 +11,13 @@ export function generateStaticParams() {
     { modul: "hsk3" },
     { modul: "hsk4" },
     { modul: "hsk5" },
-    { modul: "01" },
-    { modul: "02" },
-    { modul: "03" },
-    { modul: "04" },
-    { modul: "05" },
+    ...Array.from({ length: 12 }, (_, i) => ({
+      modul: String(i + 1).padStart(2, "0"),
+    })),
   ];
 }
+
+const HSK1_SLUGS = Array.from({ length: 12 }, (_, i) => String(i + 1).padStart(2, "0"));
 
 interface PageProps {
   params: Promise<{ modul: string }>;
@@ -25,7 +25,7 @@ interface PageProps {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { modul } = await params;
-  if (["01", "02", "03", "04", "05"].includes(modul)) {
+  if (HSK1_SLUGS.includes(modul)) {
     return { title: `Pelajaran ${modul} | Mandarin Context Lab` };
   }
   const currentModule = getModuleById(modul);
@@ -45,8 +45,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 export default async function ModuleLessonsPage({ params }: PageProps) {
   const { modul } = await params;
 
-  // Kompatibilitas mundur: jika rute lama /lessons/01 s.d. 05
-  if (["01", "02", "03", "04", "05"].includes(modul)) {
+  // Kompatibilitas mundur: jika rute lama /lessons/01 s.d. 12
+  if (HSK1_SLUGS.includes(modul)) {
     redirect(`/lessons/hsk1/${modul}`);
   }
 

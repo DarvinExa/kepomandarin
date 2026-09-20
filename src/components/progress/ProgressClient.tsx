@@ -16,22 +16,29 @@ interface ProgressClientProps {
 }
 
 const HSK1_LESSONS = [
-  { slug: "01", title: "Sapaan Sopan", hanzi: "问候", pinyin: "Wènhòu" },
-  { slug: "02", title: "Identitas Diri", hanzi: "自我介绍", pinyin: "Zìwǒ Jièshào" },
-  { slug: "03", title: "Angka & Waktu", hanzi: "数字与时间", pinyin: "Shùzì yǔ Shíjiān" },
-  { slug: "04", title: "Keluarga & Relasi", hanzi: "家庭与关系", pinyin: "Jiātíng yǔ Guānxì" },
-  { slug: "05", title: "Aktivitas Harian", hanzi: "日常活动", pinyin: "Rìcháng Huódòng" },
+  { slug: "01", title: "Salam & Sopan Santun", hanzi: "问候与礼貌", pinyin: "Wènhòu yǔ Lǐmào" },
+  { slug: "02", title: "Identitas & Perkenalan", hanzi: "自我介绍", pinyin: "Zìwǒ Jièshào" },
+  { slug: "03", title: "Angka & Kuantitas Mandiri", hanzi: "数字与数量", pinyin: "Shùzì yǔ Shùliàng" },
+  { slug: "04", title: "Tanggal, Hari & Waktu", hanzi: "日期与时间", pinyin: "Rìqī yǔ Shíjiān" },
+  { slug: "05", title: "Keluarga & Kepemilikan", hanzi: "家庭与所有", pinyin: "Jiātíng yǔ Suǒyǒu" },
+  { slug: "06", title: "Rutinitas Harian & Jadwal", hanzi: "日常作息", pinyin: "Rìcháng Zuòxī" },
+  { slug: "07", title: "Makanan & Minuman", hanzi: "饮食与点餐", pinyin: "Yǐnshí yǔ Diǎncān" },
+  { slug: "08", title: "Tempat, Posisi & Arah Dasar", hanzi: "方位与地点", pinyin: "Fāngwèi yǔ Dìdiǎn" },
+  { slug: "09", title: "Belanja & Harga", hanzi: "购物与价格", pinyin: "Gòuwù yǔ Jiàgé" },
+  { slug: "10", title: "Cuaca & Kondisi", hanzi: "天气与状态", pinyin: "Tiānqì yǔ Zhuàngtài" },
+  { slug: "11", title: "Kemampuan & Permintaan Santun", hanzi: "能力与礼貌", pinyin: "Nénglì yǔ Lǐmào" },
+  { slug: "12", title: "Review Integratif & Ujian Akhir", hanzi: "综合评估", pinyin: "Zōnghé Pínggū" },
 ];
 
 export function ProgressClient({ userId, isGuest }: ProgressClientProps) {
   const [metrics, setMetrics] = useState<StudyMetrics>({
     completedLessonsCount: 0,
-    totalLessonsCount: 5,
+    totalLessonsCount: 12,
     completedLessonSlugs: [],
     averageAccuracy: null,
     totalPhrasesSaved: 0,
     reviewedVocabularyCount: 0,
-    totalVocabularyInCurriculum: 85,
+    totalVocabularyInCurriculum: 150,
     unresolvedErrorsCount: 0,
     hsk1MasteryPercent: 0,
     errorCategoryBreakdown: [],
@@ -74,9 +81,9 @@ export function ProgressClient({ userId, isGuest }: ProgressClientProps) {
       value: `${metrics.completedLessonsCount} / ${metrics.totalLessonsCount}`,
       unit: "Unit HSK 1",
       detail:
-        metrics.completedLessonsCount === 5
+        metrics.completedLessonsCount === metrics.totalLessonsCount
           ? "Seluruh silabus HSK 1 telah kamu selesaikan"
-          : `${5 - metrics.completedLessonsCount} unit tersisa untuk dituntaskan`,
+          : `${metrics.totalLessonsCount - metrics.completedLessonsCount} unit tersisa untuk dituntaskan`,
     },
     {
       index: "02",
@@ -155,7 +162,7 @@ export function ProgressClient({ userId, isGuest }: ProgressClientProps) {
                 Tingkat Penguasaan Kurikulum HSK 1
               </h3>
               <p className="text-xs text-muted">
-                Dihitung berdasarkan penyelesaian 5 unit pelajaran dan frasa yang kamu simpan.
+                Dihitung berdasarkan penyelesaian {metrics.totalLessonsCount} unit pelajaran dan frasa yang kamu simpan.
               </p>
             </div>
           </div>
@@ -173,7 +180,7 @@ export function ProgressClient({ userId, isGuest }: ProgressClientProps) {
         </div>
 
         <div className="flex items-center justify-between font-mono text-xs text-muted pt-1">
-          <span>{metrics.completedLessonsCount} DARI 5 UNIT DITUNTASKAN</span>
+          <span>{metrics.completedLessonsCount} DARI {metrics.totalLessonsCount} UNIT DITUNTASKAN</span>
           <span>TARGET LENGKAP: 100%</span>
         </div>
       </section>

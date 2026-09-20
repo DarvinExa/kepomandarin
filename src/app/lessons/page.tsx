@@ -1,10 +1,10 @@
 import Link from "next/link";
-import { getLessonsByLevel } from "@/lib/curriculum";
-import { getAllModules } from "@/lib/curriculum-modules";
+import { getAllModules, getModuleById } from "@/lib/curriculum-modules";
 
 export default async function LessonsPage() {
-  const lessons = await getLessonsByLevel();
   const allModules = getAllModules();
+  const hsk1Module = getModuleById("hsk1");
+  const lessons = hsk1Module?.units ?? [];
   const completedCount = 1;
   const totalCount = lessons.length;
 
@@ -58,8 +58,7 @@ export default async function LessonsPage() {
                 Daftar Pelajaran HSK 1
               </h1>
               <p className="text-xs sm:text-sm text-muted max-w-2xl leading-relaxed pt-1">
-                Lima unit pembelajaran terstruktur yang menghubungkan karakter,
-                pelafalan nada, pola kalimat, dan latihan kontekstual secara bertahap.
+                Dua belas unit pembelajaran kontekstual komprehensif yang menghubungkan sapaan, identitas, angka, waktu, keluarga, rutinitas, kuliner, lokasi, belanja, cuaca, kemampuan, dan evaluasi integratif tingkat HSK 1.
               </p>
             </div>
           </div>
@@ -99,7 +98,7 @@ export default async function LessonsPage() {
               Materi Dasar: Pinyin, 4 Nada & Aturan Menulis Hanzi
             </h2>
             <p className="text-xs sm:text-sm text-muted leading-relaxed">
-              Pelajari 4 nada, bunyi vokal dan konsonan, serta aturan goresan Hanzi (Bǐshùn) melalui 3 unit terstruktur sebelum masuk ke kosakata HSK 1.
+              Pelajari 4 nada, bunyi vokal dan konsonan, aturan ejaan pinyin, serta aturan goresan Hanzi (Bǐshùn) melalui 10 unit terstruktur (F-01 s.d. F-10) sebelum masuk ke kosakata HSK 1.
             </p>
           </div>
 
@@ -107,7 +106,7 @@ export default async function LessonsPage() {
             href="/lessons/fundamentals"
             className="px-6 py-3.5 bg-ink text-canvas hover:bg-black font-mono text-xs uppercase tracking-wider font-bold transition-colors shrink-0 text-center"
           >
-            Buka Fondasi Dasar (3 Unit) →
+            Buka Fondasi Dasar (10 Unit) →
           </Link>
         </div>
       </section>
@@ -118,7 +117,7 @@ export default async function LessonsPage() {
           <span className="font-mono text-xs uppercase tracking-widest text-muted font-bold">
             UNIT PELAJARAN INTI HSK 1
           </span>
-          <span className="font-mono text-xs text-muted">5 PELAJARAN KONTEKSTUAL</span>
+          <span className="font-mono text-xs text-muted">{totalCount} PELAJARAN KONTEKSTUAL</span>
         </div>
         <div className="border border-rule divide-y divide-rule bg-paper">
           {lessons.map((lesson, index) => {
@@ -189,9 +188,9 @@ export default async function LessonsPage() {
 
                   {/* Lesson Meta Badges */}
                   <div className="flex items-center gap-4 text-xs font-mono text-muted pt-1">
-                    <span>{lesson.vocab_count} KOSAKATA</span>
+                    <span>{lesson.vocabCount} KOSAKATA</span>
                     <span>·</span>
-                    <span>± {lesson.duration_minutes} MENIT</span>
+                    <span>± {lesson.durationMinutes} MENIT</span>
                   </div>
                 </div>
 

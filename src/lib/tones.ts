@@ -186,13 +186,13 @@ export interface ToneSandhiRule {
 export const TONE_SANDHI_RULES: ToneSandhiRule[] = [
   {
     id: "sandhi-33",
-    name: "Sandhi Nada 3 (Dua Nada 3 Berturutan)",
+    name: "Perubahan Nada 3 (Dua Nada 3 Berurutan)",
     formula: "Nada 3 + Nada 3 → Nada 2 + Nada 3",
-    triggerCondition: "Terjadi ketika dua suku kata bertanda Nada 3 bertemu secara berurutan.",
+    triggerCondition: "Terjadi ketika dua kata bernada 3 bertemu berurutan.",
     description:
-      "Dalam percakapan mengalir, mengucapkan dua nada yang sama-sama menukik ke dasar vokal (214 + 214) memerlukan energi fisik yang terlalu berat bagi pita suara. Karena itu, suku kata pertama otomatis berubah menjadi Nada 2 (naik 35).",
+      "Saat ada dua kata bernada 3 berjejer, kata pertama otomatis dibaca naik seperti Nada 2 agar lidah tidak lelah dan ucapanmu terdengar luwes.",
     whyItMatters:
-      "Pinyin resmi tetap ditulis dengan Nada 3 asli untuk menjaga etimologi, namun lidah wajib melafalkannya sebagai Nada 2.",
+      "Tulisan pinyin di buku tetap ditulis nada 3, tapi cara bacanya berubah jadi nada 2. Contoh paling populer: 'nǐ hǎo' dibaca 'ní hǎo'.",
     examples: [
       {
         writtenHanzi: "你好",
@@ -226,33 +226,33 @@ export const TONE_SANDHI_RULES: ToneSandhiRule[] = [
   },
   {
     id: "sandhi-half-3",
-    name: "Sandhi Setengah Nada 3 (Half Third Tone)",
-    formula: "Nada 3 + (Nada 1/2/4/Netral) → Rendah Datar (21)",
+    name: "Nada 3 Santai / Setengah (Half-3rd Tone)",
+    formula: "Nada 3 + (Nada 1/2/4/Netral) → Rendah Santai",
     triggerCondition:
-      "Terjadi ketika suku kata Nada 3 diikuti oleh suku kata bertanda Nada 1, Nada 2, Nada 4, atau Nada Netral.",
+      "Terjadi ketika kata bernada 3 diikuti nada 1, 2, 4, atau nada netral.",
     description:
-      "Ketika Nada 3 mendahului nada selain Nada 3, pembelajar TIDAK meliukkan suaranya naik ke skala 4. Pembicara hanya mengucapkan paruh pertama yang rendah (turun dari skala 2 ke 1) lalu langsung menyambung ke kata berikutnya.",
+      "Kamu tidak perlu meliukkan suara naik kembali ke atas. Cukup turunkan suara ke nada rendah lalu langsung sambung ke kata berikutnya.",
     whyItMatters:
-      "Inilah rahasia mengapa penutur asli terdengar fasih dan tidak kaku saat berbicara cepat.",
+      "Inilah rahasia mengapa penutur asli terdengar fasih dan santai saat berbicara cepat.",
     examples: [
       {
         writtenHanzi: "北京",
         writtenPinyin: "Běijīng (3 + 1)",
-        spokenPinyin: "Běi (hanya 21 rendah) + jīng",
+        spokenPinyin: "Běi (rendah santai) + jīng",
         translation: "Kota Beijing",
         audioText: "北京",
       },
       {
         writtenHanzi: "很忙",
         writtenPinyin: "hěn máng (3 + 2)",
-        spokenPinyin: "hěn (rendah 21) + máng",
+        spokenPinyin: "hěn (rendah santai) + máng",
         translation: "sangat sibuk",
         audioText: "很忙",
       },
       {
         writtenHanzi: "很大",
         writtenPinyin: "hěn dà (3 + 4)",
-        spokenPinyin: "hěn (rendah 21) + dà",
+        spokenPinyin: "hěn (rendah santai) + dà",
         translation: "sangat besar",
         audioText: "很大",
       },
@@ -260,13 +260,13 @@ export const TONE_SANDHI_RULES: ToneSandhiRule[] = [
   },
   {
     id: "sandhi-bu",
-    name: "Sandhi Kata Negasi '不' (bù)",
+    name: "Perubahan Nada Kata 'Tidak' (不 - bù)",
     formula: "不 (bù) + Nada 4 → bú (Nada 2) + Nada 4",
-    triggerCondition: "Terjadi khusus pada kata '不' ketika bertemu suku kata bertanda Nada 4.",
+    triggerCondition: "Terjadi khusus pada kata '不' ketika bertemu kata lain yang bernada 4.",
     description:
-      "Secara mandiri, kata '不' bertanda Nada 4 (bù). Namun bila diikuti oleh kata lain yang juga bertanda Nada 4, '不' berubah menjadi Nada 2 (bú) agar dua hentakan tajam tidak saling berbenturan.",
+      "Kata '不' (bù) aslinya bernada 4 (turun tajam). Tapi kalau diikuti kata lain yang juga bernada 4, kata '不' otomatis dibaca naik jadi Nada 2 ('bú') agar pengucapan tidak terasa berat.",
     whyItMatters:
-      "Bila diikuti Nada 1, 2, atau 3, kata '不' tetap diucapkan dengan nada aslinya (Nada 4: bù hē, bù lái, bù hǎo).",
+      "Kalau diikuti Nada 1, 2, atau 3, kata '不' tetap dibaca nada 4 biasa (contoh: bù hē, bù lái, bù hǎo).",
     examples: [
       {
         writtenHanzi: "不是",
@@ -293,21 +293,21 @@ export const TONE_SANDHI_RULES: ToneSandhiRule[] = [
         writtenHanzi: "不好 (Kontras)",
         writtenPinyin: "bù hǎo (4 + 3)",
         spokenPinyin: "bù hǎo (tetap Nada 4)",
-        translation: "tidak bagus (tidak ada perubahan sandhi)",
+        translation: "tidak bagus (tidak berubah nada)",
         audioText: "不好",
       },
     ],
   },
   {
     id: "sandhi-yi",
-    name: "Sandhi Kata Bilangan '一' (yī)",
+    name: "Perubahan Nada Kata 'Satu' (一 - yī)",
     formula: "一 + Nada 4 → yí (Nada 2) | 一 + Nada 1/2/3 → yì (Nada 4)",
     triggerCondition:
-      "Terjadi khusus pada kata '一' saat digabungkan dengan kata penggolong atau benda.",
+      "Terjadi khusus pada kata '一' saat digabungkan dengan kata benda atau kata penggolong.",
     description:
-      "Aslinya '一' bertanda Nada 1 (yī) saat berhitung mandiri (yī, èr, sān). Ketika melekat pada kata Nada 4, ia berubah menjadi Nada 2 (yí). Ketika melekat pada kata Nada 1, 2, atau 3, ia berubah menjadi Nada 4 (yì).",
+      "Saat berhitung biasa (1, 2, 3), kata '一' dibaca datar: yī (Nada 1). Tapi saat dipakai menghitung benda: berubah jadi Nada 2 ('yí') sebelum kata nada 4, dan berubah jadi Nada 4 ('yì') sebelum kata nada 1, 2, atau 3.",
     whyItMatters:
-      "Penguasaan sandhi '一' membedakan pembelajar pemula dengan penutur yang menguasai ritme alami Mandarin.",
+      "Aturan ini membuat ritme bicaramu terdengar luwes dan alami seperti penutur asli saat menyebut jumlah.",
     examples: [
       {
         writtenHanzi: "一个",

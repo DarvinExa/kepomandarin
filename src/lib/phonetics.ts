@@ -87,9 +87,9 @@ export const INITIALS_DRILLS: MinimalPairDrill[] = [
   {
     id: "drill-init-01",
     type: "initials",
-    title: "Retrofleks 'zh' vs Alveolo-palatal 'j'",
+    title: "Lidah Melengkung 'zh' vs Lidah Mendatar 'j'",
     phoneticFocus: "zh vs j",
-    instruction: "Dengarkan pengucapan kata berikut, lalu tentukan inisial dan hanzi yang tepat:",
+    instruction: "Dengarkan pengucapan kata berikut, lalu tentukan konsonan dan hanzi yang tepat:",
     audioPrompt: "知道",
     targetWord: {
       hanzi: "知道",
@@ -115,17 +115,17 @@ export const INITIALS_DRILLS: MinimalPairDrill[] = [
       },
     ],
     articulatoryTip: {
-      title: "Mekanisme Artikulasi: zh vs j",
+      title: "Posisi Lidah: zh vs j",
       mechanism:
-        "Inisial 'zh' adalah konsonan retrofleks: ujung lidah ditekuk ke belakang menghadap langit-langit keras. Sementara 'j' adalah alveolo-palatal: daun lidah mendatar menempel di langit-langit depan dekat gigi seri.",
+        "Huruf 'zh' diucapkan dengan ujung lidah sedikit melengkung ke atas menghadap langit-langit mulut. Sedangkan 'j' diucapkan dengan lidah mendatar menempel di langit-langit depan dekat gigi depan.",
       indonesianComparison:
-        "Bunyi 'zh' mirip perpaduan 'c' dan 'j' dengan lidah menggulung ke belakang, sedangkan 'j' mirip bunyi 'c' tipis dalam kata 'cipta'.",
+        "Bunyi 'zh' mirip perpaduan 'c' dan 'j' dengan lidah sedikit melengkung ke atas, sedangkan 'j' mirip bunyi 'c' tipis dan halus.",
     },
   },
   {
     id: "drill-init-02",
     type: "initials",
-    title: "Retrofleks 'sh' vs Alveolo-palatal 'x'",
+    title: "Lidah Melengkung 'sh' vs Desis Halus 'x'",
     phoneticFocus: "sh vs x",
     instruction: "Perhatikan gesekan desis lidah pada kata yang terdengar:",
     audioPrompt: "十",
@@ -163,7 +163,7 @@ export const INITIALS_DRILLS: MinimalPairDrill[] = [
   {
     id: "drill-init-03",
     type: "initials",
-    title: "Aspirasi Bilabial: 'b' (Tanpa Hembusan) vs 'p' (Dengan Hembusan)",
+    title: "Hembusan Angin: 'b' (Tanpa Hembusan) vs 'p' (Ada Hembusan)",
     phoneticFocus: "b vs p",
     instruction: "Dengarkan tingkat hembusan angin dari kedua bibir pada audio:",
     audioPrompt: "怕",
@@ -191,19 +191,19 @@ export const INITIALS_DRILLS: MinimalPairDrill[] = [
       },
     ],
     articulatoryTip: {
-      title: "Mekanisme Aspirasi: b vs p",
+      title: "Hembusan Angin: b vs p",
       mechanism:
-        "Dalam fonetik Mandarin, 'b' dan 'p' keduanya adalah konsonan tak bersuara (*voiceless*). Pembedanya adalah aspirasi: 'b' diucapkan tanpa hembusan udara lepas (*unaspirated*), sedangkan 'p' diucapkan dengan letupan hembusan angin kuat dari bibir (*aspirated*).",
+        "Huruf 'b' dan 'p' sama-sama dibunyikan dengan dua bibir. Bedanya: huruf 'b' diucapkan biasa tanpa semburan udara, sedangkan 'p' diucapkan dengan hembusan angin yang kuat dari bibir.",
       indonesianComparison:
-        "Taro selembar kertas di depan bibir: saat melafalkan 'p', kertas harus terdorong tertiup; saat melafalkan 'b', kertas tidak boleh bergerak.",
+        "Taruh selembar kertas atau telapak tangan di depan mulut: saat melafalkan 'p', ada hembusan angin terasa; saat melafalkan 'b', tidak ada hembusan angin.",
     },
   },
   {
     id: "drill-init-04",
     type: "initials",
-    title: "Aspirasi Alveolar: 'd' vs 't'",
+    title: "Hembusan Angin: 'd' (Tanpa Hembusan) vs 't' (Ada Hembusan)",
     phoneticFocus: "d vs t",
-    instruction: "Dengarkan perbedaan letupan nafas pada ujung lidah menyentuh gusi atas:",
+    instruction: "Dengarkan perbedaan hembusan angin pada ujung lidah di gusi atas:",
     audioPrompt: "大",
     targetWord: {
       hanzi: "大",
@@ -229,9 +229,9 @@ export const INITIALS_DRILLS: MinimalPairDrill[] = [
       },
     ],
     articulatoryTip: {
-      title: "Mekanisme Aspirasi: d vs t",
+      title: "Hembusan Angin: d vs t",
       mechanism:
-        "Konsonan 'd' tidak mengeluarkan semburan nafas saat lidah lepas dari gusi atas. Sebaliknya, 't' melepaskan hembusan udara yang terasa kuat di telapak tangan.",
+        "Huruf 'd' tidak mengeluarkan semburan nafas. Sebaliknya, 't' melepaskan hembusan udara yang terasa kuat di depan bibir.",
       indonesianComparison:
         "'d' Mandarin bersuara mirip huruf 't' lembut bahasa Indonesia tanpa letupan nafas tajam.",
     },
@@ -239,9 +239,9 @@ export const INITIALS_DRILLS: MinimalPairDrill[] = [
   {
     id: "drill-init-05",
     type: "initials",
-    title: "Dental Sibilan 'z' vs Retrofleks 'zh'",
+    title: "Lidah Datar 'z' vs Lidah Melengkung 'zh'",
     phoneticFocus: "z vs zh",
-    instruction: "Perhatikan apakah lidah datar di belakang gigi seri atau tertekuk ke belakang:",
+    instruction: "Perhatikan apakah lidah datar di belakang gigi depan atau terangkat ke atas:",
     audioPrompt: "在",
     targetWord: {
       hanzi: "在",
@@ -267,11 +267,11 @@ export const INITIALS_DRILLS: MinimalPairDrill[] = [
       },
     ],
     articulatoryTip: {
-      title: "Mekanisme Posisi Lidah: z vs zh",
+      title: "Posisi Lidah: z vs zh",
       mechanism:
-        "'z' diartikulasikan dengan ujung lidah lurus menyentuh bagian belakang gigi seri atas (bunyi 'ts' datar). 'zh' mengharuskan ujung lidah ditarik mundur dan dinaikkan menyentuh langit-langit keras.",
+        "Huruf 'z' diucapkan dengan ujung lidah lurus menyentuh bagian belakang gigi depan atas. Sedangkan 'zh' diucapkan dengan ujung lidah sedikit melengkung ke atas mendekati langit-langit mulut.",
       indonesianComparison:
-        "Lafalkan 'z' seperti 'ds' pada kata 'tsunami', sedangkan 'zh' terasa lebih tebal dan teredam di rongga mulut bagian atas.",
+        "Lafalkan 'z' mirip 'ts' datar pada kata 'tsunami', sedangkan 'zh' terasa lebih tebal seperti perpaduan 'c' dan 'j'.",
     },
   },
 ];
@@ -527,9 +527,9 @@ export const DICTATION_DRILLS: DictationDrill[] = [
       },
     ],
     articulatoryTip: {
-      title: "Aturan Sandhi Nada: 我想 (wǒ xiǎng)",
+      title: "Perubahan Nada 3: 我想 (wǒ xiǎng)",
       mechanism:
-        "Kedua kata '我' (wǒ) dan '想' (xiǎng) aslinya bertanda Nada 3. Sesuai aturan Sandhi Nada ke-3 Mandarin, kata pertama 'wǒ' otomatis berubah diucapkan menjadi Nada 2 (wó xiǎng).",
+        "Kedua kata '我' (wǒ) dan '想' (xiǎng) aslinya bernada 3. Sesuai aturan perubahan nada 3 Mandarin, kata pertama 'wǒ' otomatis dibaca naik menjadi Nada 2 (wó xiǎng).",
       indonesianComparison:
         "Kamu mendengar wó xiǎng meluncur naik-turun yang luwes, bukan dua nada patah terputus-putus.",
     },

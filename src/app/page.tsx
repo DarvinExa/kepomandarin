@@ -1,12 +1,19 @@
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/server";
 import { RecentErrorsDashboard } from "@/components/dashboard/RecentErrorsDashboard";
+import { getModuleById, getModuleUnit } from "@/lib/curriculum-modules";
 
 export default async function Home() {
   const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
+
+  const hsk1Module = getModuleById("hsk1");
+  const hsk1Units = hsk1Module?.units ?? [];
+  const totalLessons = hsk1Units.length || 12;
+  const totalVocabInCurriculum =
+    hsk1Units.reduce((acc, u) => acc + (u.vocabCount || 0), 0) || 150;
 
   let learnerName = "Pembelajar";
   let completedLessonsCount = 0;
@@ -45,11 +52,10 @@ export default async function Home() {
         );
         completedLessonsCount = completedSlugs.size;
 
-        // Cari unit pertama yang belum selesai (01 s.d. 05)
-        for (let i = 1; i <= 5; i++) {
-          const s = String(i).padStart(2, "0");
-          if (!completedSlugs.has(s)) {
-            nextLessonSlug = s;
+        // Cari unit pertama yang belum selesai (01 s.d. 12)
+        for (const unit of hsk1Units) {
+          if (!completedSlugs.has(unit.slug)) {
+            nextLessonSlug = unit.slug;
             break;
           }
         }
@@ -68,57 +74,25 @@ export default async function Home() {
   }
 
   const isGuest = !user;
-  const totalLessons = 5;
-  const totalVocabInCurriculum = 85;
-  const progressPercent = Math.round((completedLessonsCount / totalLessons) * 100);
+  const progressPercent = Math.min(
+    100,
+    Math.round((completedLessonsCount / totalLessons) * 100)
+  );
 
-  const LESSON_INFO: Record<
-    string,
-    { title: string; hanzi: string; pinyin: string; translation: string; objective: string }
-  > = {
-    "01": {
-      title: "Sapaan Sopan",
-      hanzi: "问候",
-      pinyin: "Wènhòu",
-      translation: "Sapaan Sehari-hari & Penutupan Percakapan",
-      objective:
-        "Meletakkan fondasi etika komunikasi berbahasa Mandarin, aturan sandhi nada ke-3, serta ucapan perpisahan santun.",
-    },
-    "02": {
-      title: "Identitas Diri",
-      hanzi: "自我介绍",
-      pinyin: "Zìwǒ Jièshào",
-      translation: "Perkenalan Nama & Asal Kewarganegaraan",
-      objective:
-        "Mempelajari kata ganti orang, kata kerja kopula 是 (adalah), dan cara menanyakan nama orang lain secara natural.",
-    },
-    "03": {
-      title: "Angka & Waktu",
-      hanzi: "数字与时间",
-      pinyin: "Shùzì yǔ Shíjiān",
-      translation: "Penghitungan Dasar, Jam, Hari & Tanggal",
-      objective:
-        "Menyatakan hitungan angka, jam, menit, serta urutan waktu dalam kalender Mandarin dari unit besar ke kecil.",
-    },
-    "04": {
-      title: "Keluarga & Relasi",
-      hanzi: "家庭与关系",
-      pinyin: "Jiātíng yǔ Guānxì",
-      translation: "Anggota Keluarga & Hubungan Sosial",
-      objective:
-        "Penyebutan anggota keluarga, kepemilikan partikel 的, dan penggunaan kata bantu bilangan dasar.",
-    },
-    "05": {
-      title: "Aktivitas Harian",
-      hanzi: "日常活动",
-      pinyin: "Rìcháng Huódòng",
-      translation: "Kegiatan Rutin, Lokasi & Kebiasaan",
-      objective:
-        "Menggabungkan seluruh fondasi: struktur keterangan tempat sebelum kata kerja dan pertanyaan partikel 吗.",
-    },
+  const currentUnitDetail =
+    getModuleUnit("hsk1", nextLessonSlug) ||
+    getModuleUnit("hsk1", "01");
+
+  const currentLesson = {
+    title: currentUnitDetail?.title ?? "Sapaan Sopan",
+    hanzi: currentUnitDetail?.hanzi ?? "问候",
+    pinyin: currentUnitDetail?.pinyin ?? "Wènhòu",
+    translation:
+      currentUnitDetail?.translation ?? "Sapaan Sehari-hari & Penutupan Percakapan",
+    objective:
+      currentUnitDetail?.objectives ??
+      "Meletakkan fondasi etika komunikasi berbahasa Mandarin, aturan sandhi nada ke-3, serta ucapan perpisahan santun.",
   };
-
-  const currentLesson = LESSON_INFO[nextLessonSlug] ?? LESSON_INFO["01"];
 
   return (
     <div className="p-4 sm:p-8 max-w-6xl mx-auto space-y-8 sm:space-y-12">
