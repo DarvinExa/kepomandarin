@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/client";
+import { errorEntryInputSchema } from "@/lib/validations/schemas";
 
 export interface ErrorEntry {
   id: string;
@@ -49,7 +50,7 @@ function saveToLocalStorage(entries: ErrorEntry[]) {
 }
 
 /**
- * Mengambil daftar catatan kesalahan pengguna.
+ * Mengambil daftar catatan kesalahan pengguna (dengan batas aman maksimal 50 baris).
  * Jika login, mengambil dari tabel `error_entries` Supabase.
  * Jika mode tamu, mengambil dari localStorage.
  */
@@ -60,7 +61,8 @@ export async function fetchErrorEntries(userId?: string | null): Promise<ErrorEn
       const { data, error } = await supabase
         .from("error_entries")
         .select("*")
-        .order("created_at", { ascending: false });
+        .order("created_at", { ascending: false })
+        .limit(50);
 
       if (!error && data) {
         return data as ErrorEntry[];
@@ -75,23 +77,35 @@ export async function fetchErrorEntries(userId?: string | null): Promise<ErrorEn
 }
 
 /**
- * Menyimpan catatan kesalahan baru (dari latihan atau input mandiri).
+ * Menyimpan catatan kesalahan baru dengan validasi skema input.
  */
 export async function addErrorEntry(
   item: Omit<ErrorEntry, "id" | "created_at" | "is_resolved"> & { is_resolved?: boolean },
   userId?: string | null
 ): Promise<ErrorEntry> {
+  // Validasi data masukan menggunakan Zod
+  const validated = errorEntryInputSchema.parse({
+    exercise_id: item.exercise_id ?? null,
+    hanzi: item.hanzi,
+    pinyin: item.pinyin,
+    translation: item.translation,
+    category: item.category,
+    error_context: item.error_context,
+    notes: item.notes,
+    is_resolved: item.is_resolved ?? false,
+  });
+
   const newEntry: ErrorEntry = {
     id: `local_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`,
     user_id: userId ?? undefined,
-    exercise_id: item.exercise_id ?? null,
-    hanzi: item.hanzi.trim(),
-    pinyin: item.pinyin.trim(),
-    translation: item.translation.trim(),
-    category: item.category || "Umum",
-    error_context: item.error_context?.trim() || null,
-    notes: item.notes?.trim() || null,
-    is_resolved: item.is_resolved ?? false,
+    exercise_id: validated.exercise_id ?? null,
+    hanzi: validated.hanzi,
+    pinyin: validated.pinyin,
+    translation: validated.translation,
+    category: validated.category,
+    error_context: validated.error_context ?? null,
+    notes: validated.notes ?? null,
+    is_resolved: validated.is_resolved,
     created_at: new Date().toISOString(),
   };
 
@@ -102,7 +116,7 @@ export async function addErrorEntry(
         .from("error_entries")
         .insert({
           user_id: userId,
-          exercise_id: item.exercise_id ?? null,
+          exercise_id: newEntry.exercise_id,
           hanzi: newEntry.hanzi,
           pinyin: newEntry.pinyin,
           translation: newEntry.translation,

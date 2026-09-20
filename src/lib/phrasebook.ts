@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/client";
+import { savedPhraseInputSchema } from "@/lib/validations/schemas";
 
 export interface SavedPhrase {
   id: string;
@@ -19,11 +20,11 @@ export const PHRASE_CATEGORIES = [
   "Semua",
   "Umum",
   "Sapaan",
-  "Identitas",
-  "Angka & Waktu",
-  "Keluarga",
-  "Aktivitas",
-  "Pekerjaan",
+  "Restoran",
+  "Arah & Lokasi",
+  "Belanja",
+  "Perkenalan",
+  "Tata Bahasa",
 ] as const;
 
 function getFromLocalStorage(): SavedPhrase[] {
@@ -32,7 +33,7 @@ function getFromLocalStorage(): SavedPhrase[] {
     const raw = localStorage.getItem(LOCAL_STORAGE_KEY);
     return raw ? (JSON.parse(raw) as SavedPhrase[]) : [];
   } catch (err) {
-    console.error("Gagal membaca buku frasa dari localStorage:", err);
+    console.error("Gagal membaca phrasebook dari localStorage:", err);
     return [];
   }
 }
@@ -42,12 +43,12 @@ function saveToLocalStorage(phrases: SavedPhrase[]) {
   try {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(phrases));
   } catch (err) {
-    console.error("Gagal menyimpan buku frasa ke localStorage:", err);
+    console.error("Gagal menyimpan phrasebook ke localStorage:", err);
   }
 }
 
 /**
- * Mengambil daftar frasa tersimpan pengguna.
+ * Mengambil daftar frasa tersimpan pengguna (dengan batas aman maksimal 50 baris).
  */
 export async function fetchSavedPhrases(userId?: string | null): Promise<SavedPhrase[]> {
   if (userId) {
@@ -56,7 +57,8 @@ export async function fetchSavedPhrases(userId?: string | null): Promise<SavedPh
       const { data, error } = await supabase
         .from("saved_phrases")
         .select("*")
-        .order("created_at", { ascending: false });
+        .order("created_at", { ascending: false })
+        .limit(50);
 
       if (!error && data) {
         return data as SavedPhrase[];
@@ -71,21 +73,31 @@ export async function fetchSavedPhrases(userId?: string | null): Promise<SavedPh
 }
 
 /**
- * Menyimpan frasa ke buku frasa pribadi.
+ * Menyimpan frasa ke buku frasa pribadi dengan validasi skema input.
  */
 export async function addSavedPhrase(
   item: Omit<SavedPhrase, "id" | "created_at">,
   userId?: string | null
 ): Promise<SavedPhrase> {
+  // Validasi data masukan menggunakan Zod
+  const validated = savedPhraseInputSchema.parse({
+    vocabulary_id: item.vocabulary_id ?? null,
+    hanzi: item.hanzi,
+    pinyin: item.pinyin,
+    translation: item.translation,
+    category: item.category,
+    notes: item.notes,
+  });
+
   const newPhrase: SavedPhrase = {
     id: `local_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`,
     user_id: userId ?? undefined,
-    vocabulary_id: item.vocabulary_id ?? null,
-    hanzi: item.hanzi.trim(),
-    pinyin: item.pinyin.trim(),
-    translation: item.translation.trim(),
-    category: item.category || "Umum",
-    notes: item.notes?.trim() || null,
+    vocabulary_id: validated.vocabulary_id ?? null,
+    hanzi: validated.hanzi,
+    pinyin: validated.pinyin,
+    translation: validated.translation,
+    category: validated.category,
+    notes: validated.notes ?? null,
     created_at: new Date().toISOString(),
   };
 
@@ -96,7 +108,7 @@ export async function addSavedPhrase(
         .from("saved_phrases")
         .insert({
           user_id: userId,
-          vocabulary_id: item.vocabulary_id ?? null,
+          vocabulary_id: newPhrase.vocabulary_id,
           hanzi: newPhrase.hanzi,
           pinyin: newPhrase.pinyin,
           translation: newPhrase.translation,

@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/client";
+import { practiceAttemptInputSchema } from "@/lib/validations/schemas";
 import { fetchSavedPhrases } from "@/lib/phrasebook";
 import { fetchErrorEntries } from "@/lib/journal";
 
@@ -158,6 +159,14 @@ export async function recordPracticeAttempt(
   const slug = data.lessonSlug || "all";
   const completedAt = new Date().toISOString();
 
+  // Validasi data latihan menggunakan Zod
+  const validated = practiceAttemptInputSchema.parse({
+    lessonSlug: slug,
+    score: data.score,
+    total: data.total,
+    accuracy: data.accuracy,
+  });
+
   // 1. Perbarui local progress map
   const currentMap = getLocalProgress();
   const existing = currentMap[slug] || {
@@ -167,8 +176,8 @@ export async function recordPracticeAttempt(
 
   currentMap[slug] = {
     ...existing,
-    practiceScore: data.score,
-    practiceAccuracy: data.accuracy,
+    practiceScore: validated.score,
+    practiceAccuracy: validated.accuracy,
     completedAt,
   };
   saveLocalProgress(currentMap);

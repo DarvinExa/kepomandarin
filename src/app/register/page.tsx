@@ -29,8 +29,13 @@ export default function RegisterPage() {
       return;
     }
 
-    if (password.length < 6) {
-      setErrorMessage("Kata sandi minimal harus terdiri dari 6 karakter.");
+    if (password.length < 8) {
+      setErrorMessage("Kata sandi minimal harus terdiri dari 8 karakter.");
+      return;
+    }
+
+    if (!/[A-Za-z]/.test(password) || !/[0-9]/.test(password)) {
+      setErrorMessage("Kata sandi harus memuat kombinasi huruf dan angka.");
       return;
     }
 
@@ -205,7 +210,7 @@ export default function RegisterPage() {
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
-                placeholder="Minimal 6 karakter"
+                placeholder="Minimal 8 karakter kombinasi"
                 disabled={isLoading}
                 required
                 className="w-full bg-canvas border border-rule hover:border-ink focus:border-ink px-4 py-3 font-mono text-sm text-ink outline-none transition-colors placeholder:text-muted/60 disabled:opacity-60"

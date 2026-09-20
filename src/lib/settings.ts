@@ -1,4 +1,5 @@
 import { createClient } from "@/lib/supabase/client";
+import { userSettingsInputSchema } from "@/lib/validations/schemas";
 
 export interface UserSettings {
   daily_goal_vocab: number;
@@ -72,7 +73,10 @@ export async function updateUserSettings(
   userId?: string | null
 ): Promise<UserSettings> {
   const current = getLocalSettings();
-  const updated: UserSettings = { ...current, ...newValues };
+  const candidate = { ...current, ...newValues };
+  
+  // Validasi data masukan menggunakan Zod
+  const updated: UserSettings = userSettingsInputSchema.parse(candidate);
   saveLocalSettings(updated);
 
   if (userId) {
