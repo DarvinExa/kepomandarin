@@ -338,16 +338,16 @@ export function PublicLandingPage() {
       </section>
 
       {/* 5. Banner Penutup & Ajakan Bertindak (Constructivist CTA Block) */}
-      <section className="border-2 border-ink bg-ink text-canvas p-8 sm:p-12 space-y-6">
+      <section className="border-2 border-ink bg-ink text-canvas dark:bg-paper dark:border-rule dark:text-ink p-8 sm:p-12 space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6">
           <div className="space-y-2 max-w-2xl">
-            <span className="font-mono text-xs uppercase tracking-widest text-accent-yellow font-bold block">
+            <span className="font-mono text-xs uppercase tracking-widest text-accent-yellow font-bold block dark:text-muted">
               MULAI SEKARANG JUGA
             </span>
-            <h2 className="text-2xl sm:text-4xl font-black uppercase tracking-tight text-canvas">
+            <h2 className="text-2xl sm:text-4xl font-black uppercase tracking-tight text-canvas dark:text-ink">
               Siap Mulai Belajar Bahasa Mandarin Bersama KepoMandarin
             </h2>
-            <p className="text-xs sm:text-sm text-canvas/80 leading-relaxed">
+            <p className="text-xs sm:text-sm text-canvas/80 dark:text-muted leading-relaxed">
               Coba langsung materi dan latihan soal tanpa harus mendaftar, atau buat akun gratis untuk menyimpan progres belajarmu secara permanen.
             </p>
           </div>
@@ -355,13 +355,13 @@ export function PublicLandingPage() {
           <div className="shrink-0 flex flex-col sm:flex-row gap-3">
             <Link
               href="/?view=dashboard"
-              className="bg-canvas text-ink hover:bg-white font-mono text-xs uppercase tracking-wider px-6 py-4 font-bold text-center transition-colors block"
+              className="bg-canvas text-ink hover:bg-white dark:bg-[#2A2A26] dark:text-[#F0EDE5] dark:border dark:border-rule dark:hover:bg-[#34342F] font-mono text-xs uppercase tracking-wider px-6 py-4 font-bold text-center transition-colors block"
             >
               Masuk ke Dasbor Belajar →
             </Link>
             <Link
               href="/register"
-              className="border border-canvas/40 hover:border-canvas text-canvas font-mono text-xs uppercase tracking-wider px-6 py-4 font-semibold text-center transition-colors block"
+              className="border border-canvas/40 hover:border-canvas text-canvas dark:border-rule dark:text-ink dark:hover:border-strong-border dark:hover:bg-transparent font-mono text-xs uppercase tracking-wider px-6 py-4 font-semibold text-center transition-colors block"
             >
               Daftar Akun Baru
             </Link>

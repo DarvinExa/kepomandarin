@@ -6,6 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import type { User } from "@supabase/supabase-js";
 import { NAV_ITEMS } from "./nav-config";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 
 export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -108,8 +109,9 @@ export function MobileNav() {
           />
         </Link>
 
-        {/* User initials (if logged in) + Menu Toggle Button */}
+        {/* Theme Toggle + User initials (if logged in) + Menu Toggle Button */}
         <div className="flex items-center gap-2">
+          <ThemeToggle variant="compact" />
           {user && (
             <div className="w-7 h-7 bg-ink text-canvas font-mono text-[11px] font-bold flex items-center justify-center shrink-0 border border-ink">
               {(fullName || user.email || "P")[0].toUpperCase()}
@@ -229,6 +231,11 @@ export function MobileNav() {
                 )}
               </div>
             )}
+
+            <div className="flex items-center justify-between text-[11px] font-mono uppercase text-muted">
+              <span>Tema Tampilan</span>
+              <ThemeToggle variant="segmented" showLabel={false} />
+            </div>
 
             <div className="flex items-center justify-between text-[11px] font-mono uppercase text-muted">
               <span>Kurikulum Aktif</span>

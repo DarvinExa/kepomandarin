@@ -1,16 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-canvas: #F4F1E8;
-  --color-ink: #171717;
-  --color-muted: #69645D;
-  --color-rule: #B8B2A7;
-  --color-accent-red: #C83B32;
-  --color-accent-blue: #1E4D8F;
-  --color-accent-yellow: #E0B52F;
-  --color-paper: #FFFDF7;
-  --color-status-success: #386A4A;
-  --color-status-error: #A8322B;
+  --color-canvas: var(--color-canvas);
+  --color-paper: var(--color-paper);
+  --color-ink: var(--color-ink);
+  --color-muted: var(--color-muted);
+  --color-rule: var(--color-rule);
+  --color-strong-border: var(--color-strong-border);
+  --color-control: var(--color-control);
+  --color-control-hover: var(--color-control-hover);
+  --color-control-text: var(--color-control-text);
+  --color-accent-red: var(--color-accent-red);
+  --color-accent-blue: var(--color-accent-blue);
+  --color-accent-yellow: var(--color-accent-yellow);
+  --color-status-success: var(--color-status-success);
+  --color-status-error: var(--color-status-error);
 
   --font-sans: var(--font-geist-sans), Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   --font-mono: var(--font-geist-mono), "IBM Plex Mono", Menlo, Monaco, Consolas, monospace;
@@ -18,15 +22,57 @@
 }
 
 :root {
-  --canvas: #F4F1E8;
-  --ink: #171717;
-  --muted: #69645D;
-  --rule: #B8B2A7;
+  --color-canvas: #F2EFE7;
+  --color-paper: #F8F6F0;
+  --color-ink: #181816;
+  --color-muted: #5F5B54;
+  --color-rule: #AAA398;
+  --color-strong-border: #6E6961;
+  --color-control: #181816;
+  --color-control-hover: #000000;
+  --color-control-text: #F8F6F0;
+  --color-accent-red: #C83B32;
+  --color-accent-blue: #1E4D8F;
+  --color-accent-yellow: #E0B52F;
+  --color-status-success: #386A4A;
+  --color-status-error: #A8322B;
+
+  --canvas: var(--color-canvas);
+  --paper: var(--color-paper);
+  --ink: var(--color-ink);
+  --muted: var(--color-muted);
+  --rule: var(--color-rule);
+  color-scheme: light;
+}
+
+.dark,
+[data-theme="dark"] {
+  --color-canvas: #11110F;
+  --color-paper: #181816;
+  --color-ink: #EDEAE2;
+  --color-muted: #B6B1A7;
+  --color-rule: #3E3D38;
+  --color-strong-border: #646159;
+  --color-control: #2A2A26;
+  --color-control-hover: #34342F;
+  --color-control-text: #F0EDE5;
+  --color-accent-red: #8C433E;
+  --color-accent-blue: #3E5A80;
+  --color-accent-yellow: #8C7B42;
+  --color-status-success: #3E7350;
+  --color-status-error: #B8433C;
+
+  --canvas: var(--color-canvas);
+  --paper: var(--color-paper);
+  --ink: var(--color-ink);
+  --muted: var(--color-muted);
+  --rule: var(--color-rule);
+  color-scheme: dark;
 }
 
 html {
-  background-color: var(--canvas);
-  color: var(--ink);
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
   font-family: var(--font-sans);
 }
 
@@ -34,8 +80,8 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background-color: var(--canvas);
-  color: var(--ink);
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -47,6 +93,37 @@ body {
 
 /* Selection style in line with constructivist theme */
 ::selection {
-  background-color: #171717;
-  color: #F4F1E8;
+  background-color: var(--color-ink);
+  color: var(--color-canvas);
+}
+
+/* Dark Mode Button & Element Refinements per docs/theme-dark-light.md */
+.dark button.bg-ink,
+.dark a.bg-ink {
+  background-color: var(--color-control);
+  color: var(--color-control-text);
+  border: 1px solid var(--color-rule);
+}
+.dark button.bg-ink:hover,
+.dark a.bg-ink:hover {
+  background-color: var(--color-control-hover);
+  color: var(--color-control-text);
+}
+
+.dark .hover\:bg-black:hover {
+  background-color: var(--color-control-hover) !important;
+  color: var(--color-control-text) !important;
+}
+
+.dark .border-ink {
+  border-color: var(--color-strong-border);
+}
+.dark .border-2.border-ink {
+  border-color: var(--color-rule);
+}
+
+.dark nav a.bg-ink {
+  background-color: #20201D;
+  color: var(--color-ink);
+  border-color: var(--color-rule);
 }

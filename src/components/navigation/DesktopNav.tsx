@@ -6,6 +6,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import type { User } from "@supabase/supabase-js";
 import { NAV_ITEMS } from "./nav-config";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 
 export function DesktopNav() {
   const pathname = usePathname();
@@ -289,6 +290,14 @@ export function DesktopNav() {
             </div>
           )}
 
+          {/* Theme Toggle in Collapsed Mode */}
+          <div className="border-t border-rule pt-2">
+            <ThemeToggle
+              variant="vertical"
+              className="w-full"
+            />
+          </div>
+
           <div className="grid grid-cols-3 gap-0.5 pt-0.5" aria-hidden="true">
             <div className="h-1 bg-accent-red" />
             <div className="h-1 bg-accent-blue" />
@@ -348,8 +357,9 @@ export function DesktopNav() {
             </div>
           )}
 
-          {/* Level Status & Curriculum */}
-          <div className="space-y-1 border-t border-rule pt-3">
+          {/* Level Status, Theme & Curriculum */}
+          <div className="space-y-2 border-t border-rule pt-3">
+            <ThemeToggle variant="segmented" className="w-full justify-between" />
             <div className="flex items-center justify-between text-[10px] font-mono uppercase text-muted">
               <span>Kurikulum</span>
               <span className="text-status-success font-bold">HSK 1</span>

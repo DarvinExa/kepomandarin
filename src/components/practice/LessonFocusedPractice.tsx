@@ -593,7 +593,7 @@ function LessonPracticeCard({
       </div>
 
       {/* 2. Garis Progres Linear Tepat di Bawah Header */}
-      <div className="w-full h-1.5 bg-[#dcd7cb] relative">
+      <div className="w-full h-1.5 bg-rule/40 relative">
         <div
           className="h-full bg-accent-blue transition-all duration-300"
           style={{ width: `${((questionIndex + 1) / totalQuestions) * 100}%` }}
@@ -615,7 +615,7 @@ function LessonPracticeCard({
         {/* Kotak Konteks / Stimulus Soal */}
         {isListening ? (
           /* A. Tipe Soal Mendengar (Listening) */
-          <div className="border border-rule bg-[#ede9de] p-6 sm:p-8 space-y-5">
+          <div className="border border-rule bg-canvas p-6 sm:p-8 space-y-5">
             <div className="flex items-center justify-between">
               <span className="font-mono text-xs uppercase tracking-widest text-accent-blue font-bold">
                 STIMULUS AUDIO // SIMAK DENGAN TELITI
@@ -670,7 +670,7 @@ function LessonPracticeCard({
           </div>
         ) : exercise.type === "sentence_ordering" ? (
           /* B. Tipe Soal Susun Kalimat (Soal Bahasa Indonesia -> Susun Kalimat Mandarin) */
-          <div className="border border-rule bg-[#ede9de] p-6 sm:p-8 space-y-4">
+          <div className="border border-rule bg-canvas p-6 sm:p-8 space-y-4">
             <div className="flex items-center justify-between">
               <span className="font-mono text-xs uppercase tracking-widest text-muted font-bold">
                 TARGET KALIMAT
@@ -709,7 +709,7 @@ function LessonPracticeCard({
           </div>
         ) : (
           /* C. Tipe Soal Pilihan Ganda (Isi Kata Kosong) */
-          <div className="border border-rule bg-[#ede9de] p-6 sm:p-8 space-y-4">
+          <div className="border border-rule bg-canvas p-6 sm:p-8 space-y-4">
             <div className="flex items-center justify-between">
               <span className="font-mono text-xs uppercase tracking-widest text-muted">
                 CONTOH KALIMAT
@@ -809,7 +809,7 @@ function LessonPracticeCard({
               )}
             </div>
 
-            <div className="min-h-[72px] border-2 border-dashed border-rule p-3.5 bg-[#ede9de]/40 flex flex-wrap items-center gap-2">
+            <div className="min-h-[72px] border-2 border-dashed border-rule p-3.5 bg-canvas/50 flex flex-wrap items-center gap-2">
               {orderedWords.length === 0 ? (
                 <span className="font-mono text-xs text-muted italic">
                   Klik potongan kata di bawah untuk menyusun kalimat...
