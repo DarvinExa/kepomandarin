@@ -1,164 +1,163 @@
-# Mandarin Context Lab
+# KepoMandarin
 
-> **Platform Pembelajaran Bahasa Mandarin Berbasis Konteks Kalimat & Standar Tingkat HSK**  
-> Dibangun dengan prinsip desain fungsional **Bauhaus**, **De Stijl**, dan **Constructivism**.
-
----
-
-## 01 // Ikhtisar Produk
-
-**Mandarin Context Lab** adalah platform web modern untuk mempelajari bahasa Mandarin secara mendalam, tenang, dan efektif. Tidak seperti aplikasi pembelajaran konvensional yang mengandalkan hafalan kata terisolasi atau elemen *gamification* berlebihan, Mandarin Context Lab menempatkan setiap kata dan pola tata bahasa ke dalam **konteks kalimat utuh**, dilengkapi pembiasaan auditori, pelacakan kesalahan personal, dan eksplorasi mandiri bertingkat dari **HSK 1 hingga HSK 5**.
+> Platform Pembelajaran Bahasa Mandarin Interaktif Berbasis Konteks Kalimat dan Standar HSK.  
+> Dirancang dengan arsitektur web modern serta estetika visual fungsional terinspirasi Bauhaus dan De Stijl.
 
 ---
 
-## 02 // Karakteristik Visual & Desain Sistem
+## Deskripsi Produk
 
-Desain antarmuka mematuhi prinsip ketat aliran **Bauhaus**, **De Stijl**, dan **Konstruktivisme Soviet**:
+**KepoMandarin** adalah platform web pembelajaran bahasa Mandarin yang berfokus pada pemahaman konteks kalimat utuh, bukan sekadar menghafal kosakata terpisah. Pembelajar dibimbing secara bertahap mulai dari fondasi fonetik dasar (Pinyin dan 4 nada), 12 unit materi terstruktur HSK 1, latihan interaktif tiga mode (pilihan ganda, susun kalimat, dan audio menyimak), hingga modul laboratorium tematik seperti pelatih nada, penjelajah Hanzi, kata bantu bilangan, skenario percakapan, dan jurnal kesalahan personal.
 
-- **Geometri Tegas**: Struktur grid asimetris berbingkai garis tegas (`border-rule`, `border-ink`), tanpa sudut membulat (`rounded-none`).
-- **Palet Warna Solid Terbatas**: Menggunakan warna dasar fungsional:
-  - `bg-canvas` (`#F7F5F0` / Warm Paper) & `bg-paper` (`#FFFFFF`)
-  - `text-ink` (`#121212` / Solid Charcoal) & `text-muted` (`#5A5A5A`)
-  - Aksen primer De Stijl: `accent-red` (`#D9381E`), `accent-blue` (`#1B4D89`), `accent-yellow` (`#E5A93C`)
-- **Tipografi sebagai Struktur Utama**: Kombinasi `Space Grotesk` (editorial), `Space Mono` (teknis/metrik), dan `Noto Sans SC` (karakter Hanzi proporsional).
-- **Ketegasan Fungsional**: **0 emoji**, **0 gradien**, **0 efek glassmorphism/glow/neon**, dan **0 ilustrasi generik**. Setiap elemen visual memiliki fungsi pedagogis langsung.
-- **Kebijakan Bahasa Konsisten**: Seluruh antarmuka pengguna disajikan dalam Bahasa Indonesia alami. Setiap entri Mandarin wajib memuat tiga serangkai: **Hanzi**, **Pinyin bernada**, dan **Terjemahan Bahasa Indonesia**.
+Platform ini mengusung pendekatan *local-first hybrid*: pengguna dapat langsung belajar secara penuh menggunakan **Mode Tamu** tanpa kewajiban mendaftar akun, dengan seluruh progres tersimpan aman di browser. Ketika pengguna memilih untuk membuat akun, progres belajar otomatis tersinkronisasi ke database cloud Supabase.
 
 ---
 
-## 03 // Arsitektur Kurikulum HSK (Tingkat 1 s.d. 5)
+## Karakteristik Desain & Pengalaman Pengguna
 
-| Tingkat | Setara CEFR | Target Kosakata | Karakteristik Pedagogis & Fokus Pembelajaran | Status |
-|---|---|---|---|---|
-| **HSK 1** | CEFR A1 | 150 Kata | Fondasi pengenalan sapaan, angka/waktu, keluarga, restoran, dan lokasi. Dilengkapi 5 unit pelajaran terpandu, pemutar audio, kuis interaktif (pilihan ganda & susun kalimat), serta pencatatan otomatis ke Jurnal Kesalahan. | **Aktif Penuh** |
-| **HSK 2** | CEFR A2 | 300 Kata | Perluasan rutinitas harian, cuaca, belanja, transportasi, dan kesehatan. Dilengkapi 6 formula tata bahasa (`了`, `比`, `过`, `离`, `正在`, `往/到`), 5 silabus unit, dan 150 kosakata tematik. | **Kurikulum Aktif** |
-| **HSK 3** | CEFR B1 | 600 Kata | Kemandirian komunikasi dunia kerja, liburan, dan tradisi. Dilengkapi 6 tata bahasa kunci (`把`, `被`, `起来/下去/出来`, `虽然...但是...`, `连...都...`, `只要...就...`), 5 silabus unit, dan 300 kosakata tematik. | **Kurikulum Aktif** |
-| **HSK 4** | CEFR B2 | 1.200 Kata | Wacana sosial konseptual, dinamika karir, finansial cerdas, dan filosofi hidup. Dilengkapi 6 tata bahasa retoris (`反而`, `之所以...是因为...`, `对于/关于`, `难道...吗？`, `无论...都...`, `其实/究竟`), 5 silabus unit, dan 600 kosakata tematik. | **Kurikulum Aktif** |
-| **HSK 5** | CEFR C1 | 2.500 Kata | Literasi wacana formal (*shūmiànyǔ*), sains kecerdasan buatan, arsitektur peradaban, dan dialog global. Dilengkapi 6 tata bahasa literasi (`自...以来/凭`, `未尝/何尝`, `日益/日渐`, `想必/势必`, `宁可...也...`, `总而言之/综上所述`), 5 silabus unit, dan 1.300 kosakata tematik. | **Kurikulum Aktif** |
+Antarmuka KepoMandarin memadukan estetika konstruktivis yang bersih, tegas, dan bebas distraksi:
 
----
-
-## 04 // Modul Khusus Laboratorium Pembelajaran
-
-Selain kurikulum bertingkat, platform dilengkapi 5 laboratorium spesialis yang dapat diakses secara mandiri:
-
-1. **Laboratorium Menyimak (`/listening`)**:
-   - Latihan diskriminasi pasangan minimal fonem kritis (`zh/j`, `sh/x`, `b/p`).
-   - Latihan kontras nada dan dikte kalimat kontekstual terintegrasi dengan Jurnal Kesalahan.
-2. **Pelatih Nada & Matriks Sandhi (`/tone-coach`)**:
-   - Visualisator kontur nada 5-tingkat skala Chao (*Chao 5-pitch scale*) interaktif menggunakan SVG geometris.
-   - Matriks formula 4 variasi *Tone Sandhi* (nada 3+3, half-3rd tone, sandhi 不, dan sandhi 一).
-   - Latihan auditif diskriminasi nada.
-3. **Penjelajah Radikal & Struktur Hanzi (`/hanzi-explorer`)**:
-   - Indeks 12 radikal semantik primer Mandarin beserta dekonstruksi visualnya.
-   - Visualisator 4 jenis konfigurasi spasial Hanzi: Kiri-Kanan (`[ ◧ ]`), Atas-Bawah (`[ ⬓ ]`), Lingkup (`[ ▣ ]`), dan Utuh (`[ ■ ]`).
-   - Pedoman 7 urutan goresan standar (*Bǐshùn*) dan kuis identifikasi radikal.
-4. **Penjelajah Kata Penggolong (`/measure-words`)**:
-   - 10 kata penggolong esensial (`个`, `本`, `块`, `只`, `张`, `杯`, `岁`, `点`, `位`, `双`).
-   - Sintaks formula 3-blok Bauhaus: `[ Angka / Tunjuk ] + [ Kata Penggolong ] + [ Kata Benda ]`.
-   - Logika fisik bentuk semantik dan kuis rumpang interaktif.
-5. **Skenario Percakapan Kontekstual (`/scenarios`)**:
-   - 4 situasi percakapan nyata: Salam Kampus, Kedai Teh, Pasar Buah, dan Penjadwalan Waktu.
-   - Mode peran bergantian (*turn-based roleplay*) dua penutur (Pembicara A Merah vs Pembicara B Biru).
-   - Catatan etiket sosiokultural dan penyimpanan dialog 1-klik ke Buku Frasa.
+- **Struktur Grid Tegas**: Tata letak geometris asimetris dengan garis batas tegas (`border-rule`, `border-ink`), tanpa sudut membulat berlebihan.
+- **Palet Warna Solid De Stijl**: Menggunakan warna fungsional seperti krem kertas (`bg-canvas`), putih bersih (`bg-paper`), arang solid (`text-ink`), serta aksen primer merah (`accent-red`), biru (`accent-blue`), dan kuning (`accent-yellow`).
+- **Dukungan Tema Terang dan Gelap**: Pengguna dapat dengan mudah beralih antara mode gelap dan mode terang melalui tombol switch di bilah navigasi.
+- **Tipografi Jelas**: Tipografi editorial modern dipadukan dengan font Mandarin proporsional `Noto Sans SC` untuk keterbacaan karakter Hanzi yang optimal.
+- **Bebas Distraksi**: Tanpa elemen dekoratif mengganggu, tanpa gradien mencolok, dan tanpa animasi berlebihan. Setiap komponen dibuat untuk mendukung fokus belajar.
+- **Tiga Serangkai Bahasa**: Setiap kosakata dan kalimat penting selalu dilengkapi tiga elemen: Hanzi, Pinyin bernada, dan terjemahan Bahasa Indonesia.
 
 ---
 
-## 05 // Fitur Manajemen Pembelajar
+## Fitur Utama
 
-- **Buku Frasa Personal (`/phrasebook`)**: Simpan frasa favorit atau kata sulit dari seluruh modul dengan 1-klik, tambah entri kustom, pencarian instan, dan filter kategori.
-- **Jurnal Kesalahan (`/error-journal`)**: Pencatatan otomatis jawaban salah saat latihan kuis dengan label jenis kesalahan (Nada, Tata Bahasa, Karakter, Kosakata) dan pelacakan status perbaikan.
-- **Dasbor Kemajuan (`/progress`)**: Statistik transparan mengenai penyelesaian materi, akurasi latihan, dan pola kelemahan belajar.
-- **Autentikasi & Mode Tamu (`/login`, `/register`, `/settings`)**: Mendukung autentikasi Supabase serta mode tamu (*Guest Mode*) dengan penyimpanan `localStorage` instan tanpa hambatan pendaftaran.
+### 1. Dasbor Belajar & Jalur Pembelajaran Dinamis
+- **Jalur Belajar Duolingo-style**: Visualisasi peta belajar yang dinamis mencakup 12 unit HSK 1 dan simpul fondasi dasar.
+- **Status Unit Otomatis**: Unit otomatis berubah status menjadi selesai (*done* dengan centang emas), sedang aktif (*current* dengan tombol putar), atau terkunci (*locked*).
+- **Sistem Hadiah Milestone**: Checkpoint milestone terbuka setiap kelipatan 3 unit (Unit 03, 06, 09, dan 12) untuk mengevaluasi pencapaian pembelajar.
+- **Bilah Samping Metrik**: Menampilkan persentase penguasaan kurikulum, akurasi latihan soal terkini, target kosakata, dan rekomendasi pelajaran berikutnya.
+
+### 2. Modul Fondasi Dasar Mandarin (`/fundamentals`)
+- **Pinyin Lengkap**: Panduan 23 inisial (*Shēngmǔ*) dan 24 final (*Yùnmǔ*) dengan audio pelafalan interaktif.
+- **4 Nada Dasar & Nada Netral**: Visualisasi kontur nada berbasis skala Chao 5-tingkat dengan contoh audio fonem kontras.
+- **Kaidah Penulisan Hanzi**: 8 goresan dasar (*Yǒngzì Bāfǎ*) dan 7 aturan utama urutan menulis karakter (*Bǐshùn*).
+
+### 3. Kurikulum HSK Terpadu (HSK 1 s.d. HSK 5)
+- **HSK 1 (12 Unit Lengkap)**:
+  - Unit 01: Sapaan Sopan & Etika Komunikasi
+  - Unit 02: Angka, Kuantitas & Transaksi
+  - Unit 03: Waktu, Jam & Jadwal Harian
+  - Unit 04: Belanja, Harga & Tawar-Menawar
+  - Unit 05: Arah, Lokasi & Transportasi
+  - Unit 06: Makanan, Minuman & Restoran
+  - Unit 07: Keluarga, Relasi & Pekerjaan Rumah
+  - Unit 08: Rutinitas, Hobi & Waktu Luang
+  - Unit 09: Cuaca, Musim & Pakaian
+  - Unit 10: Pekerjaan, Kantor & Profesi
+  - Unit 11: Kesehatan, Tubuh & Perasaan
+  - Unit 12: Evaluasi Komprehensif & Simulasi HSK 1
+- **HSK 2 sampai HSK 5**: Peta silabus lengkap dengan formula tata bahasa esensial, ratusan target kosakata tematik, dan contoh kalimat berstandar internasional.
+
+### 4. Mesin Latihan Interaktif (`/practice`)
+- Tiga mode latihan per unit: **Pilihan Ganda**, **Susun Struktur Kalimat**, dan **Menyimak Audio**.
+- Evaluasi langsung dengan skor instan, penjelasan konteks, dan integrasi otomatis ke Jurnal Kesalahan saat jawaban keliru.
+
+### 5. Laboratorium Belajar Mandiri
+- **Pelatih Nada & Matriks Sandhi (`/tone-coach`)**: Visualisator kurva nada interaktif dan tabel aturan perubahan nada (*Tone Sandhi* 3+3, kata 不, dan kata 一).
+- **Laboratorium Menyimak (`/listening`)**: Latihan membedakan fonem kritis yang sering tertukar (seperti zh/j, sh/x, b/p) dan dikte kalimat.
+- **Penjelajah Hanzi (`/hanzi-explorer`)**: Dekonstruksi radikal pembentuk karakter dan 4 pola tata letak spasial Hanzi.
+- **Kata Bantu Bilangan (`/measure-words`)**: Panduan aturan pakai kata penggolong esensial Mandarin lengkap dengan formula dan kartu latihan.
+- **Skenario Percakapan Kontekstual (`/scenarios`)**: Simulasi dialog dunia nyata dengan sistem bermain peran (*roleplay*) dua penutur.
+
+### 6. Alat Manajemen Pembelajar Pribadi
+- **Buku Frasa Personal (`/phrasebook`)**: Simpan frasa favorit dengan satu klik, buat catatan kustom, dan cari kosakata dengan cepat.
+- **Jurnal Kesalahan (`/error-journal`)**: Evaluasi riwayat kesalahan kuis, dikelompokkan berdasarkan kategori (Nada, Tata Bahasa, Karakter, Kosakata).
+- **Dasbor Progres Belajar (`/progress`)**: Laporan statistik lengkap mengenai akurasi, materi yang dituntaskan, dan frasa yang dikuasai.
+- **Mode Tamu & Akun Cloud**: Akses langsung tanpa login, dengan opsi daftar akun di Supabase untuk sinkronisasi antarperangkat.
 
 ---
 
-## 06 // Peta Rute Aplikasi (26 Rute Terkompilasi)
-
-```
-/                     Beranda Utama & Navigasi Cepat
-/fundamentals         Fondasi Dasar (4 Nada, Pīnyīn, 8 Goresan Hanzi)
-/lessons              Daftar Unit Pelajaran HSK 1
-/lessons/[id]         Detail Pelajaran Interaktif (01 s.d. 05)
-/practice             Mesin Latihan Kuis Terintegrasi Tiap Unit
-/phrasebook           Buku Frasa Kosakata Pribadi
-/error-journal        Jurnal Pelacakan Kesalahan Belajar
-/progress             Dasbor Metrik Kemajuan Belajar
-/hsk                  Peta Kurikulum Terpadu (HSK 1–5)
-/hsk/2                Kurikulum HSK 2 (Tingkat Dasar II)
-/hsk/3                Kurikulum HSK 3 (Tingkat Menengah I)
-/hsk/4                Kurikulum HSK 4 (Tingkat Menengah II)
-/hsk/5                Kurikulum HSK 5 (Tingkat Mahir)
-/listening            Laboratorium Menyimak & Dikte
-/tone-coach           Pelatih Nada & Matriks Sandhi
-/hanzi-explorer       Penjelajah Radikal & Struktur Karakter
-/measure-words        Penjelajah Kata Penggolong (Measure Words)
-/scenarios            Skenario Percakapan Kontekstual
-/login                Halaman Masuk Akun
-/register             Halaman Pendaftaran Akun
-/settings             Pengaturan Profil & Preferensi Audio
-/_not-found           Halaman 404 Estetika Bauhaus
-```
-
----
-
-## 07 // Tumpukan Teknologi (Tech Stack)
+## Tech Stack
 
 - **Framework**: Next.js 16 (App Router, Turbopack, React 19)
-- **Bahasa**: TypeScript 5 (Strict Mode, 0 any policy)
-- **Styling**: Tailwind CSS v4 (Custom Bauhaus palette & design tokens)
-- **Database & Auth**: Supabase PostgreSQL dengan Row-Level Security (RLS)
-- **Audio**: Web Speech API (`zh-CN` speech synthesis) dengan fallback mandiri
-- **Linting & Formatting**: ESLint 9 flat config, Prettier-compliant
+- **Bahasa**: TypeScript 5 (Strict Mode)
+- **Styling**: Tailwind CSS v4 dengan sistem token warna dan tema gelap/terang
+- **Database & Autentikasi**: Supabase PostgreSQL dengan Row-Level Security (RLS)
+- **Penyimpanan Lokal**: Web Storage API (`localStorage`) untuk Mode Tamu instan
+- **Audio & Sintesis Suara**: Web Speech API (`zh-CN` speech synthesis) dengan fallback audio mandiri
+- **Validasi Data**: Zod v3 untuk validasi input dan skema data
+- **Ikon**: Komponen SVG kustom bebas dependensi pihak ketiga yang berat
 
 ---
 
-## 08 // Panduan Instalasi & Menjalankan Proyek
+## Struktur Rute Aplikasi
 
-### Kebutuhan Sistem
+```
+/                     Dasbor Utama Pembelajar & Jalur Belajar HSK 1
+/fundamentals         Modul Fondasi Dasar (Pinyin, 4 Nada, Goresan Hanzi)
+/lessons              Daftar Modul & Pelajaran HSK 1
+/lessons/[modul]/[unit] Detail Materi Pelajaran (Tata Bahasa, Dialog, Kosakata)
+/lessons/[modul]/[unit]/practice Mesin Latihan Kuis Interaktif Unit
+/practice             Latihan Kuis Mandiri (Pilihan Ganda, Susun Kalimat, Audio)
+/hsk                  Peta Kurikulum Terpadu HSK 1 sampai HSK 5
+/hsk/[level]          Detail Kurikulum Tingkat Lanjutan (HSK 2 s.d. HSK 5)
+/listening            Laboratorium Menyimak & Dikte Fonem
+/tone-coach           Pelatih Nada & Matriks Formula Tone Sandhi
+/hanzi-explorer       Penjelajah Radikal & Struktur Karakter Hanzi
+/measure-words        Panduan & Latihan Kata Bantu Bilangan
+/scenarios            Simulasi Skenario Percakapan Kontekstual
+/phrasebook           Buku Frasa Kosakata Pribadi
+/error-journal        Jurnal Pelacakan & Evaluasi Kesalahan
+/progress             Dasbor Metrik & Rekapitulasi Progres Belajar
+/login                Halaman Masuk Akun
+/register             Halaman Pendaftaran Akun
+/settings             Pengaturan Profil & Preferensi Belajar
+```
+
+---
+
+## Panduan Menjalankan Proyek
+
+### Prasyarat Sistem
 - Node.js versi 18.18+ atau 20+
 - npm atau pnpm
 
 ### Langkah Instalasi
 
-1. **Klon repositori dan masuk ke direktori kerja**:
+1. **Masuk ke folder proyek**:
    ```bash
    cd develop
    ```
 
-2. **Pasang dependensi**:
+2. **Pasang dependensi paket**:
    ```bash
    npm install
    ```
 
-3. **Konfigurasi Environment Variables**:
-   Salin `.env.example` menjadi `.env.local`:
+3. **Pengaturan Variabel Lingkungan**:
+   Salin file `.env.example` menjadi `.env.local`:
    ```bash
    cp .env.example .env.local
    ```
-   *(Opsional: masukkan `NEXT_PUBLIC_SUPABASE_URL` dan `NEXT_PUBLIC_SUPABASE_ANON_KEY`. Jika dibiarkan kosong, aplikasi otomatis berjalan dalam Offline Local-Fallback Mode).*
+   *(Opsional: masukkan URL dan Anon Key Supabase. Jika tidak diisi, aplikasi tetap dapat digunakan 100% menggunakan Mode Tamu lokal).*
 
-4. **Jalankan Development Server**:
+4. **Jalankan Server Development**:
    ```bash
    npm run dev
    ```
    Buka peramban di [http://localhost:3000](http://localhost:3000).
 
-5. **Pengujian Kualitas Kode**:
+5. **Uji Kualitas Kode & Build Produksi**:
    ```bash
-   # Typecheck TypeScript
+   # Pengecekan tipe data TypeScript
    npm run typecheck
 
-   # Linter ESLint
+   # Pengecekan linter
    npm run lint
 
-   # Kompilasi Produksi (Production Build)
+   # Build produksi
    npm run build
    ```
 
 ---
 
-## 09 // Lisensi & Hak Cipta
+## Lisensi & Kontribusi
 
-Dikembangkan sebagai portofolio edutech modern untuk platform **Mandarin Context Lab**.  
-Seluruh hak cipta dilindungi.
+Proyek ini dikembangkan secara independen sebagai platform edutech interaktif untuk pembelajaran bahasa Mandarin modern. Seluruh hak cipta dilindungi.
