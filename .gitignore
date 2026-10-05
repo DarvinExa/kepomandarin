@@ -46,6 +46,8 @@ next-env.d.ts
 # AI and agent configuration files
 AGENTS.md
 CLAUDE.md
+DESIGN.md
+REDESIGN-NOTES.md
 *.prompt
 .gemini/
 .claude/
