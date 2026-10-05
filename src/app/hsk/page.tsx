@@ -2,10 +2,12 @@ import Link from "next/link";
 import { getCurriculumLevels, getLessonsByLevel } from "@/lib/curriculum";
 
 export default async function HskPage() {
-  const levels = await getCurriculumLevels();
+  const [levels, lessons] = await Promise.all([
+    getCurriculumLevels(),
+    getLessonsByLevel("level-hsk-1"),
+  ]);
   const primaryLevel = levels.find((lvl) => lvl.level_number === 1) ?? levels[0];
   const advancedLevels = levels.filter((lvl) => lvl.level_number > 1);
-  const lessons = await getLessonsByLevel(primaryLevel?.id);
   const previewLessons = lessons.slice(0, 5);
   const remainingLessonsCount = Math.max(0, lessons.length - previewLessons.length);
 
@@ -16,7 +18,7 @@ export default async function HskPage() {
         <div className="flex items-center gap-2">
           <span className="w-2.5 h-2.5 bg-accent-red" aria-hidden="true" />
           <span className="font-mono text-xs uppercase tracking-widest text-muted">
-            {`02 // PETA TINGKATAN HSK`}
+            {`02 · PETA TINGKATAN HSK`}
           </span>
         </div>
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
@@ -31,7 +33,7 @@ export default async function HskPage() {
           </div>
           <div className="shrink-0 font-mono text-xs text-muted flex items-center gap-2">
             <span className="w-2 h-2 bg-status-success inline-block" />
-            <span className="font-bold text-ink">{`KURIKULUM AKTIF // HSK 1 SAMPAI 5`}</span>
+            <span className="font-bold text-ink">{`KURIKULUM AKTIF: HSK 1 SAMPAI 5`}</span>
           </div>
         </div>
       </section>
@@ -42,7 +44,7 @@ export default async function HskPage() {
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 bg-accent-red" aria-hidden="true" />
             <span className="font-mono text-xs font-bold uppercase tracking-widest text-ink">
-              PRASYARAT WAJIB // TINGKAT 00
+              PRASYARAT WAJIB: TINGKAT 00
             </span>
           </div>
           <span className="font-mono text-[10px] text-muted uppercase bg-canvas border border-rule px-2 py-0.5">
@@ -76,7 +78,7 @@ export default async function HskPage() {
           <div className="border-b border-rule px-6 py-3 bg-canvas flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-2">
               <span className="font-mono text-xs font-bold uppercase tracking-wider text-accent-red">
-                Tingkat Utama // Fondasi Terpandu
+                Tingkat Utama · Fondasi Terpandu
               </span>
               <span className="text-rule">|</span>
               <span className="font-mono text-xs text-muted">INTI KURIKULUM & LATIHAN INTERAKTIF</span>

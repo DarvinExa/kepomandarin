@@ -19,12 +19,12 @@ export default async function ListeningLabPage() {
 
   return (
     <div className="p-4 sm:p-8 max-w-6xl mx-auto space-y-8 sm:space-y-10">
-      {/* 1. Header Section Bauhaus */}
+      {/* 1. Header Section */}
       <section className="border-b border-rule pb-6 space-y-3">
         <div className="flex items-center gap-2">
           <span className="w-2.5 h-2.5 bg-accent-blue" aria-hidden="true" />
           <span className="font-mono text-xs uppercase tracking-widest text-muted">
-            04 // LATIHAN MENDENGAR AUDIO
+            04 · LATIHAN MENDENGAR AUDIO
           </span>
         </div>
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
@@ -52,31 +52,31 @@ export default async function ListeningLabPage() {
         </div>
         <div className="flex flex-wrap items-center gap-2">
           <span className="px-3 py-1 bg-ink text-canvas border border-ink font-bold">
-            01 // Mendengar
+            01 · Mendengar
           </span>
           <Link
             href="/tone-coach"
             className="px-3 py-1 border border-rule bg-paper text-muted hover:text-ink hover:border-ink transition-colors"
           >
-            02 // Pelatih Nada
+            02 · Pelatih Nada
           </Link>
           <Link
             href="/hanzi-explorer"
             className="px-3 py-1 border border-rule bg-paper text-muted hover:text-ink hover:border-ink transition-colors"
           >
-            03 // Karakter Hanzi
+            03 · Karakter Hanzi
           </Link>
           <Link
             href="/measure-words"
             className="px-3 py-1 border border-rule bg-paper text-muted hover:text-ink hover:border-ink transition-colors"
           >
-            04 // Kata Penggolong
+            04 · Kata Penggolong
           </Link>
           <Link
             href="/scenarios"
             className="px-3 py-1 border border-rule bg-paper text-muted hover:text-ink hover:border-ink transition-colors"
           >
-            05 // Skenario Percakapan
+            05 · Skenario Percakapan
           </Link>
         </div>
       </div>

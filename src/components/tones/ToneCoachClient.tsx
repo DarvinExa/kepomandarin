@@ -96,33 +96,33 @@ export function ToneCoachClient({ userId }: ToneCoachClientProps) {
             href="/listening"
             className="px-3 py-1 border border-rule bg-paper text-muted hover:text-ink hover:border-ink transition-colors"
           >
-            01 // Mendengar
+            01 · Mendengar
           </Link>
           <span className="px-3 py-1 bg-ink text-canvas border border-ink font-bold">
-            02 // Pelatih Nada
+            02 · Pelatih Nada
           </span>
           <Link
             href="/hanzi-explorer"
             className="px-3 py-1 border border-rule bg-paper text-muted hover:text-ink hover:border-ink transition-colors"
           >
-            03 // Karakter Hanzi
+            03 · Karakter Hanzi
           </Link>
           <Link
             href="/measure-words"
             className="px-3 py-1 border border-rule bg-paper text-muted hover:text-ink hover:border-ink transition-colors"
           >
-            04 // Kata Penggolong
+            04 · Kata Penggolong
           </Link>
           <Link
             href="/scenarios"
             className="px-3 py-1 border border-rule bg-paper text-muted hover:text-ink hover:border-ink transition-colors"
           >
-            05 // Skenario Percakapan
+            05 · Skenario Percakapan
           </Link>
         </div>
       </div>
 
-      {/* 2. Pemilih Tab Utama Bauhaus */}
+      {/* 2. Pemilih Tab Utama */}
       <div className="flex flex-wrap gap-2 border-b border-rule pb-4">
         <button
           type="button"
@@ -133,7 +133,7 @@ export function ToneCoachClient({ userId }: ToneCoachClientProps) {
               : "bg-paper text-ink border-rule hover:border-ink"
           }`}
         >
-          01 // Kontur 5-Skala Chao
+          01 · Kontur 5-Skala Chao
         </button>
         <button
           type="button"
@@ -144,7 +144,7 @@ export function ToneCoachClient({ userId }: ToneCoachClientProps) {
               : "bg-paper text-ink border-rule hover:border-ink"
           }`}
         >
-          02 // Kaidah Sandhi Nada
+          02 · Kaidah Sandhi Nada
         </button>
         <button
           type="button"
@@ -155,7 +155,7 @@ export function ToneCoachClient({ userId }: ToneCoachClientProps) {
               : "bg-paper text-ink border-rule hover:border-ink"
           }`}
         >
-          03 // Uji Identifikasi Nada
+          03 · Uji Identifikasi Nada
         </button>
       </div>
 
@@ -299,8 +299,8 @@ export function ToneCoachClient({ userId }: ToneCoachClientProps) {
                         />
                         <span className="font-mono text-xs font-bold uppercase tracking-wider text-ink">
                           {isSelectedCorrect
-                            ? "Analisis Akurat // Kaidah Terverifikasi"
-                            : "Analisis Belum Tepat // Tinjauan Kaidah"}
+                            ? "Analisis Akurat · Kaidah Terverifikasi"
+                            : "Analisis Belum Tepat · Tinjauan Kaidah"}
                         </span>
                       </div>
                       <span className="font-mono text-xs text-muted block sm:hidden mt-0.5">

@@ -15,7 +15,7 @@ export default async function SettingsPage() {
         <div className="flex items-center gap-2">
           <span className="w-2.5 h-2.5 bg-ink" aria-hidden="true" />
           <span className="font-mono text-xs uppercase tracking-widest text-muted">
-            08 // KONFIGURASI SISTEM
+            08 · KONFIGURASI SISTEM
           </span>
         </div>
         <h1 className="text-2xl sm:text-4xl font-black uppercase tracking-tight text-ink">

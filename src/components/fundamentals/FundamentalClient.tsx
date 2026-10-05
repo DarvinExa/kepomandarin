@@ -70,7 +70,7 @@ export function FundamentalClient() {
           <div className="flex items-center gap-3">
             <span className="w-3 h-3 bg-accent-red" aria-hidden="true" />
             <span className="font-mono text-xs uppercase tracking-widest text-ink font-bold">
-              MODUL 00 // FONDASI DASAR MANDARIN
+              MODUL 00 · FONDASI DASAR MANDARIN
             </span>
           </div>
           <div className="flex items-center gap-2">
@@ -128,7 +128,7 @@ export function FundamentalClient() {
               : "text-muted hover:text-ink hover:bg-paper"
           }`}
         >
-          01 // 4 Nada & Aturan
+          01 · 4 Nada & Aturan
         </button>
         <button
           type="button"
@@ -139,7 +139,7 @@ export function FundamentalClient() {
               : "text-muted hover:text-ink hover:bg-paper"
           }`}
         >
-          02 // 23 Inisial (Konsonan)
+          02 · 23 Inisial (Konsonan)
         </button>
         <button
           type="button"
@@ -150,7 +150,7 @@ export function FundamentalClient() {
               : "text-muted hover:text-ink hover:bg-paper"
           }`}
         >
-          03 // 24 Final (Vokal)
+          03 · 24 Final (Vokal)
         </button>
         <button
           type="button"
@@ -161,7 +161,7 @@ export function FundamentalClient() {
               : "text-muted hover:text-ink hover:bg-paper"
           }`}
         >
-          04 // Kaidah Menulis Hanzi
+          04 · Kaidah Menulis Hanzi
         </button>
         <button
           type="button"
@@ -172,7 +172,7 @@ export function FundamentalClient() {
               : "text-accent-red hover:bg-accent-red hover:text-canvas"
           }`}
         >
-          05 // Latihan Fondasi →
+          05 · Latihan Fondasi →
         </button>
       </div>
 

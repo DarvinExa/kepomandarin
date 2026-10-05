@@ -147,7 +147,7 @@ export function PracticeEngine({
           <div className="flex-1 min-w-0 space-y-1">
             <div className="flex items-center justify-between">
               <span className="font-mono text-xs uppercase font-bold text-accent-red tracking-widest">
-                HASIL EVALUASI // SESI SELESAI
+                HASIL EVALUASI · SESI SELESAI
               </span>
               <span className="font-mono text-xs text-muted">
                 {totalAnswered} SOAL DIKERJAKAN
@@ -564,7 +564,7 @@ function QuestionCard({
           <div className="border border-rule bg-canvas p-6 sm:p-8 space-y-5">
             <div className="flex items-center justify-between">
               <span className="font-mono text-[10px] uppercase font-bold text-accent-blue tracking-wider">
-                STIMULUS AUDIO // SIMAK DENGAN TELITI
+                STIMULUS AUDIO · SIMAK DENGAN TELITI
               </span>
               <span className="font-mono text-[10px] text-muted uppercase">
                 Mandarin Lisan
@@ -836,7 +836,7 @@ function QuestionCard({
                       isCorrect ? "text-status-success" : "text-accent-red"
                     }`}
                   >
-                    {isCorrect ? "HASIL // JAWABAN TEPAT" : "HASIL // BELUM TEPAT"}
+                    {isCorrect ? "HASIL: JAWABAN TEPAT" : "HASIL: BELUM TEPAT"}
                   </span>
                   <span className="font-mono text-[10px] text-muted uppercase">
                     Penjelasan

@@ -92,21 +92,23 @@ export default async function ModuleUnitDetailPage({ params }: PageProps) {
           <span className="text-ink font-semibold">Pelajaran {unitDetail.slug}</span>
         </div>
 
-        <div className="flex items-center gap-3 font-mono text-xs">
+        <div className="flex items-center gap-2.5 font-mono text-xs">
           {prevUnit && (
             <Link
               href={`/lessons/${currentModule.id}/${prevUnit.slug}`}
-              className="border border-rule px-3 py-1 bg-paper hover:border-ink text-ink transition-colors"
+              className="km-lesson-nav-btn px-3.5 py-1.5 font-bold transition-all rounded-xl border border-white/40 shadow-sm"
+              style={{ color: "#18181b", backgroundColor: "#ffffff" }}
             >
-              ← Unit {prevUnit.slug}
+              {`← Unit ${prevUnit.slug}`}
             </Link>
           )}
           {nextUnit && (
             <Link
               href={`/lessons/${currentModule.id}/${nextUnit.slug}`}
-              className="border border-rule px-3 py-1 bg-paper hover:border-ink text-ink transition-colors"
+              className="km-lesson-nav-btn px-3.5 py-1.5 font-bold transition-all rounded-xl border border-white/40 shadow-sm"
+              style={{ color: "#18181b", backgroundColor: "#ffffff" }}
             >
-              Unit {nextUnit.slug} →
+              {`Unit ${nextUnit.slug} →`}
             </Link>
           )}
         </div>
@@ -239,7 +241,7 @@ export default async function ModuleUnitDetailPage({ params }: PageProps) {
             {unitDetail.grammarRules.map((grammar, idx) => (
               <div key={idx} className="p-6 sm:p-8 space-y-3">
                 <span className="font-mono text-xs font-bold text-accent-blue block">
-                  KAIDAH // 0{idx + 1}
+                  KAIDAH · 0{idx + 1}
                 </span>
                 <h2 className="text-base font-bold text-ink uppercase tracking-tight">
                   {grammar.ruleTitle}
@@ -599,7 +601,7 @@ export default async function ModuleUnitDetailPage({ params }: PageProps) {
             />
             <div className="space-y-1">
               <span className="font-mono text-xs uppercase font-bold text-accent-red tracking-wider block">
-                EVALUASI PEMAHAMAN // UNIT {unitDetail.slug}
+                EVALUASI PEMAHAMAN · UNIT {unitDetail.slug}
               </span>
               <h3 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-ink">
                 Siap Menguji Pemahaman Unit Ini?

@@ -20,7 +20,7 @@ export default async function MeasureWordPage() {
         <div className="flex items-center gap-2">
           <span className="w-2.5 h-2.5 bg-accent-blue" aria-hidden="true" />
           <span className="font-mono text-xs uppercase tracking-widest text-muted">
-            04 // KATA BANTU BILANGAN (量词)
+            04 · KATA BANTU BILANGAN (量词)
           </span>
         </div>
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">

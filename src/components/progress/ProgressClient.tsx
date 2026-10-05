@@ -133,7 +133,7 @@ export function ProgressClient({ userId, isGuest }: ProgressClientProps) {
         {metricCards.map((m) => (
           <div key={m.label} className="p-6 space-y-3">
             <div className="flex items-center justify-between font-mono text-xs text-muted">
-              <span>METRIK // {m.index}</span>
+              <span>METRIK · {m.index}</span>
             </div>
             <p className="text-3xl sm:text-4xl font-black text-ink font-mono">
               {isLoading ? "..." : m.value}
@@ -192,7 +192,7 @@ export function ProgressClient({ userId, isGuest }: ProgressClientProps) {
             <div className="flex items-center gap-2">
               <span className="w-2.5 h-2.5 bg-accent-red inline-block" />
               <span className="font-mono text-xs uppercase tracking-widest text-muted">
-                POLA KESALAHAN // SEBARAN KATEGORI
+                POLA KESALAHAN · SEBARAN KATEGORI
               </span>
             </div>
             <h3 className="text-base sm:text-lg font-black uppercase tracking-tight text-ink mt-1">
@@ -319,7 +319,7 @@ export function ProgressClient({ userId, isGuest }: ProgressClientProps) {
                 {/* Informasi Unit */}
                 <div className="flex items-start sm:items-center gap-4">
                   <span className="font-mono text-sm font-bold text-muted w-10 shrink-0">
-                    {"//"} {les.slug}
+                    {les.slug}
                   </span>
                   <div className="space-y-0.5">
                     <div className="flex items-center gap-3">

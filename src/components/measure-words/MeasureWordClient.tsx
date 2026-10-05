@@ -99,28 +99,28 @@ export function MeasureWordClient({ userId }: MeasureWordClientProps) {
             href="/listening"
             className="px-3 py-1 border border-rule bg-paper text-muted hover:text-ink hover:border-ink transition-colors"
           >
-            01 // Mendengar
+            01 · Mendengar
           </Link>
           <Link
             href="/tone-coach"
             className="px-3 py-1 border border-rule bg-paper text-muted hover:text-ink hover:border-ink transition-colors"
           >
-            02 // Pelatih Nada
+            02 · Pelatih Nada
           </Link>
           <Link
             href="/hanzi-explorer"
             className="px-3 py-1 border border-rule bg-paper text-muted hover:text-ink hover:border-ink transition-colors"
           >
-            03 // Karakter Hanzi
+            03 · Karakter Hanzi
           </Link>
           <span className="px-3 py-1 bg-ink text-canvas border border-ink font-bold">
-            04 // Kata Penggolong
+            04 · Kata Penggolong
           </span>
           <Link
             href="/scenarios"
             className="px-3 py-1 border border-rule bg-paper text-muted hover:text-ink hover:border-ink transition-colors"
           >
-            05 // Skenario Percakapan
+            05 · Skenario Percakapan
           </Link>
         </div>
       </div>
@@ -136,7 +136,7 @@ export function MeasureWordClient({ userId }: MeasureWordClientProps) {
               : "bg-paper text-ink border-rule hover:border-ink"
           }`}
         >
-          01 // Katalog Penggolong (量词)
+          01 · Katalog Penggolong (量词)
         </button>
         <button
           type="button"
@@ -147,7 +147,7 @@ export function MeasureWordClient({ userId }: MeasureWordClientProps) {
               : "bg-paper text-ink border-rule hover:border-ink"
           }`}
         >
-          02 // Rumus Sintaksis Balok
+          02 · Rumus Sintaksis Balok
         </button>
         <button
           type="button"
@@ -158,7 +158,7 @@ export function MeasureWordClient({ userId }: MeasureWordClientProps) {
               : "bg-paper text-ink border-rule hover:border-ink"
           }`}
         >
-          03 // Uji Pemilihan Penggolong
+          03 · Uji Pemilihan Penggolong
         </button>
       </div>
 
@@ -278,8 +278,8 @@ export function MeasureWordClient({ userId }: MeasureWordClientProps) {
                     />
                     <span className="font-mono text-xs font-bold uppercase tracking-wider text-ink">
                       {isSelectedCorrect
-                        ? "Penempatan Tepat // Kaidah Sesuai"
-                        : "Penempatan Belum Tepat // Tinjauan Kaidah"}
+                        ? "Penempatan Tepat · Kaidah Sesuai"
+                        : "Penempatan Belum Tepat · Tinjauan Kaidah"}
                     </span>
                   </div>
                   <span className="font-mono text-xs text-muted">

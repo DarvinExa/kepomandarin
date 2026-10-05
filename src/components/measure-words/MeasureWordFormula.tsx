@@ -120,7 +120,7 @@ export function MeasureWordFormula() {
                     : "bg-paper text-ink border-rule hover:border-ink hover:bg-canvas"
                 }`}
               >
-                {`0${idx + 1} // ${fc.badge.split(" + ")[0]}`}
+                {`0${idx + 1} · ${fc.badge.split(" + ")[0]}`}
               </button>
             );
           })}

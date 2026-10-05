@@ -153,23 +153,47 @@ export function parseDialogueSpecimen(dialogueSpecimenJson: unknown): DialogueSp
   return [];
 }
 
+let supabaseOfflineUntil = 0;
+
+function isSupabaseTemporarilyOffline(): boolean {
+  return Date.now() < supabaseOfflineUntil;
+}
+
+function markSupabaseOffline() {
+  supabaseOfflineUntil = Date.now() + 60_000;
+}
+
+function withTimeout<T>(promise: PromiseLike<T>, ms = 500): Promise<T> {
+  return Promise.race([
+    Promise.resolve(promise),
+    new Promise<T>((_, reject) =>
+      setTimeout(() => reject(new Error("Supabase query timeout")), ms)
+    ),
+  ]);
+}
+
 /**
  * Mengambil data kurikulum dari Supabase atau fallback ke data statis
  */
 export async function getCurriculumData(code = "HSK"): Promise<Curriculum> {
+  if (isSupabaseTemporarilyOffline()) {
+    return DEFAULT_CURRICULUM;
+  }
   try {
     const supabase = createClient();
-    const { data, error } = await supabase
-      .from("curriculums")
-      .select("*")
-      .eq("code", code)
-      .maybeSingle();
+    const { data, error } = await withTimeout(
+      supabase
+        .from("curriculums")
+        .select("*")
+        .eq("code", code)
+        .maybeSingle()
+    );
 
     if (!error && data) {
       return data;
     }
   } catch {
-    // Gunakan data default jika koneksi gagal atau tabel belum siap
+    markSupabaseOffline();
   }
   return DEFAULT_CURRICULUM;
 }
@@ -178,18 +202,23 @@ export async function getCurriculumData(code = "HSK"): Promise<Curriculum> {
  * Mengambil daftar tingkatan level dari Supabase atau fallback ke data statis
  */
 export async function getCurriculumLevels(): Promise<CurriculumLevel[]> {
+  if (isSupabaseTemporarilyOffline()) {
+    return DEFAULT_LEVELS;
+  }
   try {
     const supabase = createClient();
-    const { data, error } = await supabase
-      .from("levels")
-      .select("*")
-      .order("order_index", { ascending: true });
+    const { data, error } = await withTimeout(
+      supabase
+        .from("levels")
+        .select("*")
+        .order("order_index", { ascending: true })
+    );
 
     if (!error && data && data.length > 0) {
       return data;
     }
   } catch {
-    // Gunakan data default jika koneksi gagal atau tabel belum siap
+    markSupabaseOffline();
   }
   return DEFAULT_LEVELS;
 }
@@ -198,6 +227,12 @@ export async function getCurriculumLevels(): Promise<CurriculumLevel[]> {
  * Mengambil daftar pelajaran berdasarkan level_id atau fallback ke data statis
  */
 export async function getLessonsByLevel(levelId?: string): Promise<Lesson[]> {
+  if (isSupabaseTemporarilyOffline()) {
+    if (levelId) {
+      return DEFAULT_LESSONS.filter((l) => l.level_id === levelId);
+    }
+    return DEFAULT_LESSONS;
+  }
   try {
     const supabase = createClient();
     let query = supabase
@@ -207,20 +242,21 @@ export async function getLessonsByLevel(levelId?: string): Promise<Lesson[]> {
     if (levelId) {
       query = query.eq("level_id", levelId);
     }
-    const { data, error } = await query;
+    const { data, error } = await withTimeout(query);
 
     if (!error && data && data.length > 0) {
       if (data.length >= DEFAULT_LESSONS.length) {
         return data;
       }
-      // Jika database masih berisi sebagian data awal (misal migrasi 12 unit belum dieksekusi di cloud),
-      // satukan data yang sudah ada dengan unit pelengkap dari DEFAULT_LESSONS
       const existingSlugs = new Set(data.map((l) => l.slug));
       const missing = DEFAULT_LESSONS.filter((l) => !existingSlugs.has(l.slug));
       return [...data, ...missing].sort((a, b) => a.order_index - b.order_index);
     }
   } catch {
-    // Gunakan data default jika koneksi gagal atau tabel belum siap
+    markSupabaseOffline();
+  }
+  if (levelId) {
+    return DEFAULT_LESSONS.filter((l) => l.level_id === levelId);
   }
   return DEFAULT_LESSONS;
 }
@@ -229,19 +265,24 @@ export async function getLessonsByLevel(levelId?: string): Promise<Lesson[]> {
  * Mengambil detail pelajaran berdasarkan slug (misal: "01", "02")
  */
 export async function getLessonBySlug(slug: string): Promise<Lesson | null> {
+  if (isSupabaseTemporarilyOffline()) {
+    return DEFAULT_LESSONS.find((l) => l.slug === slug) ?? null;
+  }
   try {
     const supabase = createClient();
-    const { data, error } = await supabase
-      .from("lessons")
-      .select("*")
-      .eq("slug", slug)
-      .maybeSingle();
+    const { data, error } = await withTimeout(
+      supabase
+        .from("lessons")
+        .select("*")
+        .eq("slug", slug)
+        .maybeSingle()
+    );
 
     if (!error && data) {
       return data;
     }
   } catch {
-    // Gunakan data default jika koneksi gagal atau tabel belum siap
+    markSupabaseOffline();
   }
   return DEFAULT_LESSONS.find((l) => l.slug === slug) ?? null;
 }
@@ -254,11 +295,13 @@ export type VocabularyItem = Database["public"]["Tables"]["vocabulary"]["Row"];
 export async function getVocabularyByLesson(lessonId: string): Promise<VocabularyItem[]> {
   try {
     const supabase = createClient();
-    const { data, error } = await supabase
-      .from("vocabulary")
-      .select("*")
-      .eq("lesson_id", lessonId)
-      .order("order_index", { ascending: true });
+    const { data, error } = await withTimeout(
+      supabase
+        .from("vocabulary")
+        .select("*")
+        .eq("lesson_id", lessonId)
+        .order("order_index", { ascending: true })
+    );
 
     if (!error && data) {
       return data;
@@ -275,11 +318,13 @@ export async function getVocabularyByLesson(lessonId: string): Promise<Vocabular
 export async function getVocabularyByLevel(levelId: string): Promise<VocabularyItem[]> {
   try {
     const supabase = createClient();
-    const { data, error } = await supabase
-      .from("vocabulary")
-      .select("*")
-      .eq("level_id", levelId)
-      .order("order_index", { ascending: true });
+    const { data, error } = await withTimeout(
+      supabase
+        .from("vocabulary")
+        .select("*")
+        .eq("level_id", levelId)
+        .order("order_index", { ascending: true })
+    );
 
     if (!error && data) {
       return data;

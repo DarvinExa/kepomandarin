@@ -50,7 +50,7 @@ export default async function LessonsPage() {
             <div className="flex items-center gap-2">
               <span className="w-2.5 h-2.5 bg-accent-red" aria-hidden="true" />
               <span className="font-mono text-xs uppercase tracking-widest text-muted">
-                02 // SILABUS HSK 1
+                02 · SILABUS HSK 1
               </span>
             </div>
             <div>
@@ -82,7 +82,7 @@ export default async function LessonsPage() {
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-rule pb-3">
           <div className="flex items-center gap-3">
             <span className="font-mono text-xs uppercase font-bold text-accent-red tracking-wider">
-              MODUL DASAR // SEBELUM HSK 1
+              MODUL DASAR · SEBELUM HSK 1
             </span>
             <span className="text-rule">|</span>
             <span className="font-mono text-xs text-muted">DASAR MANDARIN</span>

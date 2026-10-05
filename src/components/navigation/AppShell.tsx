@@ -8,18 +8,11 @@ interface AppShellProps {
 
 export function AppShell({ children }: AppShellProps) {
   return (
-    <div className="min-h-screen bg-canvas text-ink flex flex-col lg:flex-row selection:bg-ink selection:text-canvas">
-      {/* Desktop Sidebar Navigation */}
+    <div className="km-shell min-h-screen bg-canvas text-ink">
       <DesktopNav />
-
-      {/* Mobile Top Navigation & Content Container */}
-      <div className="flex-1 flex flex-col min-w-0">
+      <div className="km-workspace">
         <MobileNav />
-
-        {/* Main Application Workspace */}
-        <div className="flex-1 min-w-0">
-          {children}
-        </div>
+        <div className="km-page">{children}</div>
       </div>
     </div>
   );

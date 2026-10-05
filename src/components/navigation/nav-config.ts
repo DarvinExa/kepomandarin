@@ -1,9 +1,12 @@
+import type { AppIconName } from "@/components/ui/AppIcon";
+
 export interface NavItem {
   label: string;
   shortLabel: string;
   href: string;
   index: string;
   description: string;
+  icon: AppIconName;
 }
 
 export const NAV_ITEMS: NavItem[] = [
@@ -12,6 +15,7 @@ export const NAV_ITEMS: NavItem[] = [
     shortLabel: "Beranda",
     href: "/",
     index: "01",
+    icon: "home",
     description: "Ringkasan belajar dan panduan materi",
   },
   {
@@ -19,6 +23,7 @@ export const NAV_ITEMS: NavItem[] = [
     shortLabel: "Silabus",
     href: "/hsk",
     index: "02",
+    icon: "map",
     description: "Materi belajar HSK 1 sampai HSK 5",
   },
   {
@@ -26,6 +31,7 @@ export const NAV_ITEMS: NavItem[] = [
     shortLabel: "Mendengar",
     href: "/listening",
     index: "03",
+    icon: "headphones",
     description: "Latihan dengar bunyi dan nada",
   },
   {
@@ -33,6 +39,7 @@ export const NAV_ITEMS: NavItem[] = [
     shortLabel: "Frasa",
     href: "/phrasebook",
     index: "04",
+    icon: "message",
     description: "Daftar kata dan kalimat pilihanmu",
   },
   {
@@ -40,6 +47,7 @@ export const NAV_ITEMS: NavItem[] = [
     shortLabel: "Jurnal",
     href: "/error-journal",
     index: "05",
+    icon: "book",
     description: "Catatan kesalahan buat dipelajari lagi",
   },
   {
@@ -47,6 +55,7 @@ export const NAV_ITEMS: NavItem[] = [
     shortLabel: "Progres",
     href: "/progress",
     index: "06",
+    icon: "trophy",
     description: "Pantau hasil belajar dan akurasi",
   },
   {
@@ -54,6 +63,7 @@ export const NAV_ITEMS: NavItem[] = [
     shortLabel: "Setelan",
     href: "/settings",
     index: "07",
+    icon: "settings",
     description: "Atur akun dan tampilan",
   },
 ];

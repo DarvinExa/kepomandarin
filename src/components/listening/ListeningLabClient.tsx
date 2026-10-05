@@ -213,10 +213,10 @@ export function ListeningLabClient({
               />
               <span className="font-mono text-[11px] uppercase tracking-widest text-muted">
                 {currentDrill.type === "initials"
-                  ? "FONETIK // PASANGAN INISIAL"
+                  ? "FONETIK · PASANGAN INISIAL"
                   : currentDrill.type === "tones"
-                  ? "AKUSTIK // KONSILESTASI NADA"
-                  : "SINTAKSIS // DIKTASI KALIMAT"}
+                  ? "AKUSTIK · KONSILESTASI NADA"
+                  : "SINTAKSIS · DIKTASI KALIMAT"}
               </span>
             </div>
             <h2 className="text-lg sm:text-xl font-black text-ink uppercase tracking-tight">
@@ -349,8 +349,8 @@ export function ListeningLabClient({
                       />
                       <span className="font-mono text-xs font-bold uppercase tracking-wider text-ink">
                         {isSelectedCorrect
-                          ? "Pendengaran Tepat // Analisis Fonetik Sesuai"
-                          : "Diferensiasi Belum Tepat // Tinjauan Fonetik"}
+                          ? "Pendengaran Tepat · Analisis Fonetik Sesuai"
+                          : "Diferensiasi Belum Tepat · Tinjauan Fonetik"}
                       </span>
                     </div>
                     <span className="font-mono text-[11px] text-muted block sm:hidden mt-0.5">

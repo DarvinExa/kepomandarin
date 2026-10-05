@@ -96,7 +96,7 @@ export function HanziExplorerClient({ userId }: HanziExplorerClientProps) {
               : "bg-paper text-ink border-rule hover:border-ink"
           }`}
         >
-          01 // Radikal Semantik
+          01 · Radikal Semantik
         </button>
         <button
           type="button"
@@ -107,7 +107,7 @@ export function HanziExplorerClient({ userId }: HanziExplorerClientProps) {
               : "bg-paper text-ink border-rule hover:border-ink"
           }`}
         >
-          02 // Dekonstruksi Spasial & Goresan
+          02 · Dekonstruksi Spasial & Goresan
         </button>
         <button
           type="button"
@@ -118,7 +118,7 @@ export function HanziExplorerClient({ userId }: HanziExplorerClientProps) {
               : "bg-paper text-ink border-rule hover:border-ink"
           }`}
         >
-          03 // Uji Identifikasi Radikal
+          03 · Uji Identifikasi Radikal
         </button>
       </div>
 
@@ -224,8 +224,8 @@ export function HanziExplorerClient({ userId }: HanziExplorerClientProps) {
                     />
                     <span className="font-mono text-xs font-bold uppercase tracking-wider text-ink">
                       {isSelectedCorrect
-                        ? "Analisis Tepat // Radikal Dikenali"
-                        : "Analisis Belum Tepat // Tinjauan Radikal"}
+                        ? "Analisis Tepat · Radikal Dikenali"
+                        : "Analisis Belum Tepat · Tinjauan Radikal"}
                     </span>
                   </div>
                   <span className="font-mono text-xs text-muted">

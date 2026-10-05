@@ -281,8 +281,8 @@ export function ScenarioPlayer({ scenario, userId }: ScenarioPlayerProps) {
                     />
                     <span className="font-mono text-xs font-bold uppercase tracking-wider text-ink">
                       {selectedChoice.isAppropriate
-                        ? "Respons Alami // Sesuai Konteks"
-                        : "Respons Kurang Tepat // Tinjauan Etika"}
+                        ? "Respons Alami · Sesuai Konteks"
+                        : "Respons Kurang Tepat · Tinjauan Etika"}
                     </span>
                   </div>
 

@@ -20,7 +20,7 @@ export default async function ScenariosPage() {
         <div className="flex items-center gap-2">
           <span className="w-2.5 h-2.5 bg-accent-yellow" aria-hidden="true" />
           <span className="font-mono text-xs uppercase tracking-widest text-muted">
-            05 // SKENARIO PERCAKAPAN KONTEKSTUAL
+            05 · SKENARIO PERCAKAPAN KONTEKSTUAL
           </span>
         </div>
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">

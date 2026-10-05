@@ -91,7 +91,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="p-4 sm:p-8 max-w-xl mx-auto py-8 sm:py-16 space-y-6">
+    <div className="km-auth-page p-4 sm:p-8 max-w-xl mx-auto py-8 sm:py-16 space-y-6">
       <div className="flex justify-center">
         <Link href="/" title="KepoMandarin: Beranda">
           <img
@@ -109,7 +109,7 @@ export default function LoginPage() {
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 bg-accent-blue" aria-hidden="true" />
             <span className="font-mono text-xs uppercase tracking-widest text-muted">
-              AUTENTIKASI SISTEM // 02
+              AUTENTIKASI SISTEM · 02
             </span>
           </div>
           <span className="font-mono text-[10px] uppercase font-bold px-2 py-0.5 border border-rule bg-paper text-ink">

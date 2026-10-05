@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { createClient } from "@/lib/supabase/server";
 import { getModuleById, getModuleUnit } from "@/lib/curriculum-modules";
 import { LearnerDashboard } from "@/components/dashboard/LearnerDashboard";
-import { PublicLandingPage } from "@/components/landing/PublicLandingPage";
 
 export const metadata: Metadata = {
   title: "KepoMandarin | Belajar Mandarin Buat Si Kepo",
@@ -10,24 +9,13 @@ export const metadata: Metadata = {
     "Belajar Mandarin buat si kepo: platform belajar bahasa Mandarin berbasis konteks kalimat sehari-hari dan kurikulum HSK 1 yang tenang, fokus, dan teratur.",
 };
 
-interface HomePageProps {
-  searchParams: Promise<{ view?: string }>;
-}
-
-export default async function Home({ searchParams }: HomePageProps) {
+export default async function Home() {
   const supabase = await createClient();
   const {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const { view } = await searchParams;
-
-  // Jika pengunjung belum login dan tidak meminta tampilan dasbor secara eksplisit, tampilkan Landing Page
-  if (!user && view !== "dashboard") {
-    return <PublicLandingPage />;
-  }
-
-  // Jika sudah login atau tamu meminta tampilan dasbor (?view=dashboard)
+  // Tampilkan antarmuka belajar utama untuk semua pengguna (mode tamu maupun terdaftar)
   const hsk1Module = getModuleById("hsk1");
   const hsk1Units = hsk1Module?.units ?? [];
   const totalLessons = hsk1Units.length || 12;
@@ -125,6 +113,15 @@ export default async function Home({ searchParams }: HomePageProps) {
       recentAccuracy={recentAccuracy}
       nextLessonSlug={nextLessonSlug}
       currentLesson={currentLesson}
+      units={hsk1Units.map((u) => ({
+        slug: u.slug,
+        title: u.title,
+        hanzi: u.hanzi,
+        pinyin: u.pinyin,
+        translation: u.translation,
+        objective: u.objectives,
+        vocabCount: u.vocabCount,
+      }))}
     />
   );
 }

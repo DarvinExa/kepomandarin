@@ -14,7 +14,7 @@ export default function NotFound() {
 
         <div className="space-y-2">
           <div className="inline-block border border-rule px-3 py-1 font-mono text-[11px] text-accent-red uppercase bg-canvas font-bold">
-            GALAT 404 // HALAMAN TIDAK DITEMUKAN
+            GALAT 404: HALAMAN TIDAK DITEMUKAN
           </div>
           <h1 className="text-2xl sm:text-3xl font-black uppercase tracking-tight text-ink">
             Sepertinya Kamu Tersesat

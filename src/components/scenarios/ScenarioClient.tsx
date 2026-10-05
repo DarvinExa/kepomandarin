@@ -31,28 +31,28 @@ export function ScenarioClient({ userId }: ScenarioClientProps) {
             href="/listening"
             className="px-3 py-1 border border-rule bg-paper text-muted hover:text-ink hover:border-ink transition-colors"
           >
-            01 // Mendengar
+            01 · Mendengar
           </Link>
           <Link
             href="/tone-coach"
             className="px-3 py-1 border border-rule bg-paper text-muted hover:text-ink hover:border-ink transition-colors"
           >
-            02 // Pelatih Nada
+            02 · Pelatih Nada
           </Link>
           <Link
             href="/hanzi-explorer"
             className="px-3 py-1 border border-rule bg-paper text-muted hover:text-ink hover:border-ink transition-colors"
           >
-            03 // Karakter Hanzi
+            03 · Karakter Hanzi
           </Link>
           <Link
             href="/measure-words"
             className="px-3 py-1 border border-rule bg-paper text-muted hover:text-ink hover:border-ink transition-colors"
           >
-            04 // Kata Penggolong
+            04 · Kata Penggolong
           </Link>
           <span className="px-3 py-1 bg-ink text-canvas border border-ink font-bold">
-            05 // Skenario Percakapan
+            05 · Skenario Percakapan
           </span>
         </div>
       </div>

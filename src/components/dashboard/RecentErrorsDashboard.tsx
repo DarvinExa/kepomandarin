@@ -47,7 +47,7 @@ export function RecentErrorsDashboard({ userId }: RecentErrorsDashboardProps) {
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 bg-accent-red" aria-hidden="true" />
             <span className="font-mono text-xs uppercase tracking-widest text-muted">
-              CATATAN TERBARU // JURNAL KESALAHAN
+              CATATAN TERBARU: JURNAL KESALAHAN
             </span>
           </div>
           <h3 className="text-lg sm:text-xl font-black uppercase tracking-tight text-ink">

@@ -65,12 +65,8 @@ export default function RegisterPage() {
         return;
       }
 
-      if (data.user && !data.session) {
-        setSuccessMessage(
-          "Pendaftaran berhasil! Tautan konfirmasi telah dikirimkan ke email kamu. Silakan periksa kotak masuk untuk mengaktifkan akun sebelum masuk."
-        );
-      } else if (data.session && data.user) {
-        // Buat record profil dasar (Task 2.6)
+      if (data.session && data.user) {
+        // Buat record profil dasar
         try {
           await supabase.from("profiles").upsert({
             id: data.user.id,
@@ -86,7 +82,37 @@ export default function RegisterPage() {
         setTimeout(() => {
           router.push("/");
           router.refresh();
-        }, 1500);
+        }, 1000);
+      } else if (data.user) {
+        // Jika session belum langsung dibuat, lakukan login otomatis
+        try {
+          const { data: loginData } = await supabase.auth.signInWithPassword({
+            email: email.trim(),
+            password,
+          });
+
+          if (loginData?.session) {
+            try {
+              await supabase.from("profiles").upsert({
+                id: data.user.id,
+                full_name: fullName.trim(),
+                username: email.trim().split("@")[0],
+                updated_at: new Date().toISOString(),
+              });
+            } catch {}
+            setSuccessMessage("Pendaftaran berhasil! Mengalihkan ke dasbor...");
+            setTimeout(() => {
+              router.push("/");
+              router.refresh();
+            }, 1000);
+            return;
+          }
+        } catch {}
+
+        setSuccessMessage("Pendaftaran berhasil! Mengalihkan ke halaman masuk...");
+        setTimeout(() => {
+          router.push("/login");
+        }, 1000);
       }
     } catch {
       setErrorMessage("Gagal terhubung ke server autentikasi. Periksa koneksi internetmu.");
@@ -96,7 +122,7 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="p-4 sm:p-8 max-w-xl mx-auto py-8 sm:py-16 space-y-6">
+    <div className="km-auth-page p-4 sm:p-8 max-w-xl mx-auto py-8 sm:py-16 space-y-6">
       <div className="flex justify-center">
         <Link href="/" title="KepoMandarin: Beranda">
           <img
@@ -114,7 +140,7 @@ export default function RegisterPage() {
           <div className="flex items-center gap-2">
             <span className="w-2.5 h-2.5 bg-accent-red" aria-hidden="true" />
             <span className="font-mono text-xs uppercase tracking-widest text-muted">
-              AUTENTIKASI SISTEM // 01
+              AUTENTIKASI SISTEM · 01
             </span>
           </div>
           <span className="font-mono text-[10px] uppercase font-bold px-2 py-0.5 border border-rule bg-paper text-ink">

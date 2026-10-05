@@ -247,7 +247,7 @@ export function LessonFocusedPractice({
                 UNIT {lesson.slug} · {lesson.hanzi} ({lesson.pinyin.toUpperCase()})
               </span>
               <h1 className="text-xl sm:text-2xl font-black uppercase tracking-tight text-ink truncate sm:whitespace-normal">
-                LATIHAN SELESAI // PELAJARAN {lesson.slug}: {lesson.title.toUpperCase()}
+                LATIHAN SELESAI: PELAJARAN {lesson.slug}: {lesson.title.toUpperCase()}
               </h1>
             </div>
           </div>
@@ -618,7 +618,7 @@ function LessonPracticeCard({
           <div className="border border-rule bg-canvas p-6 sm:p-8 space-y-5">
             <div className="flex items-center justify-between">
               <span className="font-mono text-xs uppercase tracking-widest text-accent-blue font-bold">
-                STIMULUS AUDIO // SIMAK DENGAN TELITI
+                STIMULUS AUDIO: SIMAK DENGAN TELITI
               </span>
               <span className="font-mono text-xs uppercase text-muted tracking-wider">
                 MANDARIN LISAN
@@ -889,7 +889,7 @@ function LessonPracticeCard({
                       isCorrect ? "text-status-success" : "text-accent-red"
                     }`}
                   >
-                    {isCorrect ? "HASIL // BENAR" : "HASIL // BELUM TEPAT"}
+                    {isCorrect ? "HASIL: BENAR" : "HASIL: BELUM TEPAT"}
                   </span>
                   <span className="font-mono text-[10px] text-muted uppercase">
                     Penjelasan

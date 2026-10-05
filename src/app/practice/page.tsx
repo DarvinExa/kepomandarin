@@ -59,7 +59,7 @@ export default async function PracticePage({ searchParams }: PracticePageProps) 
         <div className="flex items-center gap-2">
           <span className="w-2.5 h-2.5 bg-accent-blue" aria-hidden="true" />
           <span className="font-mono text-xs uppercase tracking-widest text-muted">
-            03 // LATIHAN SOAL
+            03 · LATIHAN SOAL
           </span>
         </div>
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">

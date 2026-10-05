@@ -16,7 +16,7 @@ export default async function ProgressPage() {
         <div className="border border-rule bg-paper p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="space-y-1">
             <span className="font-mono text-[10px] uppercase font-bold text-accent-blue block">
-              MODE TAMU // PROGRES TERSIMPAN DI PERANGKAT INI
+              MODE TAMU: PROGRES TERSIMPAN DI PERANGKAT INI
             </span>
             <p className="text-xs text-muted">
               Progres belajarmu saat ini tersimpan di browser. Masuk atau buat akun agar riwayat belajar tersimpan aman di akunmu.
@@ -44,7 +44,7 @@ export default async function ProgressPage() {
         <div className="flex items-center gap-2">
           <span className="w-2.5 h-2.5 bg-accent-red" aria-hidden="true" />
           <span className="font-mono text-xs uppercase tracking-widest text-muted">
-            07 // PROGRES BELAJAR
+            07 · PROGRES BELAJAR
           </span>
         </div>
         <h1 className="text-2xl sm:text-4xl font-black uppercase tracking-tight text-ink">

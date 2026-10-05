@@ -16,7 +16,7 @@ export default async function PhrasebookPage() {
         <div className="border border-rule bg-paper p-4 sm:p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="space-y-1">
             <span className="font-mono text-[10px] uppercase font-bold text-ink block bg-accent-yellow px-2 py-0.5 w-fit">
-              MODE TAMU // PENYIMPANAN DI PERANGKAT INI
+              MODE TAMU: PENYIMPANAN DI PERANGKAT INI
             </span>
             <p className="text-xs text-muted">
               Koleksi frasamu saat ini tersimpan di browser. Masuk atau buat akun agar frasa tersimpan aman di akunmu.
@@ -44,7 +44,7 @@ export default async function PhrasebookPage() {
         <div className="flex items-center gap-2">
           <span className="w-2.5 h-2.5 bg-accent-yellow" aria-hidden="true" />
           <span className="font-mono text-xs uppercase tracking-widest text-muted">
-            05 // BUKU FRASA PRIBADI
+            05 · BUKU FRASA PRIBADI
           </span>
         </div>
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">

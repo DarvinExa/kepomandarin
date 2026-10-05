@@ -17,7 +17,7 @@ export function ToneSandhiMatrix() {
         <div className="flex items-center gap-2">
           <span className="w-2.5 h-2.5 bg-accent-blue" aria-hidden="true" />
           <span className="font-mono text-xs uppercase tracking-widest text-muted">
-            MATRIKS PERUBAHAN NADA // TONE SANDHI
+            MATRIKS PERUBAHAN NADA · TONE SANDHI
           </span>
         </div>
 
@@ -35,7 +35,7 @@ export function ToneSandhiMatrix() {
                     : "bg-paper text-ink border-rule hover:border-ink hover:bg-canvas"
                 }`}
               >
-                {`0${idx + 1} // ${rule.name.split(" (")[0]}`}
+                {`0${idx + 1} · ${rule.name.split(" (")[0]}`}
               </button>
             );
           })}
