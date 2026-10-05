@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import {
   FUNDAMENTAL_TONES,
@@ -12,10 +12,22 @@ import {
   FUNDAMENTAL_QUIZ,
 } from "@/lib/fundamentals";
 import { AudioPlayer } from "@/components/audio/AudioPlayer";
+import { recordPracticeAttempt } from "@/lib/progress";
 
 export function FundamentalClient() {
   const [activeTab, setActiveTab] = useState<"tones" | "initials" | "finals" | "strokes" | "quiz">("tones");
   const [finalCategoryFilter, setFinalCategoryFilter] = useState<string>("all");
+  const [isFundamentalsCompleted, setIsFundamentalsCompleted] = useState(false);
+
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem("mandarin_lab_progress");
+      const map = raw ? JSON.parse(raw) : {};
+      if (map["fundamentals"]?.isCompleted) {
+        setIsFundamentalsCompleted(true);
+      }
+    } catch {}
+  }, []);
 
   // State untuk latihan fondasi
   const [currentQuizIndex, setCurrentQuizIndex] = useState(0);
@@ -44,6 +56,20 @@ export function FundamentalClient() {
     }
   };
 
+  const handleMarkCompleted = () => {
+    try {
+      const raw = localStorage.getItem("mandarin_lab_progress");
+      const map = raw ? JSON.parse(raw) : {};
+      map["fundamentals"] = {
+        lessonSlug: "fundamentals",
+        isCompleted: true,
+        completedAt: new Date().toISOString(),
+      };
+      localStorage.setItem("mandarin_lab_progress", JSON.stringify(map));
+      setIsFundamentalsCompleted(true);
+    } catch {}
+  };
+
   const handleNextQuiz = () => {
     if (currentQuizIndex + 1 < FUNDAMENTAL_QUIZ.length) {
       setCurrentQuizIndex((prev) => prev + 1);
@@ -51,6 +77,14 @@ export function FundamentalClient() {
       setIsAnswerSubmitted(false);
     } else {
       setIsQuizCompleted(true);
+      handleMarkCompleted();
+      const finalAccuracy = Math.round((quizScore / FUNDAMENTAL_QUIZ.length) * 100);
+      recordPracticeAttempt({
+        lessonSlug: "fundamentals",
+        score: quizScore,
+        total: FUNDAMENTAL_QUIZ.length,
+        accuracy: finalAccuracy,
+      }).catch(() => {});
     }
   };
 
@@ -74,6 +108,19 @@ export function FundamentalClient() {
             </span>
           </div>
           <div className="flex items-center gap-2">
+            {isFundamentalsCompleted ? (
+              <span className="font-mono text-xs px-2.5 py-1 bg-status-success text-canvas uppercase font-bold">
+                ✓ Fondasi Tuntas
+              </span>
+            ) : (
+              <button
+                type="button"
+                onClick={handleMarkCompleted}
+                className="font-mono text-xs px-3 py-1 bg-ink text-canvas hover:bg-accent-red uppercase font-bold transition-colors cursor-pointer"
+              >
+                Tandai Selesai
+              </button>
+            )}
             <span className="font-mono text-xs px-2.5 py-1 bg-accent-blue text-canvas uppercase font-bold">
               PRASYARAT HSK 1
             </span>
@@ -656,7 +703,7 @@ export function FundamentalClient() {
               {/* SEAMLESS CTA: Lanjut ke HSK 1 Pelajaran 01 */}
               <div className="pt-3 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
-                  href="/lessons/01"
+                  href="/lessons/hsk1/01"
                   className="w-full sm:w-auto px-8 py-4 bg-ink text-canvas hover:bg-black font-mono text-xs uppercase tracking-widest font-black transition-colors block text-center"
                 >
                   Lanjut ke HSK 1: Pelajaran 01 (Sapaan Sopan) →

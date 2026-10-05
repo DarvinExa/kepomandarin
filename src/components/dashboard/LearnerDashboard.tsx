@@ -115,13 +115,18 @@ export function LearnerDashboard({
     };
   }, [userId, totalLessons, units]);
 
+  // Fondasi dianggap selesai jika user telah menyelesaikan Fondasi atau sudah menyelesaikan setidaknya 1 unit HSK 1
+  const isFundamentalsDone =
+    completedSlugs.has("fundamentals") ||
+    completedSlugs.has("01") ||
+    completedCount > 0;
+
   // Bangun jalur pembelajaran Duolingo-style yang dinamis dengan sistem unlock milestone
   const nodes: PathNode[] = [];
 
   // 1. Fondasi Dasar (Node 0)
-  const isFundamentalsDone = completedCount > 0 || completedSlugs.has("fundamentals");
   nodes.push({
-    icon: "check",
+    icon: isFundamentalsDone ? "check" : "play",
     state: isFundamentalsDone ? "done" : "current",
     label: isFundamentalsDone ? "Fondasi Dasar Selesai" : "Fondasi Dasar Mandarin",
     subLabel: "Pīnyīn & 4 Nada Dasar",
@@ -131,7 +136,7 @@ export function LearnerDashboard({
   // 2. Unit-unit Kurikulum HSK 1 (Unit 01 s/d 12) + Hadiah Milestone per 3 Unit
   units.forEach((u, index) => {
     const isDone = completedSlugs.has(u.slug);
-    const isCurrent = u.slug === nextLessonSlug;
+    const isCurrent = isFundamentalsDone && u.slug === nextLessonSlug;
 
     let icon: AppIconName = "lock";
     let state: "done" | "current" | "locked" | "reward" = "locked";
@@ -152,7 +157,7 @@ export function LearnerDashboard({
       state,
       label: `Unit ${u.slug}: ${u.title}`,
       subLabel: u.translation,
-      href: `/lessons/hsk1/${u.slug}`,
+      href: isDone || isCurrent ? `/lessons/hsk1/${u.slug}` : undefined,
     });
 
     // Checkpoint Milestone setiap 3 unit (Unit 03, 06, 09, 12)
@@ -190,9 +195,21 @@ export function LearnerDashboard({
 
         <section className="km-unit-card">
           <div className="km-unit-card-content">
-            <small>Unit {nextLessonSlug} · HSK 1</small>
-            <h1>{currentLesson.title}</h1>
-            <p>{currentLesson.translation}</p>
+            <small>
+              {!isFundamentalsDone
+                ? "Prasyarat HSK 1 · Fondasi Dasar"
+                : `Unit ${nextLessonSlug} · HSK 1`}
+            </small>
+            <h1>
+              {!isFundamentalsDone
+                ? "Fondasi Dasar Mandarin"
+                : currentLesson.title}
+            </h1>
+            <p>
+              {!isFundamentalsDone
+                ? "Pīnyīn, 4 Nada Dasar & Kaidah Menulis Karakter Hanzi"
+                : currentLesson.translation}
+            </p>
           </div>
           <img src="/images/mascot-studying.png" alt="Maskot Belajar KepoMandarin" />
           <div className="km-unit-progress-wrap">
@@ -264,12 +281,33 @@ export function LearnerDashboard({
 
         <section className="km-side-card highlight">
           <h2>Pelajaran berikutnya</h2>
-          <div className="hanzi font-chinese">{currentLesson.hanzi}</div>
-          <strong>{currentLesson.pinyin}</strong>
-          <p className="mt-2 text-sm text-muted">{currentLesson.objective}</p>
-          <Link href={`/lessons/hsk1/${nextLessonSlug}`} className="km-btn km-btn-primary mt-4 w-full">
-            Mulai pelajaran <AppIcon name="arrow" />
-          </Link>
+          {!isFundamentalsDone ? (
+            <>
+              <div className="hanzi font-chinese">拼音与声调</div>
+              <strong>Pīnyīn yǔ Shēngdiào</strong>
+              <p className="mt-2 text-sm text-muted">
+                Kuasai sistem bunyi Pīnyīn, 4 nada dasar, dan aturan goresan karakter Hanzi sebelum memulai Unit 01 HSK 1.
+              </p>
+              <Link
+                href="/lessons/fundamentals"
+                className="km-btn km-btn-primary mt-4 w-full"
+              >
+                Mulai fondasi <AppIcon name="arrow" />
+              </Link>
+            </>
+          ) : (
+            <>
+              <div className="hanzi font-chinese">{currentLesson.hanzi}</div>
+              <strong>{currentLesson.pinyin}</strong>
+              <p className="mt-2 text-sm text-muted">{currentLesson.objective}</p>
+              <Link
+                href={`/lessons/hsk1/${nextLessonSlug}`}
+                className="km-btn km-btn-primary mt-4 w-full"
+              >
+                Mulai pelajaran <AppIcon name="arrow" />
+              </Link>
+            </>
+          )}
         </section>
 
         <section className="km-side-card">
