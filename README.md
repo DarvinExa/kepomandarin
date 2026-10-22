@@ -152,6 +152,9 @@ Antarmuka KepoMandarin memadukan estetika konstruktivis yang bersih, tegas, dan 
    # Pengecekan linter
    npm run lint
 
+   # Ping keep-alive Supabase (mencegah auto-pause inaktivitas)
+   npm run ping:supabase
+
    # Build produksi
    npm run build
    ```
